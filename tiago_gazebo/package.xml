@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package>
+  <name>tiago_gazebo</name>
+  <version>0.0.0</version>
+  <description>The tiago_gazebo package</description>
+  <maintainer email="bence.magyar@pal-robotics.com">Bence Magyar</maintainer>
+  <license>BSD</license>
+  <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>gazebo_plugins</run_depend>
+  <run_depend>pal_gazebo_plugins</run_depend>
+  <run_depend>tiago_bringup</run_depend>
+  <run_depend>tiago_controller_configuration</run_depend>
+  <run_depend>tiago_description</run_depend>
+</package>
