@@ -1,0 +1,36 @@
+<launch>
+  <arg name="namespace" default="/"/>
+
+  <arg name="world"  default="small_office"/>
+  <arg name="robot"  default="full_v2"/>
+  <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
+  <arg name="planner"        default="base"/>
+  <arg name="global_planner" default="navfn"/>
+  <arg name="local_planner"  default="pal"/>
+  <arg name="mapping"        default="karto"/>
+
+  <arg name="rviz"     default="true"/>
+  <arg name="gzclient" default="true"/>
+
+  <group ns="$(arg namespace)">
+
+    <include file="$(find tiago_gazebo)/launch/tiago_gazebo.launch">
+      <arg name="world"  value="$(arg world)"/>
+      <arg name="robot"  value="$(arg robot)"/>
+      <arg name="gzpose" value="$(arg gzpose)"/>
+      <arg name="gui"    value="$(arg gzclient)"/>
+    </include>
+
+    <include file="$(find tiago_2dnav)/launch/navigation.launch">
+      <arg name="state"          value="mapping"/>
+      <arg name="mapping"        value="$(arg mapping)"/>
+      <arg name="planner"        value="$(arg planner)"/>
+      <arg name="global_planner" value="$(arg global_planner)"/>
+      <arg name="local_planner"  value="$(arg local_planner)"/>
+    </include>
+
+    <node name="rviz" pkg="rviz" type="rviz" if="$(arg rviz)"
+          args="-d $(find tiago_2dnav)/config/rviz/navigation.rviz"/>
+  </group>
+</launch>
