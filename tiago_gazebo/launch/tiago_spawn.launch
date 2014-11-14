@@ -1,6 +1,6 @@
 <launch>
   <arg name="robot"  default="full"/>
-  <arg name="gzpose" default="-x 0 -y 0 -z 0.85 -R 0.0 -P 0.0 -Y 0.0"/>
+  <arg name="gzpose" default="-x 0 -y 0 -z 0.25 -R 0.0 -P 0.0 -Y 0.0"/>
 
   <!-- PID gains -->
   <rosparam command="load" file="$(find tiago_controller_configuration)/config/pids.yaml"/>
