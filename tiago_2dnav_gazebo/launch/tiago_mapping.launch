@@ -2,7 +2,7 @@
   <arg name="namespace" default="/"/>
 
   <arg name="world"  default="small_office"/>
-  <arg name="robot"  default="full_v2"/>
+  <arg name="robot"  default="full"/>
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
 
   <arg name="planner"        default="base"/>
