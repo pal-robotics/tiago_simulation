@@ -1,0 +1,4 @@
+The model.sdf file has been auto-generated from pal_office.png.
+
+Use https://github.com/RainCT/img2sdf if you need to re-generate it:
+  $ img2sdf.py pal_office.png 0.07 --name=PalOfficePujades > model.sdf

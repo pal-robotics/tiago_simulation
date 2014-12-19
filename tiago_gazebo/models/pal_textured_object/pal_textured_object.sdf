@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="pal_textured_object">
+    <static>0</static>
+    <link name="box">
+      <gravity>false</gravity>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.04 0.154 0.1855</size>            
+          </box>
+        </geometry>
+        <material>
+          <script>
+	    <uri>model://pal_textured_object/material/scripts</uri>
+	    <uri>model://pal_textured_object/material/textures</uri>
+            <name>pal_textured_object</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.04 0.154 0.1855</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

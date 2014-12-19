@@ -1,0 +1,13 @@
+material eyeHandCalibrationChessBoard
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture eyeHandCalibrationChessBoard.png
+			}
+		}
+	}
+}

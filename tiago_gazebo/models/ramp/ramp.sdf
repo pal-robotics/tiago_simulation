@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="ramp">
+    <static>1</static>
+    <!-- alpha  = arctan2( 1, 8 )     = 0.12435499454676144 -->
+    <!-- length = sqrt( 8**2 + 1**2 ) = 8.0622577482985491 -->
+    <link name="ramp_link">
+      <!-- ramp up -->
+      <collision name="ramp_up_collision">
+        <pose>0. 0. 0.5 0. 0.12435499454676144 0.</pose>
+        <geometry>
+          <box>
+            <size>8.0622577482985491 2. 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="ramp_up_visual">
+        <pose>0. 0. 0.5 0. 0.12435499454676144 0.</pose>
+        <geometry>
+          <box>
+            <size>8.0622577482985491 2. 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+        <cast_shadows>0</cast_shadows>
+      </visual>
+
+      <!-- plane -->
+      <collision name="plane_collision">
+        <pose>-6. 0. 1. 0. 0. 0.</pose>
+        <geometry>
+          <box>
+            <size>4. 2. 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="plane_visual">
+        <pose>-6. 0. 1. 0. 0. 0.</pose>
+        <geometry>
+          <box>
+            <size>4. 2. 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+        <cast_shadows>0</cast_shadows>
+      </visual>
+
+      <!-- ramp down -->
+      <collision name="ramp_down_collision">
+        <pose>-12. 0. 0.5 0. -0.12435499454676144 0.</pose>
+        <geometry>
+          <box>
+            <size>8.0622577482985491 2. 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="ramp_down_visual">
+        <pose>-12. 0. 0.5 0. -0.12435499454676144 0.</pose>
+        <geometry>
+          <box>
+            <size>8.0622577482985491 2. 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+        </material>
+        <cast_shadows>0</cast_shadows>
+      </visual>
+      <velocity_decay>
+        <linear>0.</linear>
+        <angular>0.</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+    </link>
+  </model>
+</sdf>

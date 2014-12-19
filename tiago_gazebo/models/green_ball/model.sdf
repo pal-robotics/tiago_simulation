@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<sdf version='1.4'>
+  <model name='table'>
+      <link name='link'>
+        <gravity>false</gravity>
+        <collision name='surface'>
+          <pose>0.0 0.0 1.2 0.0 0.0 0.0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.035</radius>
+            </sphere>
+          </geometry>
+        </collision>
+        <visual name='visual1'>
+          <pose>0.0 0.0 1.2 0.0 0.0 0.0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.035</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://green_ball/materials/scripts/ball.material</uri>
+              <name>Ball/Green</name>
+            </script>
+          </material>
+        </visual>
+    </model>
+</sdf>
+

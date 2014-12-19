@@ -1,0 +1,4 @@
+The model.sdf file has been auto-generated from model.png.
+
+Use https://github.com/RainCT/img2sdf if you need to re-generate it:
+  $ img2sdf.py world.png 0.15 --name=FunWorld1 > model.sdf

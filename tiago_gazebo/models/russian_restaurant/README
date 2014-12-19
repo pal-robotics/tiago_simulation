@@ -1,0 +1,4 @@
+The model.sdf file has been auto-generated from russian_restaurant_walls.png.
+
+Use https://github.com/RainCT/img2sdf if you need to re-generate it:
+  $ img2sdf.py russian_restaurant_walls.png 0.05 --name=RussianRestaurant > model.sdf

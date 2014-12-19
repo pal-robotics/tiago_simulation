@@ -1,0 +1,4 @@
+The model.sdf file has been auto-generated from multi_loops.png.
+
+Use https://github.com/RainCT/img2sdf if you need to re-generate it:
+  $ img2sdf.py multi_loops.png 0.15 --name=MultiLoops > model.sdf

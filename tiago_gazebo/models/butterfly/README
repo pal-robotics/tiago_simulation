@@ -1,0 +1,4 @@
+The model.sdf file has been auto-generated from butterfly.png.
+
+Use https://github.com/RainCT/img2sdf if you need to re-generate it:
+  $ img2sdf.py butterfly.png 0.6 --name=ButterflyWorld > model.sdf

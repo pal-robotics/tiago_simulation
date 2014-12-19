@@ -1,0 +1,14 @@
+material pal_textured_object
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture pal_textured_object.png
+			}
+		}
+	}
+}
+

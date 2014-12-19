@@ -1,0 +1,4 @@
+The model.sdf file has been auto-generated from FixedMapPalaceDemo_gazebo.png.
+
+Use https://github.com/RainCT/img2sdf if you need to re-generate it:
+  $ img2sdf.py palace_demo.png 0.15 --name=AbuDhabi > model.sdf

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="wifi_ap">
+    <static>1</static>
+    <link name="wifi_ap_link">
+      <visual name="wifi_ap_visual">
+        <pose>0. 0. 0.0075 0. 0. 0.</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.05 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay>
+        <linear>0.</linear>
+        <angular>0.</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+    </link>
+     <plugin filename="libgazebo_wifi_ap.so" name="gazebo_wifi_ap">
+        <update_rate>2.0</update_rate>
+        <robot_model>reemc_full</robot_model>
+        <topic>routerManagerWifiScan</topic>
+<!--    <essid>wifi_test</essid> -->
+        <max_value>-10.0</max_value>
+      </plugin>
+  </model>
+</sdf>
