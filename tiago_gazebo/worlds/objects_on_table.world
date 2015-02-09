@@ -56,6 +56,7 @@
     </include>
     <!-- A table -->
     <include>
+<<<<<<< HEAD
       <uri>model://table_1m</uri>
       <name>table1</name>
       <pose>0.95 0 0 0 0 0</pose>
@@ -77,6 +78,28 @@
     <include>
       <uri>model://bifrutas_tropical_can</uri>
       <pose>0.57 0.2 1.8 0 0 -0.5</pose>
+=======
+      <uri>model://table_0m8</uri>
+      <name>table1</name>
+      <pose>0.8 0 0 0 0 0</pose>
+    </include>
+    <!-- Objects on the table -->
+    <include>
+      <uri>model://pringles</uri>
+      <pose>0.55 0 1.8 0 0 2.62</pose>
+    </include>
+    <include>
+      <uri>model://biscuits_pack</uri>
+      <pose>0.8 0.4 1.8 0 0 1.5</pose>
+    </include>
+    <include>
+      <uri>model://coke_can_slim</uri>
+      <pose>0.353 -0.221 1.1 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://bifrutas_tropical_can</uri>
+      <pose>0.42 0.2 1.8 0 0 -0.5</pose>
+>>>>>>> 1cf15dd... Add objects on table world and belongings
     </include>
     <gui fullscreen="0">
       <camera name="user_camera">
