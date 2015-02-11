@@ -32,24 +32,6 @@
       </attenuation>
       <direction>0.2 0.0 -1.0</direction>
     </light>
-    <light type="spot" name="light2">
-      <cast_shadows>true</cast_shadows>
-      <pose>0 0 3.5 0 0 0</pose>
-      <diffuse>1.0 1.0 1.0 1</diffuse>
-      <specular>0.1 0.1 0.1 1</specular>
-      <attenuation>
-        <range>20</range>
-        <constant>0.9</constant>
-        <linear>0.01</linear>
-        <quadratic>0.001</quadratic>
-      </attenuation>
-      <direction>0 0.0 -1.0</direction>
-      <spot>
-        <inner_angle>0.7</inner_angle>
-        <outer_angle>1.0</outer_angle>
-        <falloff>1.0</falloff>
-      </spot>
-    </light>
     <!-- A ground plane -->
     <include>
       <uri>model://ground_plane</uri>
@@ -67,15 +49,15 @@
     </include>
     <include>
       <uri>model://biscuits_pack</uri>
-      <pose>0.8 0.4 1.8 0 0 1.5</pose>
+      <pose>0.8 0.3 1.8 0 0 1.5</pose>
     </include>
     <include>
       <uri>model://coke_can_slim</uri>
-      <pose>0.353 -0.221 1.1 0 0 0</pose>
+      <pose>0.753 -0.221 1.1 0 0 0</pose>
     </include>
     <include>
       <uri>model://bifrutas_tropical_can</uri>
-      <pose>0.42 0.2 1.8 0 0 -0.5</pose>
+      <pose>0.9 0.2 1.8 0 0 -0.5</pose>
     </include>
     <gui fullscreen="0">
       <camera name="user_camera">
