@@ -26,4 +26,6 @@
   <include file="$(find tiago_bringup)/launch/tiago_bringup.launch">
     <arg name="robot"  value="$(arg robot)"/>
   </include>
+
+  <node name="tuck_arm" pkg="tiago_gazebo" type="tuck_arm.py" output="screen"/>
 </launch>

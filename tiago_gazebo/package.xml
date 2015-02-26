@@ -12,4 +12,7 @@
   <run_depend>tiago_bringup</run_depend>
   <run_depend>tiago_controller_configuration</run_depend>
   <run_depend>tiago_description</run_depend>
+
+  <run_depend>rospy</run_depend>
+  <run_depend>play_motion_msgs</run_depend>
 </package>
