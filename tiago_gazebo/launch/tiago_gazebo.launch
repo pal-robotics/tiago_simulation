@@ -23,5 +23,7 @@
   </include>
 
   <!-- bring up robot -->
-  <include file="$(find tiago_bringup)/launch/tiago_bringup.launch"/>
+  <include file="$(find tiago_bringup)/launch/tiago_bringup.launch">
+    <arg name="robot"  value="$(arg robot)"/>
+  </include>
 </launch>
