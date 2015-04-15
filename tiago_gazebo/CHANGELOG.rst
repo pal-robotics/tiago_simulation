@@ -2,6 +2,9 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.1 (2015-04-15)
 ------------------
 * Install tuck script and configuration files
