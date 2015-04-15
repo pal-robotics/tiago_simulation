@@ -2,8 +2,8 @@
 Changelog for package tiago_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.2 (2015-04-15)
+------------------
 * Fix depend
 * Contributors: Bence Magyar
 
