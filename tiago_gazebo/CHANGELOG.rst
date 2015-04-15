@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.1 (2015-04-15)
+------------------
 * Install tuck script and configuration files
 * Add tuck_arm to gazebo launch sequence
 * Robot spawns on the ground instead of tiny elevation
