@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>tiago_2dnav_gazebo</name>
-  <version>0.9.0</version>
+  <version>0.0.0</version>
   <description>TiaGo-specific launch files needed to run
     navigation on the TiaGo robot.</description>
   <maintainer email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</maintainer>
