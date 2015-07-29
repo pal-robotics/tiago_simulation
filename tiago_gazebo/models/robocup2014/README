@@ -1,4 +1,0 @@
-The model.sdf file has been auto-generated from robocup2014.png.
-
-Use https://github.com/RainCT/img2sdf if you need to re-generate it:
-  $ img2sdf.py robocup2014.png 0.05 --name=Robocup2014 > model.sdf

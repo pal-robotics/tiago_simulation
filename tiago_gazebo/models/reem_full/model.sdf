@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-<sdf version='1.4'>
- <model name='reem'>
-   <include>
-     <uri>model://reem_full</uri>
-   </include>
-</sdf>
