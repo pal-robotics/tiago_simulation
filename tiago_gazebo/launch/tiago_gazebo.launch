@@ -2,7 +2,7 @@
 
 <launch>
   <arg name="world"  default="empty"/>  <!-- empty, ... (see ../worlds) -->
-  <arg name="robot"  default="titanium"/>          <!-- see tiago_description/robots/tiago_* -->
+  <arg name="robot"  default="steel"/>          <!-- see tiago_description/robots/tiago_* -->
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
