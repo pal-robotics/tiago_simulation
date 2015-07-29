@@ -94,7 +94,7 @@ private:
   std::vector<gazebo::physics::JointPtr> sim_joints_;
   std::vector<gazebo::physics::JointPtr> pos_sim_joints_;
   std::vector<gazebo::physics::JointPtr> vel_sim_joints_;
-  boost::shared_ptr<gazebo::sensors::ImuSensor> imu_sensor_;
+  gazebo::sensors::ImuSensor* imu_sensor_;
 
   // Hardware interface: joints
   hardware_interface::JointStateInterface    jnt_state_interface_;

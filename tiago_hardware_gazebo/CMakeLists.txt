@@ -20,6 +20,8 @@ catkin_package(
       joint_limits_interface
       hardware_interface
     LIBRARIES ${PROJECT_NAME}
+    DEPENDS
+        gazebo
 )
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
