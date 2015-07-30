@@ -1,0 +1,4 @@
+The model.sdf file has been auto-generated from rockin_camp.png.
+
+Use https://github.com/RainCT/img2sdf if you need to re-generate it:
+  $ img2sdf.py rockin_camp.png 0.027 --name=RockinCamp > model.sdf

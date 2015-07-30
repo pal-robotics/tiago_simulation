@@ -1,0 +1,11 @@
+<library path="lib/libtiago_hardware_gazebo">
+
+  <class
+    name="tiago_hardware_gazebo/TiagoHardwareGazebo"
+    type="tiago_hardware_gazebo::TiagoHardwareGazebo"
+    base_class_type="gazebo_ros_control::RobotHWSim">
+    <description>
+      TIAGO robot simulation interface.
+    </description>
+  </class>
+</library>

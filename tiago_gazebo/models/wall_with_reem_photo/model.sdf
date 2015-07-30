@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<sdf version='1.4'>
+  <model name='table'>
+      <link name="wallWithREEMphoto_body">
+        <inertial>
+          <mass>4.0</mass>
+          <inertia>
+            <ixx>1.0</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>1.0</iyy>
+            <iyz>0.0</iyz>
+            <izz>1.0</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.05 1.0 2.0</size> <!-- Wall dimensions: thickness width length -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.05 1.0 2.0</size> <!-- Wall dimensions: thickness width length -->
+            </box>
+          </geometry>
+          <material>
+            <script>
+	      <uri>model://wall_with_reem_photo/material/scripts</uri>
+	      <uri>model://wall_with_reem_photo/material/textures</uri>
+              <name>Custom/REEM_photo0</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+</sdf>
+

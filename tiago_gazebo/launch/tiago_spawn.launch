@@ -1,0 +1,26 @@
+<launch>
+  <arg name="robot"  default="full"/>
+  <arg name="gzpose" default="-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
+  <!-- PID gains -->
+  <rosparam command="load" file="$(find tiago_controller_configuration)/config/pids.yaml"/>
+
+  <!-- Joint trajectory and diff drive controllers -->
+  <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_trajectory_controllers.yaml"/>
+  <rosparam command="load" file="$(find tiago_controller_configuration)/config/mobile_base_controller.yaml"/>
+
+  <!-- Joystick controller parameters -->
+  <!--
+  <rosparam file="$(find tiago_gazebo)/config/joy_teleop_sim.yaml" command="load"/>
+  -->
+
+  <!-- Robot model -->
+  <include file="$(find tiago_description)/robots/upload_tiago.launch">
+    <arg name="robot" value="$(arg robot)"/>
+  </include>
+
+  <!-- Spawn robot in Gazebo -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_model"
+    args="-urdf -param robot_description $(arg gzpose) -model tiago_$(arg robot)" />
+
+</launch>
