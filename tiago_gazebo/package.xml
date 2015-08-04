@@ -3,7 +3,7 @@
   <name>tiago_gazebo</name>
   <version>0.0.0</version>
   <description>The tiago_gazebo package</description>
-  <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
+  <maintainer email="maintainer@pal-robotics.com">PAL Robotics</maintainer>
   <license>BSD</license>
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
   <buildtool_depend>catkin</buildtool_depend>

@@ -4,7 +4,7 @@
   <version>0.0.0</version>
   <description>Gazebo plugin to control a Tiago robot in simulation.</description>
 
-  <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
+  <maintainer email="maintainer@pal-robotics.com">PAL Robotics</maintainer>
 
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
 
