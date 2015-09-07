@@ -2,8 +2,8 @@
 Changelog for package tiago_hardware_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.1 (2015-09-07)
+------------------
 * Update maintainer email
 * Update package xmls
 * First tiago release

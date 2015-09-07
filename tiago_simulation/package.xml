@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>tiago_simulation</name>
-  <version>0.0.0</version>
+  <version>0.0.1</version>
   <description>The tiago_simulation package</description>
   <maintainer email="maintainer@pal-robotics.com">PAL Robotics</maintainer>
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
