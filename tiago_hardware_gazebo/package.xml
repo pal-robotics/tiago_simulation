@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>tiago_hardware_gazebo</name>
-  <version>0.0.1</version>
+  <version>0.1.0</version>
   <description>Gazebo plugin to control a Tiago robot in simulation.</description>
 
   <maintainer email="tiago-support@pal-robotics.com">PAL Robotics</maintainer>

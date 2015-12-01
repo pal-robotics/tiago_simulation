@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <package>
   <name>tiago_gazebo</name>
-  <version>0.0.1</version>
+  <version>0.1.0</version>
   <description>The tiago_gazebo package</description>
   <maintainer email="tiago-support@pal-robotics.com">PAL Robotics</maintainer>
   <license>BSD</license>
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
+  <author email="jordi.pages@pal-robotics.com">Jordi Pages</author>
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>gazebo_plugins</run_depend>
   <run_depend>tiago_bringup</run_depend>
