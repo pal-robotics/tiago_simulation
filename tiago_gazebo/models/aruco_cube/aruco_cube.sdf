@@ -1,0 +1,56 @@
+<sdf version="1.4">
+  <model name="aruco_cube">
+    <static>0</static>
+    <link name="link">
+
+      <inertial>
+        <mass>0.25</mass>
+        <inertia>
+          <ixx>0.001066664</ixx>
+          <ixy>0.000000</ixy>
+          <ixz>0.000000</ixz>
+          <iyy>0.001066664</iyy>
+          <iyz>0.000000</iyz>
+          <izz>0.001066664</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="colision1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://aruco_cube/meshes/aruco_cube_8cm.dae</uri>
+	    <scale> 1 1 1 </scale>
+          </mesh>
+        </geometry>
+        <surface>
+          <bounce />
+          <friction>
+            <ode />
+          </friction>
+          <contact>
+            <ode />
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual1">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://aruco_cube/meshes/aruco_cube_8cm.dae</uri>
+	    <scale> 1 1 1 </scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <velocity_decay>
+        <linear>0.000000</linear>
+        <angular>0.000000</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+    </link>
+  </model>
+</sdf>
