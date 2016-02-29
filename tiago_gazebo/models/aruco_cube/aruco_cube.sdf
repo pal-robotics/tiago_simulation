@@ -19,7 +19,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://aruco_cube/meshes/aruco_cube_8cm.dae</uri>
+            <uri>model://aruco_cube/meshes/aruco_cube_6cm.dae</uri>
 	    <scale> 1 1 1 </scale>
           </mesh>
         </geometry>
@@ -38,7 +38,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://aruco_cube/meshes/aruco_cube_8cm.dae</uri>
+            <uri>model://aruco_cube/meshes/aruco_cube_6cm.dae</uri>
 	    <scale> 1 1 1 </scale>
           </mesh>
         </geometry>
