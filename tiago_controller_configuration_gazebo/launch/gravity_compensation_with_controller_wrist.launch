@@ -1,0 +1,11 @@
+<launch>
+  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/gravity_compensation_with_controller_wrist_controller.yaml" />
+
+  <node name="grav_compensation_controller_loader"
+        pkg="controller_manager" type="controller_manager" output="screen"
+        args="load gravity_compensation" />
+  <node name="wrist_controller_loader"
+        pkg="controller_manager" type="controller_manager" output="screen"
+        args="load wrist_controller" />
+
+</launch>

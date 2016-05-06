@@ -8,7 +8,7 @@
   <license>BSD</license>
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>tiago_gazebo</run_depend>
-  <run_depend>tiago_hardware_gazebo</run_depend>
+  <run_depend>pal_hardware_gazebo</run_depend>
   <export>
     <metapackage/>
   </export>

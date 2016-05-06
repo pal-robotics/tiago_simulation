@@ -4,7 +4,8 @@
 
   <!-- PID gains -->
   <rosparam command="load" file="$(find tiago_controller_configuration)/config/pids.yaml"/>
-
+  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/tiago_pal_hardware_gazebo.yaml"/>
+  
   <!-- Joint trajectory and diff drive controllers -->
   <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_trajectory_controllers.yaml"/>
   <rosparam command="load" file="$(find tiago_controller_configuration)/config/mobile_base_controller.yaml"/>
