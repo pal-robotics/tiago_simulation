@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.3 (2016-06-14)
+------------------
 * Updated simulation for imu and force torque
 * Add simulation controller configuration package
   Also make the simulation launch that related controllers instead of the tiago_bringup ones

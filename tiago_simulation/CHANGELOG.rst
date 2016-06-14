@@ -2,8 +2,8 @@
 Changelog for package tiago_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.3 (2016-06-14)
+------------------
 * Update package.xml to pull pal_hardware_gazebo dependence
 * Contributors: Sam Pfeiffer
 
