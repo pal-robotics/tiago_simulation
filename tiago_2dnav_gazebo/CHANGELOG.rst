@@ -2,6 +2,12 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* default robot model
+* fix default robot
+* Contributors: Jeremie Deray
+
 0.0.2 (2015-04-15)
 ------------------
 

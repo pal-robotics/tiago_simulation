@@ -2,6 +2,17 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Updated simulation for imu and force torque
+* Add simulation controller configuration package
+  Also make the simulation launch that related controllers instead of the tiago_bringup ones
+* Update package.xml to pull pal_hardware_gazebo dependence
+* Cleanup
+* Make steel default
+* Added navigation visualisation to rviz
+* Contributors: Bence Magyar, Jordi Adell, Sam Pfeiffer
+
 0.0.2 (2015-04-15)
 ------------------
 
