@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <include file="$(find tiago_controller_configuration)/launch/force_torque_controller.launch"/>
-  <include file="$(find tiago_controller_configuration)/launch/imu_sensor_controller.launch"/>
+  <include file="$(find tiago_controller_configuration)/launch/imu_controller.launch"/>
   <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch"/>
   <include file="$(find tiago_controller_configuration)/launch/hey5_controller.launch"/>
   <!-- load gravity compensation controller with controllable wrist -->
