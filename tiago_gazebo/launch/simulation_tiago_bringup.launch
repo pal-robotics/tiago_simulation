@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-  <arg name="robot" default="steel"/>
+  <arg name="robot" default="custom"/>
 
   <!-- Load default controllers -->
   <include file="$(find tiago_controller_configuration_gazebo)/launch/$(arg robot)_controllers.launch"/>
