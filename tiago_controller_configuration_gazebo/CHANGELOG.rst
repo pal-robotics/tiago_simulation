@@ -2,6 +2,11 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix name of imu_controller launch
+* Contributors: Victor Lopez
+
 0.0.3 (2016-06-14)
 ------------------
 * fix version number
