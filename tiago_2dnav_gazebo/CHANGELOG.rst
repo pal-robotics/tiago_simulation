@@ -2,6 +2,11 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Change default robot type to custom
+* Contributors: Victor Lopez
+
 0.0.6 (2016-06-15)
 ------------------
 
