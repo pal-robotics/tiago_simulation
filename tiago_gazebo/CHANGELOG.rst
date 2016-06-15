@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Change default robot to custom for some launch files
+* Contributors: Victor Lopez
+
 0.0.4 (2016-06-15)
 ------------------
 
