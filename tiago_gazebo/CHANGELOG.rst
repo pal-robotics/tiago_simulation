@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.6 (2016-06-15)
+------------------
 * add missing launch sonar_to_cloud
 * Contributors: Jeremie Deray
 
