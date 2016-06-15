@@ -32,4 +32,8 @@
   <!-- Joystick controller -->
   <include file="$(find tiago_bringup)/launch/joystick_teleop.launch"/>
 
+  <include file="$(find sensor_to_cloud)/launch/sonar_to_cloud.launch"/>
+    <!--arg name="config" value="$(find tiago_bringup)/config/sensor_to_cloud/sonar_to_cloud.yaml"/>
+  </include-->
+
 </launch>
