@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add missing launch sonar_to_cloud
+* Contributors: Jeremie Deray
+
 0.0.5 (2016-06-15)
 ------------------
 * Change default robot to custom for some launch files
