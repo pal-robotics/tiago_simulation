@@ -9,5 +9,7 @@
   </include>
 
   <!-- Play motion -->
-  <include file="$(find tiago_bringup)/launch/play_motion.launch"/>
+  <include file="$(find tiago_bringup)/launch/play_motion.launch">
+    <arg name="robot_sufix" value="_steel" />
+  </include>
 </launch>
