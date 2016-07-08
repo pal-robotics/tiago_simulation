@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.8 (2016-07-08)
+------------------
 * tell play_motion which robot is running
   possible args: custom, steel or titanium
 * Contributors: Jordi Pages
