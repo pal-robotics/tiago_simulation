@@ -36,4 +36,7 @@
     <!--arg name="config" value="$(find tiago_bringup)/config/sensor_to_cloud/sonar_to_cloud.yaml"/>
   </include-->
 
+  <!-- Republish image_raw to image_rect_color to have the same available topic -->
+  <node name="image_raw_to_rect_color_relay" pkg="topic_tools" type="relay" args="/xtion/rgb/image_raw /xtion/rgb/image_rect_color" />
+
 </launch>
