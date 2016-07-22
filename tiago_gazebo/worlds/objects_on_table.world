@@ -52,7 +52,7 @@
       <pose>0.8 0.3 1.8 0 0 1.5</pose>
     </include>
     <include>
-      <uri>model://coke_can_slim</uri>
+      <uri>model://green_cube</uri>
       <pose>0.63 -0.221 1.1 0 0 0</pose>
     </include>
     <include>
