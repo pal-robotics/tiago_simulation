@@ -6,31 +6,30 @@
       <inertial>
         <mass>0.25</mass>
         <inertia>
-          <ixx>0.00015</ixx>
+          <ixx>0.000041667</ixx>
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>0.00015</iyy>
+          <iyy>0.000041667</iyy>
           <iyz>0.0</iyz>
-          <izz>0.00015</izz>
+          <izz>0.000041667</izz>
         </inertia>
       </inertial>
 
       <collision name="colision1">
         <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://aruco_cube/meshes/aruco_cube_6cm.dae</uri>
-	    <scale> 1 1 1 </scale>
-          </mesh>
-        </geometry>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.06</size>
+            </box>
+          </geometry>
         <surface>
 <!--           <bounce>
             <restitution_coefficient>0</restitution_coefficient>
           </bounce> -->
           <friction>
             <ode>
-              <mu>1.0</mu>
-              <mu2>1.0</mu2>
+              <mu>30.0</mu>
+              <mu2>30.0</mu2>
               <fdir1>0 0 0</fdir1>
             </ode>
           </friction>
@@ -38,8 +37,8 @@
             <ode>
               <kp>100000000.0</kp>
               <kd>1.0</kd>
-              <min_depth>0.0</min_depth>
-              <max_vel>0.0</max_vel>
+              <min_depth>0.0025</min_depth>
+              <max_vel>1.0</max_vel>
             </ode>
           </contact>
         </surface>
