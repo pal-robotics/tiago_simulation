@@ -18,11 +18,6 @@ if __name__ == "__main__":
   rospy.loginfo("Grasping demo...")
   goal = PlayMotionGoal()
 
-  #goal.motion_name = 'home'
-  #goal.skip_planning = True
-  #client.send_goal(goal)
-  #client.wait_for_result(rospy.Duration(15.0))
-
   goal.motion_name = 'look_at_object_demo'
   goal.skip_planning = True
   client.send_goal(goal)
