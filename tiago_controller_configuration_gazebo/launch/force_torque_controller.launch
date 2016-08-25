@@ -1,0 +1,10 @@
+<launch>
+  <!-- Force-torque sensors controller -->
+  <rosparam command="load" file="$(find force_torque_sensor_controller)/force_torque_sensor_controller.yaml" />
+
+  <!-- Controllers that come up started -->
+  <node name="bringup_controllers_spawner_ft"
+        pkg="controller_manager" type="spawner" output="screen"
+        args="force_torque_sensor_controller" />
+
+</launch>

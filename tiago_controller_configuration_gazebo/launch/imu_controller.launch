@@ -1,0 +1,9 @@
+<launch>
+  <!-- load configuration -->
+  <rosparam command="load" file="$(find imu_sensor_controller)/imu_sensor_controller.yaml" />
+
+  <!-- spawn controller -->
+  <node name="bringup_controllers_spawner_imu" 
+  		pkg="controller_manager" type="spawner" output="screen" 
+		args="imu_sensor_controller" />
+</launch>
