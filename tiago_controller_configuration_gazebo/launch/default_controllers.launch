@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <rosparam command="load" file="$(find joint_state_controller)/joint_state_controller.yaml" />
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/joint_trajectory_controllers.yaml" />
