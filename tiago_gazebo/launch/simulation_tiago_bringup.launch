@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="robot" default="custom"/>
+  <arg name="public_sim"     default="false"/>
 
   <!-- Load default controllers -->
   <include file="$(find tiago_controller_configuration_gazebo)/launch/$(arg robot)_controllers.launch"/>
@@ -19,9 +20,11 @@
   <include file="$(find tiago_bringup)/launch/twist_mux.launch"/>
 
   <!-- Dynamic footprint -->
-  <include file="$(find tiago_bringup)/launch/dynamic_footprint.launch">
-    <arg name="robot" value="$(arg robot)"/>
-  </include>
+  <group unless="$(arg public_sim)"> 
+    <include file="$(find tiago_bringup)/launch/dynamic_footprint.launch">
+      <arg name="robot" value="$(arg robot)"/>
+    </include>
+  </group>
 
   <!-- Speed limit -->
   <include file="$(find speed_limit)/launch/speed_limit.launch">

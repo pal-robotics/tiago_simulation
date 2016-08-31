@@ -5,6 +5,7 @@
   <arg name="gzpose" default="-x -0.1 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
+  <arg name="public_sim" default="false"/>
 
   <env name="GAZEBO_MODEL_PATH" value="$(find tiago_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
@@ -24,6 +25,7 @@
   <!-- bring up robot -->
   <include file="$(find tiago_gazebo)/launch/simulation_tiago_bringup.launch">
     <arg name="robot"  value="$(arg robot)"/>
+    <arg name="public_sim"  value="$(arg public_sim)"/>
   </include>
 
   <rosparam file="$(find tiago_gazebo)/config/grasp_demo_motions.yaml" command="load" />

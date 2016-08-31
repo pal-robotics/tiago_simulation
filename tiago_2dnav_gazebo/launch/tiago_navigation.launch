@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="namespace" default="/"/>
 
@@ -14,13 +15,16 @@
   <arg name="rviz"     default="true"/>
   <arg name="gzclient" default="true"/>
 
+  <arg name="public_sim"   default="false"/>
+
   <group ns="$(arg namespace)">
 
     <include file="$(find tiago_gazebo)/launch/tiago_gazebo.launch">
-      <arg name="world"  value="$(arg world)"/>
-      <arg name="robot"  value="$(arg robot)"/>
-      <arg name="gzpose" value="$(arg gzpose)"/>
-      <arg name="gui"    value="$(arg gzclient)"/>
+      <arg name="world"      value="$(arg world)"/>
+      <arg name="robot"      value="$(arg robot)"/>
+      <arg name="gzpose"     value="$(arg gzpose)"/>
+      <arg name="gui"        value="$(arg gzclient)"/>
+      <arg name="public_sim" value="$(arg public_sim)"/>
     </include>
 
     <include file="$(find tiago_2dnav)/launch/navigation.launch">
@@ -30,9 +34,15 @@
       <arg name="local_planner"  value="$(arg local_planner)"/>
       <arg name="localization"   value="$(arg localization)"/>
       <arg name="map"            value="$(arg map)"/>
+      <arg name="public_sim"     value="$(arg public_sim)"/>
     </include>
 
     <node name="rviz" pkg="rviz" type="rviz" if="$(arg rviz)"
           args="-d $(find tiago_2dnav)/config/rviz/navigation.rviz"/>
   </group>
+
+  <group if="$(arg public_sim)">
+    <node name="relay_map" pkg="topic_tools" type="relay" args="/map /vo_map"/>
+  </group>
+
 </launch>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch> 
   <rosparam command="load" file="$(find tiago_2dnav_gazebo)/custom.yaml" />
             <rosparam command="load" file="$(find pick_aruco_demo)/config/motions.yaml"/>
@@ -23,10 +24,11 @@
   <group ns="$(arg namespace)">
 
     <include file="$(find tiago_gazebo)/launch/tiago_gazebo.launch">
-      <arg name="world"  value="$(arg world)"/>
-      <arg name="robot"  value="$(arg robot)"/>
-      <arg name="gzpose" value="$(arg gzpose)"/>
-      <arg name="gui"    value="$(arg gzclient)"/>
+      <arg name="world"      value="$(arg world)"/>
+      <arg name="robot"      value="$(arg robot)"/>
+      <arg name="gzpose"     value="$(arg gzpose)"/>
+      <arg name="gui"        value="$(arg gzclient)"/>
+      <arg name="public_sim" value="$(arg public_sim)"/>
     </include>
 
     <include file="$(find tiago_2dnav)/launch/navigation.launch">
