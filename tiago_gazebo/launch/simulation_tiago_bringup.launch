@@ -17,7 +17,16 @@
   <node pkg="tf_lookup" type="tf_lookup" name="tf_lookup" output="screen"/>
 
   <!-- Twist mux -->
-  <include file="$(find tiago_bringup)/launch/twist_mux.launch"/>
+  <group if="$(arg public_sim)">
+    <include file="$(find tiago_bringup)/launch/twist_mux.launch">
+      <arg name="cmd_vel_out" value="/mobile_base_controller/cmd_vel" />
+    </include>
+  </group>
+  <group unless="$(arg public_sim)">
+    <include file="$(find tiago_bringup)/launch/twist_mux.launch">
+      <arg name="cmd_vel_out" value="/twist_mux/cmd_vel" />
+    </include>
+  </group>
 
   <!-- Dynamic footprint -->
   <group unless="$(arg public_sim)"> 
@@ -27,17 +36,19 @@
   </group>
 
   <!-- Speed limit -->
-  <include file="$(find speed_limit)/launch/speed_limit.launch">
-    <arg name="config"    value="$(find tiago_bringup)/config/speed_limit.yaml"/>
-    <arg name="footprint" value="$(find pmb2_description)/urdf/base/footprint.yaml"/>
-  </include>
+  <group unless="$(arg public_sim)">
+    <include file="$(find speed_limit)/launch/speed_limit.launch">
+      <arg name="config"    value="$(find tiago_bringup)/config/speed_limit.yaml"/>
+      <arg name="footprint" value="$(find pmb2_description)/urdf/base/footprint.yaml"/>
+    </include>
+  </group>
 
   <!-- Joystick controller -->
   <include file="$(find tiago_bringup)/launch/joystick_teleop.launch"/>
 
-  <include file="$(find sensor_to_cloud)/launch/sonar_to_cloud.launch"/>
-    <!--arg name="config" value="$(find tiago_bringup)/config/sensor_to_cloud/sonar_to_cloud.yaml"/>
-  </include-->
+  <group unless="$(arg public_sim)">
+    <include file="$(find sensor_to_cloud)/launch/sonar_to_cloud.launch"/>
+   </group>
 
   <!-- Republish image_raw to image_rect_color to have the same available topic -->
   <node name="image_raw_to_rect_color_relay" pkg="topic_tools" type="relay" args="/xtion/rgb/image_raw /xtion/rgb/image_rect_color" />

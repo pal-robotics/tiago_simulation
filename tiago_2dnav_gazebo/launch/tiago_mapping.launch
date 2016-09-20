@@ -16,6 +16,11 @@
  
   <arg name="public_sim"   default="false"/>
 
+  <arg name="sim_sufix" value="_public_sim"     if="$(arg public_sim)"/>
+  <arg name="sim_sufix" value=""                unless="$(arg public_sim)"/>
+
+  <env name="PAL_HOST" value="tiago" />
+
   <group ns="$(arg namespace)">
 
     <include file="$(find tiago_gazebo)/launch/tiago_gazebo.launch">
@@ -36,7 +41,7 @@
     </include>
 
     <node name="rviz" pkg="rviz" type="rviz" if="$(arg rviz)"
-          args="-d $(find tiago_2dnav)/config/rviz/navigation.rviz"/>
+          args="-d $(find tiago_2dnav)/config/rviz/navigation$(arg sim_sufix).rviz"/>
   </group>
 
   <group if="$(arg public_sim)">
