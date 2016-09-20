@@ -10,6 +10,8 @@
 
   <env name="GAZEBO_MODEL_PATH" value="$(find tiago_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
+  <env name="LC_NUMERIC" value="C" />
+
   <!-- start up world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find tiago_gazebo)/worlds/$(arg world).world"/>
