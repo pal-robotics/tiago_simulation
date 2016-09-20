@@ -1,0 +1,14 @@
+material Custom/bifrutas_tropical_can
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture bifrutas_tropical_can.jpg
+			}
+		}
+	}
+}
+

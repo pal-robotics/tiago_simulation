@@ -1,0 +1,14 @@
+material Custom/REEM_photo0
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture REEM_photo0.jpg
+			}
+		}
+	}
+}
+

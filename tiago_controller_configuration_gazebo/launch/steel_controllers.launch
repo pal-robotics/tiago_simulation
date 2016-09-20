@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch"/>
+  <include file="$(find tiago_controller_configuration_gazebo)/launch/imu_controller.launch"/>
+  <include file="$(find tiago_controller_configuration_gazebo)/launch/gripper_controller.launch"/>
+
+  <!-- Play motion -->
+  <include file="$(find tiago_bringup)/launch/play_motion.launch">
+    <arg name="robot_sufix" value="_steel" />
+  </include>
+
+  <!-- Motion planning -->
+  <include file="$(find tiago_moveit_config)/launch/move_group.launch">
+    <arg name="robot" value="steel" />
+    <arg name="robot_sufix" value="_steel" />
+  </include>
+</launch>
