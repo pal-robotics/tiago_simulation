@@ -1,31 +1,29 @@
+<?xml version="1.0" ?>
 <sdf version="1.4">
   <model name="aruco_cube">
     <static>0</static>
     <link name="link">
 
       <inertial>
-        <mass>0.25</mass>
+        <mass>0.05</mass>
         <inertia>
-          <ixx>0.000041667</ixx>
+          <ixx>0.000052083</ixx>
           <ixy>0.0</ixy>
           <ixz>0.0</ixz>
-          <iyy>0.000041667</iyy>
+          <iyy>0.000052083</iyy>
           <iyz>0.0</iyz>
-          <izz>0.000041667</izz>
+          <izz>0.000020833</izz>
         </inertia>
       </inertial>
 
-      <collision name="colision1">
+      <collision name="colision">
         <pose>0 0 0 0 0 0</pose>
           <geometry>
             <box>
-              <size>0.05 0.05 0.05</size>
+              <size>0.05 0.05 0.1</size>
             </box>
           </geometry>
         <surface>
-<!--           <bounce>
-            <restitution_coefficient>0</restitution_coefficient>
-          </bounce> -->
           <friction>
             <ode>
               <mu>30.0</mu>
@@ -35,8 +33,8 @@
           </friction>
           <contact>
             <ode>
-              <kp>100000000.0</kp>
-              <kd>1.0</kd>
+              <kp>1000000.0</kp>
+              <kd>100.0</kd>
               <min_depth>0.0025</min_depth>
               <max_vel>1.0</max_vel>
             </ode>
@@ -49,7 +47,7 @@
         <geometry>
           <mesh>
             <uri>model://aruco_cube/meshes/aruco_cube_5cm.dae</uri>
-	    <scale> 1 1 1 </scale>
+	    <scale> 1 1 2 </scale>
           </mesh>
         </geometry>
       </visual>
