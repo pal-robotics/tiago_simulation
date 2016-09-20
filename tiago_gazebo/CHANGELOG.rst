@@ -2,6 +2,12 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.2.0 (2016-09-20)
+------------------
+* add mapping and localization simulation
+* add grasping with perception models
+* Contributors: Jordi Pages
+
 0.1.0 (2015-12-01)
 ------------------
 * add grasping demo

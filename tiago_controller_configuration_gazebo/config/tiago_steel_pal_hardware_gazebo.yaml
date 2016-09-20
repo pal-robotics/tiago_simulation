@@ -1,0 +1,3 @@
+imu:
+  base_imu:
+    frame: base_imu_link

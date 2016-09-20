@@ -1,17 +1,22 @@
 <?xml version="1.0"?>
 <package>
   <name>tiago_gazebo</name>
-  <version>0.1.0</version>
+  <version>0.0.8</version>
   <description>The tiago_gazebo package</description>
-  <maintainer email="tiago-support@pal-robotics.com">PAL Robotics</maintainer>
+  <maintainer email="jordi.pages@pal-robotics.com">Jordi Pages</maintainer>
   <license>BSD</license>
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
+  <author email="sam.pfeiffer@pal-robotics.com">Sammy Pfeiffer</author>
   <author email="jordi.pages@pal-robotics.com">Jordi Pages</author>
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>gazebo_plugins</run_depend>
+  <run_depend>pal_gazebo_plugins</run_depend>
+  <run_depend>pal_hardware_gazebo</run_depend>
   <run_depend>tiago_bringup</run_depend>
   <run_depend>tiago_controller_configuration</run_depend>
   <run_depend>tiago_description</run_depend>
   <run_depend>rospy</run_depend>
   <run_depend>play_motion_msgs</run_depend>
+  <run_depend>speed_limit</run_depend>
+  <run_depend>sensor_to_cloud</run_depend>
 </package>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="namespace" default="/"/>
+
+  <arg name="world"  default="small_office"/>
+  <arg name="robot"  default="custom"/>
+  <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
+  <arg name="planner"        default="base"/>
+  <arg name="global_planner" default="navfn"/>
+  <arg name="local_planner"  default="pal"/>
+  <arg name="mapping"        default="karto"/>
+
+  <arg name="rviz"     default="true"/>
+  <arg name="gzclient" default="true"/>
+ 
+  <arg name="public_sim"   default="false"/>
+
+  <arg name="sim_sufix" value="_public_sim"     if="$(arg public_sim)"/>
+  <arg name="sim_sufix" value=""                unless="$(arg public_sim)"/>
+
+  <env name="PAL_HOST" value="tiago" />
+
+  <group ns="$(arg namespace)">
+
+    <include file="$(find tiago_gazebo)/launch/tiago_gazebo.launch">
+      <arg name="world"      value="$(arg world)"/>
+      <arg name="robot"      value="$(arg robot)"/>
+      <arg name="gzpose"     value="$(arg gzpose)"/>
+      <arg name="gui"        value="$(arg gzclient)"/>
+      <arg name="public_sim" value="$(arg public_sim)"/>
+    </include>
+
+    <include file="$(find tiago_2dnav)/launch/navigation.launch">
+      <arg name="state"          value="mapping"/>
+      <arg name="mapping"        value="$(arg mapping)"/>
+      <arg name="planner"        value="$(arg planner)"/>
+      <arg name="global_planner" value="$(arg global_planner)"/>
+      <arg name="local_planner"  value="$(arg local_planner)"/>
+      <arg name="public_sim"     value="$(arg public_sim)"/>
+    </include>
+
+    <node name="rviz" pkg="rviz" type="rviz" if="$(arg rviz)"
+          args="-d $(find tiago_2dnav)/config/rviz/navigation$(arg sim_sufix).rviz"/>
+  </group>
+
+  <group if="$(arg public_sim)">
+    <node name="relay_map" pkg="topic_tools" type="relay" args="/map /vo_map"/>
+  </group>
+
+</launch>
