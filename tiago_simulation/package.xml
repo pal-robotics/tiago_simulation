@@ -3,7 +3,7 @@
   <name>tiago_simulation</name>
   <version>0.0.8</version>
   <description>The tiago_simulation package</description>
-  <maintainer email="bence.magyar@pal-robotics.com">Bence Magyar</maintainer>
+  <maintainer email="jordi.pages@pal-robotics.com">Jordi Pages</maintainer>
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
   <license>BSD</license>
   <buildtool_depend>catkin</buildtool_depend>
