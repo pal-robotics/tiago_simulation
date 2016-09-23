@@ -6,9 +6,10 @@ Panels:
       Expanded:
         - /Grid1/Offset1
         - /TF1/Frames1
-        - /Sensors1/LaserScan1/Status1
+        - /Sensors1
+        - /Sensors1/Sonars1
       Splitter Ratio: 0.85906
-    Tree Height: 430
+    Tree Height: 231
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -93,23 +94,17 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         arm_tool_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        base_battery_link:
+        base_antenna_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        base_bumper_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        base_charger_link:
+        base_antenna_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -123,7 +118,7 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        base_inclinometer_link:
+        base_imu_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -137,48 +132,17 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        base_mic_back_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_mic_back_right_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_mic_front_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_mic_front_right_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_rear_cover_link:
+        base_sonar_01_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        base_rear_cover_sonar_01_link:
+        base_sonar_02_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        base_rear_cover_sonar_02_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        base_rear_cover_sonar_03_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        base_rear_cover_sonar_04_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        base_rear_cover_sonar_05_link:
+        base_sonar_03_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -223,192 +187,21 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        hand_index_abd_link:
+        gripper_grasping_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        gripper_left_finger_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        hand_index_flex_1_link:
+        gripper_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        hand_index_flex_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_index_flex_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_index_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_index_virtual_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_index_virtual_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_index_virtual_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_abd_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_flex_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_flex_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_flex_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_virtual_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_virtual_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_little_virtual_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_abd_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_flex_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_flex_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_flex_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_virtual_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_virtual_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_middle_virtual_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_mrl_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_palm_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_abd_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_flex_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_flex_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_flex_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_virtual_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_virtual_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_ring_virtual_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_safety_box:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_abd_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_flex_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_flex_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_virtual_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        hand_thumb_virtual_2_link:
+        gripper_right_finger_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -419,6 +212,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         head_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        torso_fixed_column_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -455,7 +253,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
         xtion_optical_frame:
           Alpha: 1
           Show Axes: false
@@ -496,17 +293,15 @@ Visualization Manager:
       Overlay Alpha: 0.5
       Queue Size: 2
       Transport Hint: raw
+      Unreliable: false
       Value: true
       Visibility:
         Grid: true
-        Navigation:
-          Map: true
-          Path: true
-          Pose: true
-          Value: true
         Point cloud: true
         Sensors:
+          DepthImage: true
           LaserScan: true
+          Sonars: true
           Value: true
         TF: true
         TIAGo: true
@@ -537,54 +332,35 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.01
       Style: Flat Squares
-      Topic: /xtion/depth/points
+      Topic: /xtion/depth_registered/points
+      Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
     - Class: rviz/Group
       Displays:
-        - Alpha: 1
-          Class: rviz/Map
-          Color Scheme: map
-          Draw Behind: true
+        - Class: rviz/Image
           Enabled: true
-          Name: Map
-          Topic: /map
+          Image Topic: /xtion/depth_registered/image_raw
+          Max Value: 1
+          Median window: 5
+          Min Value: 0
+          Name: DepthImage
+          Normalize Range: true
+          Queue Size: 2
+          Transport Hint: raw
+          Unreliable: false
           Value: true
-        - Alpha: 1
-          Axes Length: 1
-          Axes Radius: 0.1
-          Class: rviz/Pose
-          Color: 255; 25; 0
-          Enabled: true
-          Head Length: 0.3
-          Head Radius: 0.1
-          Name: Pose
-          Shaft Length: 1
-          Shaft Radius: 0.05
-          Shape: Arrow
-          Topic: /move_base/current_goal
-          Value: true
-        - Alpha: 0.7
-          Class: rviz/Map
-          Color Scheme: map
-          Draw Behind: false
-          Enabled: true
-          Name: Map
-          Topic: /map
-          Value: true
-        - Alpha: 1
+        - Alpha: 0.5
           Buffer Length: 1
-          Class: rviz/Path
-          Color: 25; 255; 0
+          Class: rviz/Range
+          Color: 255; 255; 255
           Enabled: true
-          Name: Path
-          Topic: /move_base/PalLocalPlanner/global_plan
+          Name: Sonars
+          Queue Size: 100
+          Topic: /sonar_base
+          Unreliable: false
           Value: true
-      Enabled: true
-      Name: Navigation
-    - Class: rviz/Group
-      Displays:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
@@ -611,6 +387,7 @@ Visualization Manager:
           Size (m): 0.01
           Style: Points
           Topic: /scan
+          Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
           Value: true
@@ -640,30 +417,32 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 14.481
+      Distance: 7.8355
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 3.83384
-        Y: -0.324754
-        Z: 0.313517
+        X: 2.51188
+        Y: -0.353253
+        Z: 0.31835
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.5698
+      Pitch: 0.409797
       Target Frame: base_link
       Value: Orbit (rviz)
-      Yaw: 3.9286
+      Yaw: 3.1136
     Saved: ~
 Window Geometry:
+  DepthImage:
+    collapsed: false
   Displays:
     collapsed: false
   Height: 1026
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000002420000035ffc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000004100000275000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb00000018005200470042002d0044002000630061006d00650072006101000002bc000000e40000001600ffffff000000010000010f0000035ffc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007300000000410000035f000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000064f0000003efc0100000002fb0000000800540069006d006501000000000000064f000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000004070000035f00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001a900000378fc020000000afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000001ae000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb00000018005200470042002d0044002000630061006d00650072006101000001dc000000f50000001600fffffffb00000014004400650070007400680049006d00610067006501000002d7000000c90000001600ffffff000000010000010f0000035ffc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007300000000410000035f000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000064f0000003efc0100000002fb0000000800540069006d006501000000000000064f000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000004a00000037800000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   RGB-D camera:
     collapsed: false
   Selection:
@@ -675,5 +454,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1615
-  X: 58
-  Y: 24
+  X: 55
+  Y: 14
