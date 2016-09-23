@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-  <arg name="robot"  default="titanium"/>
+  <arg name="robot"  default="custom"/>
   <arg name="gzpose" default="-x 0 -y 0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
 
   <!-- PID gains -->
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/pids.yaml"/>
 
-  <arg name="robot_sufix"  default=""/>
-  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/tiago$(arg robot_sufix)_pal_hardware_gazebo.yaml"/>
+  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/tiago_$(arg robot)_pal_hardware_gazebo.yaml"/>
   
   <!-- Joint trajectory and diff drive controllers -->
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/joint_trajectory_controllers.yaml"/>
