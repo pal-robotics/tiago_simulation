@@ -4,7 +4,9 @@
   <arg name="public_sim"     default="false"/>
 
   <!-- Load default controllers -->
-  <include file="$(find tiago_controller_configuration_gazebo)/launch/$(arg robot)_controllers.launch"/>
+  <include file="$(find tiago_controller_configuration_gazebo)/launch/$(arg robot)_controllers.launch">
+    <arg name="public_sim" value="$(arg public_sim)"/>
+  </include>
 
 
   <!-- Robot state publisher -->

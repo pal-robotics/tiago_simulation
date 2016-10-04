@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
+  <arg name="public_sim"     default="false"/>
+
   <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch"/>
   <include file="$(find tiago_controller_configuration_gazebo)/launch/imu_controller.launch"/>
   <include file="$(find tiago_controller_configuration_gazebo)/launch/force_torque_controller.launch"/>
-  <include file="$(find tiago_controller_configuration_gazebo)/launch/hey5_controller.launch"/>
+  <include file="$(find tiago_controller_configuration_gazebo)/launch/hey5_controller.launch">
+    <arg name="public_sim" value="$(arg public_sim)"/>
+  </include>
 
   <!-- Play motion -->
   <include file="$(find tiago_bringup)/launch/play_motion.launch">
