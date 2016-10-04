@@ -4,15 +4,13 @@
       <link name='link'>
         <gravity>false</gravity>
         <collision name='surface'>
-          <pose>0.0 0.0 1.2 0.0 0.0 0.0</pose>
           <geometry>
             <sphere>
               <radius>0.035</radius>
             </sphere>
           </geometry>
         </collision>
-        <visual name='visual1'>
-          <pose>0.0 0.0 1.2 0.0 0.0 0.0</pose>
+        <visual name='visual'>
           <geometry>
             <sphere>
               <radius>0.035</radius>
