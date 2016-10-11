@@ -251,6 +251,11 @@
       <uri>model://pal_poster</uri>
       <pose>-0.78 4.83 1.2 0 0 -1.57</pose>
     </include>
+    <!-- Add an aruco board -->
+    <include>
+      <uri>model://aruco_board</uri>
+      <pose>-4.85 -0.86 1.35 0 0 0</pose>
+    </include>
     <!-- Add a REEM poster -->
     <include>
       <uri>model://wall_with_reem_photo</uri>
