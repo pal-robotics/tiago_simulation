@@ -1,0 +1,14 @@
+material Custom/pal_poster
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture pal_poster.jpg
+			}
+		}
+	}
+}
+
