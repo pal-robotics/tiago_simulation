@@ -8,6 +8,7 @@
       <arg name="local_planner"  value="eband"/>
       <arg name="localization"   value="amcl"/>
       <arg name="public_sim"     value="True"/>
+      <arg name="gzpose"         value="-x 0.78 -y -11.1 -z -0.003 -R 0.0 -P 0.0 -Y 70.0"/>
     </include>
 
 </launch>
