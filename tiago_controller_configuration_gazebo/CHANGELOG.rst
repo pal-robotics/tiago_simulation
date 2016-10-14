@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.9 (2016-10-14)
+------------------
 * Updated imu parameter tiago pal hardware gazebo
 * refs #14222. Do not call simple_action_grasping
   In public simulation this package is unreleased

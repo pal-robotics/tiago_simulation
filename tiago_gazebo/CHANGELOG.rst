@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.9 (2016-10-14)
+------------------
 * add aruco board
 * move a bit farther the pringles can
 * add a poster in the tutorial office for opencv_tut

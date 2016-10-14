@@ -2,8 +2,8 @@
 Changelog for package tiago_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.9 (2016-10-14)
+------------------
 * set myself as maintainer
 * Contributors: Jordi Pages
 

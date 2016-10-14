@@ -2,8 +2,8 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.9 (2016-10-14)
+------------------
 * set a different initial pose of the robot
 * set myself as maintainer
 * launch files to support public map/loc
