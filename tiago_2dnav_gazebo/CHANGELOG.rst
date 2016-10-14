@@ -2,6 +2,15 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* set a different initial pose of the robot
+* set myself as maintainer
+* launch files to support public map/loc
+* disable dynamic_footprint when public_sim=true
+* New launch file for the pick and place demo, also provided the world
+* Contributors: Jordi Pages, job-1994
+
 0.0.7 (2016-06-15)
 ------------------
 * Change default robot type to custom

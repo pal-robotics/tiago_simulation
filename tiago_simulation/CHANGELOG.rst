@@ -2,6 +2,11 @@
 Changelog for package tiago_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* set myself as maintainer
+* Contributors: Jordi Pages
+
 0.0.7 (2016-06-15)
 ------------------
 
