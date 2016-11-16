@@ -2,6 +2,23 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.10 (2016-10-21)
+-------------------
+* Fixed bug in yaml parameters. Added imu_sensor for all the configurations
+* Contributors: Adria Roig
+
+0.0.9 (2016-10-14)
+------------------
+* Updated imu parameter tiago pal hardware gazebo
+* refs #14222. Do not call simple_action_grasping
+  In public simulation this package is unreleased
+* use proper pal_hardware_gazebo yaml file
+* set myself as maintainer
+* set up simulation for Steel and Titanium versions
+* add xml tag to show colours in gedit
+* fix error in gripper controller joints names
+* Contributors: Hilario Tome, Jordi Pages
+
 0.0.8 (2016-07-08)
 ------------------
 * tell play_motion which robot is running

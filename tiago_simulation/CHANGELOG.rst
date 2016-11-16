@@ -2,7 +2,15 @@
 Changelog for package tiago_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.2.0 (2016-09-20)
+0.0.10 (2016-10-21)
+-------------------
+
+0.0.9 (2016-10-14)
+------------------
+* set myself as maintainer
+* Contributors: Jordi Pages
+
+0.0.7 (2016-06-15)
 ------------------
 * add mapping and localization 
 * add models for grasping with perception demo
