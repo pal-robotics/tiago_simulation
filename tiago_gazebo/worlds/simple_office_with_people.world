@@ -264,6 +264,27 @@
       <pose>4.0 0.53 0.01 0.0125 0.0023 -1.718</pose>
     </include>
 
+    <light type="point" name="male03light">
+      <!-- Light in front of the face of the model -->
+      <pose>3.6 0.53 1.6 0 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <!-- short range so it doesn't light the ground -->
+        <range>1.0</range>
+        <linear>0.01</linear>
+        <constant>0.3</constant>
+        <quadratic>0.0</quadratic>
+      </attenuation>
+      <direction>0 0 -1</direction>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>0.8</outer_angle>
+        <falloff>1.2</falloff>
+      </spot>
+      <cast_shadows>false</cast_shadows>
+    </light>
+
     <!-- Add female 02 -->
     <include>
       <name>female02</name>
@@ -271,12 +292,55 @@
       <pose>-2.84 -2.63 0.01 0 -0.025 1.683</pose>
     </include>
   
+    <light type="point" name="female02light">
+      <!-- Light in front of the face of the model -->
+      <pose>-2.5 -2.63 1.5 0 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <!-- short range so it doesn't light the ground -->
+        <range>1.0</range>
+        <linear>0.01</linear>
+        <constant>0.3</constant>
+        <quadratic>0.0</quadratic>
+      </attenuation>
+      <direction>0 0 -1</direction>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>0.8</outer_angle>
+        <falloff>1.2</falloff>
+      </spot>
+      <cast_shadows>false</cast_shadows>
+    </light>
+
+
     <!-- Add female 03 -->
     <include>
       <name>female03</name>
       <uri>model://citizen_extras_female_03</uri>
       <pose>-3.3 5.8 0.01 0.011 0.0126 1.6451</pose>
     </include>
+
+    <light type="point" name="female03light">
+      <!-- Light in front of the face of the model -->
+      <pose>-3.0 6.2 1.5 0 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <!-- short range so it doesn't light the ground -->
+        <range>1.0</range>
+        <linear>0.01</linear>
+        <constant>0.3</constant>
+        <quadratic>0.0</quadratic>
+      </attenuation>
+      <direction>0 0 -1</direction>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>0.8</outer_angle>
+        <falloff>1.2</falloff>
+      </spot>
+      <cast_shadows>false</cast_shadows>
+    </light>
 
     <!-- Add female 02 bis -->
     <include>
@@ -285,12 +349,54 @@
       <pose>4.000000 7.000000 0.000000 0.000000 0.000000 0.000000</pose>
     </include>
 
+    <light type="point" name="female02bislight">
+      <!-- Light in front of the face of the model -->
+      <pose>3.8 6.7 1.5 0 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <!-- short range so it doesn't light the ground -->
+        <range>1.0</range>
+        <linear>0.01</linear>
+        <constant>0.3</constant>
+        <quadratic>0.0</quadratic>
+      </attenuation>
+      <direction>0 0 -1</direction>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>0.8</outer_angle>
+        <falloff>1.2</falloff>
+      </spot>
+      <cast_shadows>false</cast_shadows>
+    </light>
+
     <!-- Add male 03 bis -->
     <include>
       <name>male03bis</name>
       <uri>model://citizen_extras_male_03</uri>
       <pose>-3.000000 4.000000 0.000000 0.000000 0.000000 0.000000</pose>
     </include>
+
+    <light type="point" name="male03bislight">
+      <!-- Light in front of the face of the model -->
+      <pose>-2.9 3.7 1.5 0 0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <!-- short range so it doesn't light the ground -->
+        <range>1.0</range>
+        <linear>0.01</linear>
+        <constant>0.3</constant>
+        <quadratic>0.0</quadratic>
+      </attenuation>
+      <direction>0 0 -1</direction>
+      <spot>
+        <inner_angle>0.6</inner_angle>
+        <outer_angle>0.8</outer_angle>
+        <falloff>1.2</falloff>
+      </spot>
+      <cast_shadows>false</cast_shadows>
+    </light>
 
     <!-- Change the gazebo camera point of view -->
     <gui fullscreen="0">
