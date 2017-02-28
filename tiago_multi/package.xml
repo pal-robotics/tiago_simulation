@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package>
+  <name>tiago_multi</name>
+  <version>0.0.10</version>
+  <description>The tiago_multi package</description>
+
+  <maintainer email="david.fernandez@pal-robotics.com">davidfernandez</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>tiago_gazebo</run_depend>
+</package>
