@@ -2,6 +2,9 @@
 Changelog for package tiago_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.10 (2016-10-21)
+-------------------
+
 0.0.9 (2016-10-14)
 ------------------
 * set myself as maintainer

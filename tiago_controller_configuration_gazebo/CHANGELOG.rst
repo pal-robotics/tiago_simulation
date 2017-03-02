@@ -2,6 +2,11 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.10 (2016-10-21)
+-------------------
+* Fixed bug in yaml parameters. Added imu_sensor for all the configurations
+* Contributors: Adria Roig
+
 0.0.9 (2016-10-14)
 ------------------
 * Updated imu parameter tiago pal hardware gazebo
