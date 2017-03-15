@@ -2,6 +2,7 @@
 <launch>
   <arg name="robot" default="custom"/>
   <arg name="public_sim"     default="false"/>
+  <arg name="tf_prefix" default=""/>
 
   <!-- Load default controllers -->
   <include file="$(find tiago_controller_configuration_gazebo)/launch/$(arg robot)_controllers.launch">
@@ -12,7 +13,7 @@
   <!-- Robot state publisher -->
   <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
     <param name="publish_frequency" type="double" value="50.0"/>
-    <param name="tf_prefix" type="string" value=""/>
+    <param name="tf_prefix" type="string" value="$(arg tf_prefix)"/>
   </node>
 
   <!-- TF lookup -->
@@ -31,7 +32,7 @@
   </group>
 
   <!-- Dynamic footprint -->
-  <group unless="$(arg public_sim)"> 
+  <group unless="$(arg public_sim)">
     <include file="$(find tiago_bringup)/launch/dynamic_footprint.launch">
       <arg name="robot" value="$(arg robot)"/>
     </include>
