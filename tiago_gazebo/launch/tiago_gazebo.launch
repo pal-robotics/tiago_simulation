@@ -7,6 +7,7 @@
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
   <arg name="public_sim" default="false"/>
+  <arg name="camera" default="false"/>
 
   <env name="GAZEBO_MODEL_PATH" value="$(find tiago_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
@@ -29,6 +30,7 @@
   <include file="$(find tiago_gazebo)/launch/simulation_tiago_bringup.launch">
     <arg name="robot"       value="$(arg robot)"/>
     <arg name="public_sim"  value="$(arg public_sim)"/>
+    <arg name="camera" value="$(arg camera)"/>
   </include>
 
   <node name="tuck_arm" pkg="tiago_gazebo" type="tuck_arm.py" output="screen"/>
