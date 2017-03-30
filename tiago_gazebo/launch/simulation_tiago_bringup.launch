@@ -3,12 +3,12 @@
   <arg name="robot" default="custom"/>
   <arg name="public_sim"     default="false"/>
   <arg name="tf_prefix" default=""/>
-  <arg name="camera" default="false"/>
+  <arg name="use_moveit_camera" default="false"/>
 
   <!-- Load default controllers -->
   <include file="$(find tiago_controller_configuration_gazebo)/launch/$(arg robot)_controllers.launch">
     <arg name="public_sim" value="$(arg public_sim)"/>
-    <arg name="camera" value="$(arg camera)"/>
+    <arg name="use_moveit_camera" value="$(arg use_moveit_camera)"/>
   </include>
 
 
