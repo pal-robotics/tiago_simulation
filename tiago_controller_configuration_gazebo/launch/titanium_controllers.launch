@@ -2,6 +2,7 @@
 <launch>
   <arg name="public_sim"     default="false"/>
   <arg name="tf_prefix" default=""/>
+  <arg name="use_moveit_camera" default="false"/>
 
 
   <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch">
@@ -22,5 +23,6 @@
   <include file="$(find tiago_moveit_config)/launch/move_group.launch">
     <arg name="robot" value="titanium" />
     <arg name="robot_sufix" value="_titanium" />
+    <arg name="camera" value="$(arg use_moveit_camera)"/>
   </include>
 </launch>
