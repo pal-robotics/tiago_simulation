@@ -7,6 +7,7 @@
   <!-- Load default controllers -->
   <include file="$(find tiago_controller_configuration_gazebo)/launch/$(arg robot)_controllers.launch">
     <arg name="public_sim" value="$(arg public_sim)"/>
+    <arg name="tf_prefix" value="$(arg tf_prefix)"/>
   </include>
 
 
@@ -22,7 +23,7 @@
   <!-- Twist mux -->
   <group if="$(arg public_sim)">
     <include file="$(find tiago_bringup)/launch/twist_mux.launch">
-      <arg name="cmd_vel_out" value="/mobile_base_controller/cmd_vel" />
+      <arg name="cmd_vel_out" value="mobile_base_controller/cmd_vel" />
     </include>
   </group>
   <group unless="$(arg public_sim)">
@@ -54,6 +55,6 @@
    </group>
 
   <!-- Republish image_raw to image_rect_color to have the same available topic -->
-  <node name="image_raw_to_rect_color_relay" pkg="topic_tools" type="relay" args="/xtion/rgb/image_raw /xtion/rgb/image_rect_color" />
+  <node name="image_raw_to_rect_color_relay" pkg="topic_tools" type="relay" args="xtion/rgb/image_raw xtion/rgb/image_rect_color" />
 
 </launch>
