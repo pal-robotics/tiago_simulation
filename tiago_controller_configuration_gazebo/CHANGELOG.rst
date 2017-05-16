@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.11 (2017-05-16)
+-------------------
 * Add camera parameter for Octomap with MoveIt!
 * Add configurations for Tiago Iron
 * Allow multiple Tiagos to use the navigation stack
