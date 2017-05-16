@@ -2,6 +2,11 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add world argument
+* Contributors: Jordi Pages
+
 0.0.10 (2016-10-21)
 -------------------
 
