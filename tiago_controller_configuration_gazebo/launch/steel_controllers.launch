@@ -6,6 +6,8 @@
   <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch">
     <arg name="tf_prefix" value="$(arg tf_prefix)"/>
   </include>
+  <arg name="use_moveit_camera" default="false"/>
+  
   <include file="$(find tiago_controller_configuration_gazebo)/launch/imu_controller.launch"/>
   <include file="$(find tiago_controller_configuration_gazebo)/launch/gripper_controller.launch"/>
 
@@ -18,5 +20,6 @@
   <include file="$(find tiago_moveit_config)/launch/move_group.launch">
     <arg name="robot" value="steel" />
     <arg name="robot_sufix" value="_steel" />
+    <arg name="camera" value="$(arg use_moveit_camera)"/>
   </include>
 </launch>

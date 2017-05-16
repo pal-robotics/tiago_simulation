@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="public_sim"     default="false"/>
   <arg name="tf_prefix" default=""/>
@@ -5,6 +6,8 @@
   <include file="$(find tiago_controller_configuration_gazebo)/launch/no_arm_controllers.launch">
     <arg name="tf_prefix" value="$(arg tf_prefix)"/>
   </include>
+  <arg name="use_moveit_camera" default="false"/>
+  
   <include file="$(find tiago_controller_configuration_gazebo)/launch/imu_controller.launch"/>
 
   <!-- Play motion -->
@@ -16,5 +19,6 @@
   <include file="$(find tiago_moveit_config)/launch/move_group.launch">
     <arg name="robot" value="iron" />
     <arg name="robot_sufix" value="_iron" />
+    <arg name="camera" value="$(arg use_moveit_camera)"/>
   </include>
 </launch>
