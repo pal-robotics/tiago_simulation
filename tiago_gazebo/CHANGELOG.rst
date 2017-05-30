@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.12 (2017-05-30)
+-------------------
 * Add sun and ground_plane models
 * Contributors: Victor Lopez
 
