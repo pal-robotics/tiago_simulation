@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add sun and ground_plane models
+* Contributors: Victor Lopez
+
 0.0.11 (2017-05-16)
 -------------------
 * Add camera parameter for Octomap with MoveIt!
