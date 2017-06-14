@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="robot" default="steel"/>
+  <arg name="map"   default="$(env HOME)/.pal/tiago_maps/config"/>
 
   <include file="$(find tiago_2dnav_gazebo)/launch/tiago_navigation.launch">
       <arg name="robot"          value="$(arg robot)"/>
@@ -9,6 +10,7 @@
       <arg name="localization"   value="amcl"/>
       <arg name="public_sim"     value="True"/>
       <arg name="gzpose"         value="-x 0.78 -y -11.1 -z -0.003 -R 0.0 -P 0.0 -Y 70.0"/>
+      <arg name="map"            value="$(arg map)"/>
     </include>
 
 </launch>
