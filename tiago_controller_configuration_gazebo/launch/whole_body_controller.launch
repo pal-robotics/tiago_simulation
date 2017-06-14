@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <rosparam command="load" file="$(find wbc_rpc)/config/tiago_wbc_rpc.yaml" />
+    <!-- Upload capsule collision operations  & description-->
+    <include file="$(find tiago_wbc)/launch/tiago_capsule_description.launch" />
+    <node name="controller_manager_wbc_loader"
+        pkg="controller_manager" type="controller_manager" output="screen"
+        args="load whole_body_kinematic_controler" />
+</launch>

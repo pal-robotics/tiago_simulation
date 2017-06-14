@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="robot" default="steel"/>
+  <arg name="world" default="small_office"/>
+
+  <include file="$(find tiago_2dnav_gazebo)/launch/tiago_mapping.launch">
+      <arg name="robot"          value="$(arg robot)"/>
+      <arg name="global_planner" value="navfn"/>
+      <arg name="local_planner"  value="eband"/>
+      <arg name="mapping"        value="gmapping"/>
+      <arg name="world"          value="$(arg world)"/>
+      <arg name="public_sim"     value="True"/>
+    </include>
+
+</launch>

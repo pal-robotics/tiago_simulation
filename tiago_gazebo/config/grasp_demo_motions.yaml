@@ -1,0 +1,48 @@
+play_motion:
+  controllers: [arm_controller, head_controller, torso_controller, gripper_controller]
+  motions:
+    look_at_object_demo:
+      joints: [head_1_joint, head_2_joint]
+      points:
+      - positions: [-0.18, -0.095]
+        time_from_start: 3.0
+
+    pregrasp_demo:
+      joints: [torso_lift_joint, arm_1_joint,
+      arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint,
+      arm_6_joint, arm_7_joint]
+      points:
+      - positions: [0.34, 0.21, 0.35, -3.0, 0.0, -1.57, 1.38, 0.0]
+        time_from_start: 1
+      - positions: [0.34, 0.21, -0.2, -2.2, 1.15, -1.57, 0.2, 0.0]
+        time_from_start: 2.5
+      - positions: [0.34, 0.21, 1.08, -0.41, 0.97, -1.83, 1.38, 0.0]
+        time_from_start: 3.5
+      - positions: [0.34, 1.01, 1.08, -0.41, 0.97, -1.83, 1.38, 0.0]
+        time_from_start: 4.5
+      - positions: [0.34, 1.01, 1.08, -0.41, 1.05, -1.83, 1.30, 0.0]
+        time_from_start: 5.5
+      - positions: [0.28, 1.01, 0.80, -0.41, 1.05, -1.83, 1.30, 0.0]
+        time_from_start: 6.5
+
+    grasp_demo:
+      joints: [gripper_left_finger_joint, gripper_right_finger_joint]
+      points:
+      - positions: [0.04, 0.04]
+        time_from_start: 1.0
+      - positions: [0.012, 0.012]
+        time_from_start: 1.5
+
+
+    pick_demo:
+      joints: [torso_lift_joint, arm_1_joint,
+      arm_2_joint, arm_3_joint, arm_4_joint, arm_5_joint,
+      arm_6_joint, arm_7_joint]
+      points:
+      - positions: [0.34, 1.01, 0.80, -0.41, 1.05, -1.83, 1.30, 0.0]
+        time_from_start: 1.0
+      - positions: [0.34, 0.21, 1.08, -0.41, 0.97, -1.83, 1.39, 0.0]
+        time_from_start: 4.0
+      - positions: [0.34, 0.21, -0.2, -2.2, 1.15, -1.57, 0.2, 0.0]
+        time_from_start: 7.0
+

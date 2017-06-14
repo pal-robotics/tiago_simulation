@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch> 
+  <rosparam command="load" file="$(find tiago_2dnav_gazebo)/custom.yaml" />
+            <rosparam command="load" file="$(find pick_aruco_demo)/config/motions.yaml"/>
+
+  <arg name="namespace" default="/"/>
+
+  <arg name="world"  default="pick"/>
+  <arg name="robot"  default="steel"/>
+  <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+
+  <arg name="planner"        default="base"/>
+  <arg name="global_planner" default="navfn"/>
+  <arg name="local_planner"  default="pal"/>
+  <arg name="localization"   default="amcl"/>
+  <arg name="map"            default="$(env HOME)/.pal/tiago_maps/configurations/$(arg world)"/>
+
+  <arg name="rviz"     default="true"/>
+  <arg name="gzclient" default="true"/>
+
+  <include file="$(find pick_aruco_demo)/launch/pick_cluster_robocup_real_robot.launch">
+  </include>
+
+  <group ns="$(arg namespace)">
+
+    <include file="$(find tiago_gazebo)/launch/tiago_gazebo.launch">
+      <arg name="world"      value="$(arg world)"/>
+      <arg name="robot"      value="$(arg robot)"/>
+      <arg name="gzpose"     value="$(arg gzpose)"/>
+      <arg name="gui"        value="$(arg gzclient)"/>
+      <arg name="public_sim" value="$(arg public_sim)"/>
+    </include>
+
+    <include file="$(find tiago_2dnav)/launch/navigation.launch">
+      <arg name="state"          value="localization"/>
+      <arg name="planner"        value="$(arg planner)"/>
+      <arg name="global_planner" value="$(arg global_planner)"/>
+      <arg name="local_planner"  value="$(arg local_planner)"/>
+      <arg name="localization"   value="$(arg localization)"/>
+      <arg name="map"            value="$(arg map)"/>
+    </include>
+
+    <node name="rviz" pkg="rviz" type="rviz" if="$(arg rviz)"
+          args="-d $(find tiago_2dnav)/config/rviz/navigation.rviz"/>
+    
+    <node name="depth_service" pkg="tiago_clusters" type="depth_throtle_server.py"/>
+    
+        <include file="$(find pick_aruco_demo)/launch/single.launch"/>
+        <node name="pointcloud_on_request" pkg="pick_aruco_demo" type="pointcloud_on_request.py" output="screen" />
+        <include file="$(find spherical_grasps)/launch/pick_and_place_server_tiago_steel.launch" />
+
+
+
+  </group>
+
+</launch>

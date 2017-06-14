@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="public_sim"     default="false"/>
+  <arg name="tf_prefix" default=""/>
+  <arg name="use_moveit_camera" default="false"/>
+
+
+  <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch">
+    <arg name="tf_prefix" value="$(arg tf_prefix)"/>
+  </include>
+  <include file="$(find tiago_controller_configuration_gazebo)/launch/imu_controller.launch"/>
+  <include file="$(find tiago_controller_configuration_gazebo)/launch/force_torque_controller.launch"/>
+  <include file="$(find tiago_controller_configuration_gazebo)/launch/hey5_controller.launch">
+    <arg name="public_sim" value="$(arg public_sim)"/>
+  </include>
+
+  <!-- Play motion -->
+  <include file="$(find tiago_bringup)/launch/play_motion.launch">
+    <arg name="robot_sufix" value="_titanium" />
+  </include>
+
+  <!-- Motion planning -->
+  <include file="$(find tiago_moveit_config)/launch/move_group.launch">
+    <arg name="robot" value="titanium" />
+    <arg name="robot_sufix" value="_titanium" />
+    <arg name="camera" value="$(arg use_moveit_camera)"/>
+  </include>
+</launch>

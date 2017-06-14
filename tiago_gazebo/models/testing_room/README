@@ -1,0 +1,4 @@
+The model.sdf file has been auto-generated from testing_room.png.
+
+Use https://github.com/RainCT/img2sdf if you need to re-generate it:
+  $ img2sdf.py testing_room.png 0.04 --name=TestingRoom > model.sdf

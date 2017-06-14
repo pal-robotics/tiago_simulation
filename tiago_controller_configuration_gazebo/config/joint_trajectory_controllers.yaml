@@ -1,0 +1,86 @@
+torso_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - torso_lift_joint
+
+  constraints:
+    goal_time: &goal_time_constraint 0.6
+    stopped_velocity_tolerance: &stopped_velocity_constraint 5.0 # FIXME: See #8429
+    torso_1_joint:
+      goal: &goal_pos_constraint 0.02
+    torso_2_joint:
+      goal: *goal_pos_constraint
+
+head_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - head_1_joint
+    - head_2_joint
+
+  constraints:
+    goal_time: 2.0
+    stopped_velocity_tolerance: *stopped_velocity_constraint
+    head_1_joint:
+      goal: 0.5
+    head_2_joint:
+      goal: 0.5
+
+arm_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - arm_1_joint
+    - arm_2_joint
+    - arm_3_joint
+    - arm_4_joint
+    - arm_5_joint
+    - arm_6_joint
+    - arm_7_joint
+  constraints:
+    goal_time: *goal_time_constraint
+    stopped_velocity_tolerance: *stopped_velocity_constraint
+    arm_left_1_joint:
+      goal: *goal_pos_constraint
+    arm_left_2_joint:
+      goal: *goal_pos_constraint
+    arm_left_3_joint:
+      goal: *goal_pos_constraint
+    arm_left_4_joint:
+      goal: *goal_pos_constraint
+    arm_left_5_joint:
+      goal: *goal_pos_constraint
+    arm_left_6_joint:
+      goal: *goal_pos_constraint
+    arm_left_7_joint:
+      goal: *goal_pos_constraint
+
+gripper_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - gripper_right_finger_joint
+    - gripper_left_finger_joint
+
+  constraints:
+    goal_time: *goal_time_constraint
+    stopped_velocity_tolerance: *stopped_velocity_constraint
+    gripper_right_finger_joint:
+      goal: *goal_pos_constraint
+    gripper_left_finger_joint:
+      goal: *goal_pos_constraint
+
+hand_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - hand_thumb_joint
+    - hand_index_joint
+    - hand_mrl_joint
+
+  constraints:
+    goal_time: *goal_time_constraint
+    stopped_velocity_tolerance: 0.75
+    hand_thumb_joint:
+      goal: &hand_goal_pos_constraint 0.3
+    hand_index_joint:
+      goal: 0.6
+    hand_mrl_joint:
+      goal: *hand_goal_pos_constraint
+  stop_trajectory_duration: 0.0

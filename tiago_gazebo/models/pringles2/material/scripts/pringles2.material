@@ -1,0 +1,14 @@
+material Custom/pringles2
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture pringles2.jpg
+			}
+		}
+	}
+}
+

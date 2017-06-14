@@ -1,0 +1,14 @@
+material Aruco/aruco_board
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture aruco_board.png
+			}
+		}
+	}
+}
+
