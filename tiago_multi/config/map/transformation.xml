@@ -1,0 +1,7 @@
+<MapTransformationConfig scale="1.0">
+  <location3D>
+    <translation x="0"  y="0"  z="0" ></translation>
+    <matrixRot rodrigues_x="0"  rodrigues_y="0"  rodrigues_z="0" ></matrixRot>
+    <rotationRollPitchYaw roll="0"  pitch="0"  yaw="0" ></rotationRollPitchYaw>
+  </location3D>
+</MapTransformationConfig>
