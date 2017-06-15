@@ -41,3 +41,5 @@ if __name__ == "__main__":
   client.wait_for_result(rospy.Duration(30.0))
 
   rospy.loginfo("Grasping demo OK.")
+
+

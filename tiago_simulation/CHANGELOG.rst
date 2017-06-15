@@ -2,6 +2,12 @@
 Changelog for package tiago_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.12 (2017-05-30)
+-------------------
+
+0.0.11 (2017-05-16)
+-------------------
+
 0.0.10 (2016-10-21)
 -------------------
 
@@ -16,25 +22,23 @@ Changelog for package tiago_simulation
 0.0.6 (2016-06-15)
 ------------------
 
-0.0.9 (2016-10-14)
+0.0.5 (2016-06-15)
 ------------------
-* set myself as maintainer
-* Contributors: Jordi Pages
 
-0.0.7 (2016-06-15)
+0.0.4 (2016-06-15)
 ------------------
-* add mapping and localization 
-* add models for grasping with perception demo
-* Contributors: Jordi Pages
 
-0.1.0 (2015-12-01)
+0.0.3 (2016-06-14)
 ------------------
-* add grasping demo
-* Contributors: Jordi Pages
+* Update package.xml to pull pal_hardware_gazebo dependence
+* Contributors: Sam Pfeiffer
 
-0.0.1 (2015-09-07)
+0.0.2 (2015-04-15)
 ------------------
-* Update maintainer email
-* Update package xmls
-* First tiago release
+* Fix depend
+* Contributors: Bence Magyar
+
+0.0.1 (2015-04-15)
+------------------
+* Initial commit of tiago_simulation
 * Contributors: Bence Magyar

@@ -31,3 +31,5 @@
   <rosparam file="$(find tiago_gazebo)/config/grasp_demo_motions.yaml" command="load" />
   <node name="grasping_demo" pkg="tiago_gazebo" type="grasp_demo.py" output="screen"/>
 </launch>
+
+
