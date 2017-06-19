@@ -3,6 +3,8 @@ project(tiago_multi)
 find_package(catkin REQUIRED COMPONENTS)
 catkin_package()
 
-install(DIRECTORY launch
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+foreach(dir config launch)
+    install(DIRECTORY ${dir}/
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
+endforeach(dir)
 
