@@ -7,6 +7,10 @@
     <arg name="robot"  default="steel"/>          <!-- see tiago_description/robots/tiago_* -->
     <arg name="world"  default="small_office"/>   <!-- small_office, ... (see ../worlds) -->
 
+    <arg name="planner"        default="base"/>
+    <arg name="global_planner" default="navfn"/>
+    <arg name="local_planner"  default="eband"/>
+    <arg name="localization"   default="amcl"/>
     <arg name="map"            default="$(env HOME)/.pal/tiago_maps/configurations/$(arg world)"/>
 
     <arg name="public_sim" default="true"/>
@@ -14,6 +18,10 @@
     <group ns="$(arg robot_name)">
         <arg name="gzpose" default="-x $(arg x_pose) -y $(arg y_pose) -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
         <node pkg="tf" type="static_transform_publisher" name="$(arg robot_name)_bc" args="0 0 0 0 0 0 1 /map $(arg robot_name)/map 100"/>
+
+        <!-- Write the pose in the pose.yaml used by amcl -->
+        <node pkg="tiago_multi" type="pose_writing.sh" name="multi_pose_writing"
+              args="$(arg robot_name) $(arg x_pose) $(arg y_pose)" output="screen"/>
 
         <!-- spawn robot in simulation -->
         <include file="$(find tiago_gazebo)/launch/tiago_spawn.launch">
@@ -28,6 +36,18 @@
             <arg name="robot"       value="$(arg robot)"/>
             <arg name="public_sim"  value="$(arg public_sim)"/>
             <arg name="tf_prefix" value="$(arg robot_name)"/>
+        </include>
+
+        <include file="$(find tiago_2dnav)/launch/navigation.launch">
+            <arg name="state"          value="localization"/>
+            <arg name="planner"        value="$(arg planner)"/>
+            <arg name="global_planner" value="$(arg global_planner)"/>
+            <arg name="local_planner"  value="$(arg local_planner)"/>
+            <arg name="localization"   value="$(arg localization)"/>
+            <arg name="map"            value="$(arg map)"/>
+            <arg name="public_sim"     value="$(arg public_sim)"/>
+            <arg name="tf_prefix"      value="$(arg robot_name)"/>
+            <arg name="multiple"       value="true"/>
         </include>
 
         <group if="$(arg public_sim)">
