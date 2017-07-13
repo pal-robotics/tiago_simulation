@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <arg name="robot" default=""/>
+
+    <group ns="$(arg robot)">
+        <node pkg="key_teleop" type="key_teleop.py" name="key_teleop" output="screen"/>
+    </group>
+</launch>

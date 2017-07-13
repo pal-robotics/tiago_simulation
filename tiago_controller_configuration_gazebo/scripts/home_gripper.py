@@ -16,7 +16,7 @@ if __name__ == "__main__":
   client.wait_for_server()
   rospy.loginfo("...connected.")
 
-  rospy.wait_for_message("/joint_states", JointState)
+  rospy.wait_for_message("joint_states", JointState)
 
   trajectory = JointTrajectory()
   trajectory.joint_names = joint_names

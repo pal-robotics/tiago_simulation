@@ -2,6 +2,25 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.0.12 (2017-05-30)
+-------------------
+* Add sun and ground_plane models
+* Contributors: Victor Lopez
+
+0.0.11 (2017-05-16)
+-------------------
+* Add camera parameter for Octomap with MoveIt!
+* Allow multiple Tiagos to use the navigation stack
+* Allow multiple Tiagos on Gazebo
+  Fixes #15402
+* Fix z height from Gazebo world objects_on_table
+* Add lights in front of the people to fix color
+  Given that Gazebo renders the models of the people very dark as can be seen in the TIAGo tutorial:
+  ![TIAGo tutorial people rendered dark screenshot](http://wiki.ros.org/Robots/TIAGo/Tutorials/PersonDetection?action=AttachFile&do=get&target=gazebo_person_detection.jpg)
+  I added some lights in front of the models so they become more visible.
+* add Willow Garage world
+* Contributors: Adria Roig, AleDF, David Fernandez, Jordi Pages, Sam Pfeiffer, davidfernandez
+
 0.0.10 (2016-10-21)
 -------------------
 

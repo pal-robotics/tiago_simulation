@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <arg name="world"  default="pal_office"/>  <!-- pal office, ... (see ../worlds) -->
+    <arg name="gui" default="true"/>
+    <arg name="debug" default="false"/>
+    <arg name="public_sim" default="true"/>
+    <arg name="map" default="$(find tiago_multi)/config/map"/>
+
+    <env name="GAZEBO_MODEL_PATH" value="$(find tiago_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
+
+    <env name="LC_NUMERIC" value="C" />
+
+    <!-- Gazebo start -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find tiago_gazebo)/worlds/$(arg world).world"/>
+        <arg name="gui" value="$(arg gui)"/>
+        <arg name="debug" value="$(arg debug)"/>
+    </include>
+
+    <!-- Add first tiago -->
+    <include file="$(find tiago_multi)/launch/launch_tiago_navigation.launch">
+        <arg name="robot_name" value="tiago1"/>
+        <arg name="x_pose" value="1.4"/>
+        <arg name="y_pose" value="-0.7"/>
+        <arg name="public_sim" value="$(arg public_sim)"/>
+	<arg name="map" value="$(arg map)"/>
+    </include>
+
+    <!-- Add second tiago -->
+    <include file="$(find tiago_multi)/launch/launch_tiago_navigation.launch">
+        <arg name="robot_name" value="tiago2"/>
+        <arg name="x_pose" value="1.4"/>
+        <arg name="y_pose" value="0.7"/>
+        <arg name="public_sim" value="$(arg public_sim)"/>
+	<arg name="map" value="$(arg map)"/>
+    </include>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tiago_multi)/config/rviz/multi_tiago.rviz"/>
+
+</launch>
