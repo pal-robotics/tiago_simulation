@@ -1532,7 +1532,7 @@
       <static>0</static>
       <link name="link">
         <collision name="surface">
-          <pose>0.000000 0.000000 1.000000 0.000000 0.000000 0.000000</pose>
+          <pose>0.000000 0.000000 0.900000 0.000000 0.000000 0.000000</pose>
           <geometry>
             <box>
               <size>1.500000 0.800000 0.030000</size>
@@ -1550,7 +1550,7 @@
           <max_contacts>10</max_contacts>
         </collision>
         <visual name="visual1">
-          <pose>0.000000 0.000000 1.000000 0.000000 0.000000 0.000000</pose>
+          <pose>0.000000 0.000000 0.900000 0.000000 0.000000 0.000000</pose>
           <geometry>
             <box>
               <size>1.500000 0.800000 0.030000</size>
@@ -1568,7 +1568,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1587,7 +1587,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
@@ -1602,7 +1602,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1621,7 +1621,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
@@ -1636,7 +1636,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1655,7 +1655,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
@@ -1670,7 +1670,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -1689,7 +1689,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
@@ -2387,7 +2387,7 @@
       <static>0</static>
       <link name="link">
         <collision name="surface">
-          <pose>0.000000 0.000000 1.000000 0.000000 0.000000 0.000000</pose>
+          <pose>0.000000 0.000000 0.900000 0.000000 0.000000 0.000000</pose>
           <geometry>
             <box>
               <size>1.500000 0.800000 0.030000</size>
@@ -2405,7 +2405,7 @@
           <max_contacts>10</max_contacts>
         </collision>
         <visual name="visual1">
-          <pose>0.000000 0.000000 1.000000 0.000000 0.000000 0.000000</pose>
+          <pose>0.000000 0.000000 0.900000 0.000000 0.000000 0.000000</pose>
           <geometry>
             <box>
               <size>1.500000 0.800000 0.030000</size>
@@ -2423,7 +2423,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -2442,7 +2442,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
@@ -2457,7 +2457,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -2476,7 +2476,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
@@ -2491,7 +2491,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -2510,7 +2510,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
@@ -2525,7 +2525,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -2544,7 +2544,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
@@ -2568,7 +2568,7 @@
       <static>0</static>
       <link name="link">
         <collision name="surface">
-          <pose>0.000000 0.000000 1.000000 0.000000 0.000000 0.000000</pose>
+          <pose>0.000000 0.000000 0.900000 0.000000 0.000000 0.000000</pose>
           <geometry>
             <box>
               <size>1.500000 0.800000 0.030000</size>
@@ -2586,7 +2586,7 @@
           <max_contacts>10</max_contacts>
         </collision>
         <visual name="visual1">
-          <pose>0.000000 0.000000 1.000000 0.000000 0.000000 0.000000</pose>
+          <pose>0.000000 0.000000 0.900000 0.000000 0.000000 0.000000</pose>
           <geometry>
             <box>
               <size>1.500000 0.800000 0.030000</size>
@@ -2604,7 +2604,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -2623,7 +2623,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
@@ -2638,7 +2638,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -2657,7 +2657,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
@@ -2672,7 +2672,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -2691,7 +2691,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
@@ -2706,7 +2706,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <surface>
@@ -2725,7 +2725,7 @@
           <geometry>
             <cylinder>
               <radius>0.020000</radius>
-              <length>1.000000</length>
+              <length>0.800000</length>
             </cylinder>
           </geometry>
           <material>
