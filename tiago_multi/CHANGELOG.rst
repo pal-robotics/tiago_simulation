@@ -2,8 +2,8 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.13 (2017-11-02)
+-------------------
 * fixed pal_office world for tiago navigation, added script to create the tiago pose files, modified the launch files to have tiago_multi with and without navigation
 * Fix Cmakelist after map added
 * Added map to multi tiago example
