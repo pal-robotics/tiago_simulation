@@ -2,6 +2,12 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add argument to choose map
+  w
+* Contributors: Jordi Pages
+
 0.0.12 (2017-05-30)
 -------------------
 

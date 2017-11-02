@@ -2,6 +2,14 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* reduce tables height to 0.8 m
+* fixed pal_office world for tiago navigation, added script to create the tiago pose files, modified the launch files to have tiago_multi with and without navigation
+* add pal office world
+* Add pal office world
+* Contributors: AleDF, Jordi Pages
+
 0.0.12 (2017-05-30)
 -------------------
 * Add sun and ground_plane models

@@ -2,6 +2,14 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fixed pal_office world for tiago navigation, added script to create the tiago pose files, modified the launch files to have tiago_multi with and without navigation
+* Fix Cmakelist after map added
+* Added map to multi tiago example
+* add rviz config file for multi tiago example
+* Contributors: AleDF, Jordi Pages
+
 0.0.12 (2017-05-30)
 -------------------
 

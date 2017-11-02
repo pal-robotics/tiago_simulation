@@ -2,6 +2,12 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fixed merge
+* added support for tiago titanium chessboard
+* Contributors: Hilario Tome
+
 0.0.12 (2017-05-30)
 -------------------
 
