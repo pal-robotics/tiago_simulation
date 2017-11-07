@@ -2,6 +2,12 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add point cloud throttle and filter
+  launch this node unless we are in public simulation
+* Contributors: Jordi Pages
+
 0.0.13 (2017-11-02)
 -------------------
 * reduce tables height to 0.8 m
