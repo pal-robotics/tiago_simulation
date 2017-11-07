@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.14 (2017-11-07)
+-------------------
 * add point cloud throttle and filter
   launch this node unless we are in public simulation
 * Contributors: Jordi Pages

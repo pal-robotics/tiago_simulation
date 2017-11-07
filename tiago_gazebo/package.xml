@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>tiago_gazebo</name>
-  <version>0.0.13</version>
+  <version>0.0.14</version>
   <description>The tiago_gazebo package</description>
   <maintainer email="jordi.pages@pal-robotics.com">Jordi Pages</maintainer>
   <license>BSD</license>
