@@ -5,6 +5,8 @@
   <arg name="multi" default=""/>
   <arg name="model_name" default="tiago_$(arg robot)"/>
 
+  <rosparam ns="pal_robot_info" param="type">"tiago"</rosparam>
+
   <!-- PID gains -->
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/pids.yaml"/>
 
