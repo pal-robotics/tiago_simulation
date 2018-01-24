@@ -53,3 +53,17 @@ arm_controller:
     arm_left_7_joint:
       goal: *goal_pos_constraint
 
+gripper_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - gripper_right_finger_joint
+    - gripper_left_finger_joint
+
+  constraints:
+    goal_time: *goal_time_constraint
+    stopped_velocity_tolerance: *stopped_velocity_constraint
+    gripper_right_finger_joint:
+      goal: *goal_pos_constraint
+    gripper_left_finger_joint:
+      goal: *goal_pos_constraint
+

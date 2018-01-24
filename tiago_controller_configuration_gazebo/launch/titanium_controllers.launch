@@ -7,6 +7,7 @@
 
   <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch">
     <arg name="tf_prefix" value="$(arg tf_prefix)"/>
+    <arg name="robot"  value="titanium"/>
   </include>
   <include file="$(find tiago_controller_configuration_gazebo)/launch/imu_controller.launch"/>
   <include file="$(find tiago_controller_configuration_gazebo)/launch/force_torque_controller.launch"/>

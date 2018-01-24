@@ -5,11 +5,12 @@
 
   <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch">
     <arg name="tf_prefix" value="$(arg tf_prefix)"/>
+    <arg name="robot"  value="steel"/>
   </include>
   <arg name="use_moveit_camera" default="false"/>
   
   <include file="$(find tiago_controller_configuration_gazebo)/launch/imu_controller.launch"/>
-  <include file="$(find tiago_controller_configuration_gazebo)/launch/gripper_controller.launch"/>
+  <include file="$(find pal_gripper_controller_configuration_gazebo)/launch/gripper_controller.launch"/>
 
   <!-- Play motion -->
   <include file="$(find tiago_bringup)/launch/play_motion.launch">
