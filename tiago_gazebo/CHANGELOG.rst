@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.15 (2018-01-24)
+-------------------
 * use robot sufix in all launch files
 * enable planning to fix strange movement in Gazebo
 * tmp hack for pal_nav_sm in simulation

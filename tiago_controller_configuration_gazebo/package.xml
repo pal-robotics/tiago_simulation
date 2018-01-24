@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>tiago_controller_configuration_gazebo</name>
-  <version>0.0.14</version>
+  <version>0.0.15</version>
   <description>The tiago_controller_configuration_gazebo package</description>
   <maintainer email="jordi.pages@pal-robotics.com">Jordi Pages</maintainer>
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
