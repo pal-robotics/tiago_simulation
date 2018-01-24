@@ -56,6 +56,7 @@ gains:
 
   gripper_left_finger_joint: &gripper_finger_gains {p: 2000,  d: 0,  i: 0, p_gain: 2000}
   gripper_right_finger_joint: *gripper_finger_gains
+  gripper_finger_joint: *gripper_finger_gains
 
   FFJ4: &shadow_gains {p: 100,  d: 0,  i: 10}
   FFJ3: *shadow_gains
