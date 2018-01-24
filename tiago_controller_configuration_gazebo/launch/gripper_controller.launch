@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<launch>
-  <node name="gripper_controllers_spawner"
-        pkg="controller_manager" type="spawner" output="screen"
-        args="--timeout 120
-              gripper_controller" />
-  <node name="home_gripper" pkg="tiago_controller_configuration_gazebo" type="home_gripper.py" output="screen"/>
-</launch>
