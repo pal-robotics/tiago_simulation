@@ -2,6 +2,15 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* use robot sufix in all launch files
+* add PID for shunck gripper joint
+* add files for schunk-gripper based tiago
+* remove installation rule no longer needed
+* remove files moved to pal_gripper
+* Contributors: Jordi Pages
+
 0.0.14 (2017-11-07)
 -------------------
 

@@ -2,6 +2,13 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* use robot sufix in all launch files
+* enable planning to fix strange movement in Gazebo
+* tmp hack for pal_nav_sm in simulation
+* Contributors: Jeremie Deray, Jordi Pages
+
 0.0.14 (2017-11-07)
 -------------------
 * add point cloud throttle and filter
