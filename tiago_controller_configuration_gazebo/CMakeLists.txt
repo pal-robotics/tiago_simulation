@@ -8,5 +8,3 @@ foreach(dir config launch)
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
 
-install(PROGRAMS scripts/home_gripper.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
