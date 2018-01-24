@@ -18,7 +18,7 @@ if __name__ == "__main__":
   rospy.loginfo("Tuck arm...")
   goal = PlayMotionGoal()
   goal.motion_name = 'home'
-  goal.skip_planning = True
+  goal.skip_planning = False
 
   client.send_goal(goal)
   client.wait_for_result(rospy.Duration(10.0))
