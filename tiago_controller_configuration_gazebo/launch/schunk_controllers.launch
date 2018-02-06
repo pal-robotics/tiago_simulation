@@ -10,6 +10,12 @@
   <arg name="use_moveit_camera" default="false"/>
   
   <include file="$(find tiago_controller_configuration_gazebo)/launch/imu_controller.launch"/>
+  <include file="$(find pal_wsg_gripper_controller_configuration_gazebo)/launch/gripper_fingertip_sensor_controller.launch">
+    <arg name="finger" value="left"/>
+  </include>
+  <include file="$(find pal_wsg_gripper_controller_configuration_gazebo)/launch/gripper_fingertip_sensor_controller.launch">
+    <arg name="finger" value="right"/>
+  </include>
   <include file="$(find pal_wsg_gripper_controller_configuration_gazebo)/launch/gripper_controller.launch"/>
 
   <!-- Play motion -->
