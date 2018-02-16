@@ -3,7 +3,7 @@ project(tiago_gazebo)
 find_package(catkin REQUIRED COMPONENTS)
 catkin_package()
 
-foreach(dir config launch Media models worlds)
+foreach(dir config launch Media models scripts worlds)
     install(DIRECTORY ${dir}/
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
