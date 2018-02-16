@@ -2,6 +2,11 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add fingertip force sensors
+* Contributors: Jordi Pages
+
 0.0.15 (2018-01-24)
 -------------------
 * use robot sufix in all launch files

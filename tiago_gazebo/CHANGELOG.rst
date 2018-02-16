@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Added missing scripts directory from installation
+* Contributors: Jordan Palacios
+
 0.0.15 (2018-01-24)
 -------------------
 * use robot sufix in all launch files
