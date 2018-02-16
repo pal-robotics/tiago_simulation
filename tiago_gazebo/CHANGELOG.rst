@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.16 (2018-02-16)
+-------------------
 * Added missing scripts directory from installation
 * Contributors: Jordan Palacios
 
