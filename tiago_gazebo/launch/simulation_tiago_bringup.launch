@@ -6,8 +6,6 @@
   <arg name="use_moveit_camera" default="false"/>
 
 
-sfasfsd
-
 
   <!-- Load default controllers -->
   <include file="$(find tiago_controller_configuration_gazebo)/launch/$(arg robot)_controllers.launch">
