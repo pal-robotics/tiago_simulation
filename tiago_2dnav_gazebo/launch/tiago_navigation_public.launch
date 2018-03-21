@@ -2,15 +2,21 @@
 <launch>
   <arg name="robot" default="steel"/>
   <arg name="map"   default="$(env HOME)/.pal/tiago_maps/config"/>
+  <arg name="rviz"     default="true"/>
+  <arg name="gzclient"     default="true"/>
+  <arg name="localization"   default="amcl"/>
+  <arg name="gzpose"         default="-x 0.78 -y -11.1 -z -0.003 -R 0.0 -P 0.0 -Y 70.0"/>
 
   <include file="$(find tiago_2dnav_gazebo)/launch/tiago_navigation.launch">
       <arg name="robot"          value="$(arg robot)"/>
       <arg name="global_planner" value="navfn"/>
       <arg name="local_planner"  value="eband"/>
-      <arg name="localization"   value="amcl"/>
+      <arg name="localization"   value="$(arg localization)"/>
       <arg name="public_sim"     value="True"/>
-      <arg name="gzpose"         value="-x 0.78 -y -11.1 -z -0.003 -R 0.0 -P 0.0 -Y 70.0"/>
+      <arg name="gzpose"         value="$(arg gzpose)"/>
       <arg name="map"            value="$(arg map)"/>
+      <arg name="rviz"           value="$(arg rviz)"/>
+      <arg name="gzclient"       value="$(arg gzclient)"/>
     </include>
 
 </launch>
