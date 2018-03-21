@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.18 (2018-03-21)
+-------------------
 * Fix typo
 * Merge branch 'add-simple-ramp-world' into 'dubnium-devel'
   add simple_ramp world
