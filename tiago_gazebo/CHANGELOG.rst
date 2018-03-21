@@ -2,6 +2,15 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix typo
+* Merge branch 'add-simple-ramp-world' into 'dubnium-devel'
+  add simple_ramp world
+  See merge request robots/tiago_simulation!27
+* add simple_ramp world
+* Contributors: Jordi Pages, Victor Lopez
+
 0.0.17 (2018-02-20)
 -------------------
 * added missing depend

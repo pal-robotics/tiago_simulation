@@ -2,6 +2,11 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add extra arguments to public simulation launch files
+* Contributors: Victor Lopez
+
 0.0.17 (2018-02-20)
 -------------------
 
