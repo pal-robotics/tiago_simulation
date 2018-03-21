@@ -1,4 +1,6 @@
 gains:
+  suspension_left_joint: {p: 30000,  d: 250, i: 10, i_clamp: 1.5}
+  suspension_right_joint: {p: 30000,  d: 250, i: 10, i_clamp: 1.5}
   torso_lift_joint: {p: 30000,  d: 250, i: 10, i_clamp: 1.5}
   head_1_joint: {p: 100,  d: 0, i: 10, i_clamp: 1.5}
   head_2_joint: {p: 100,  d: 0, i: 10, i_clamp: 1.5}
@@ -79,4 +81,13 @@ velocity:
   gains:
      wheel_right_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.}
      wheel_left_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     caster_front_right_1_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     caster_front_right_2_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     caster_front_left_1_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     caster_front_left_2_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     caster_back_right_1_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     caster_back_right_2_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     caster_back_left_1_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     caster_back_left_2_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+
 
