@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.0 (2018-03-26)
+------------------
 * Merge branch 'pid_for_suspension_caster' into 'erbium-devel'
   gains for suspension and caster joints
   See merge request robots/tiago_simulation!28
