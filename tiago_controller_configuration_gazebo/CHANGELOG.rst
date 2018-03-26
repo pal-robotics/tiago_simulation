@@ -2,6 +2,14 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'recover-chessboard-tiago' into 'erbium-devel'
+  Add missing files for tiago_chessboard configurations
+  See merge request robots/tiago_simulation!29
+* Add missing files for tiago_chessboard configurations
+* Contributors: Victor Lopez
+
 1.0.0 (2018-03-26)
 ------------------
 * Merge branch 'pid_for_suspension_caster' into 'erbium-devel'
