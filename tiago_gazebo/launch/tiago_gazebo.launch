@@ -8,6 +8,7 @@
   <arg name="debug" default="false"/>
   <arg name="public_sim" default="false"/>
   <arg name="use_moveit_camera" default="false"/>
+  <arg name="tuck_arm" default="true"/>
 
   <env name="GAZEBO_MODEL_PATH" value="$(find tiago_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)"/>
 
@@ -40,5 +41,7 @@
     </include>
   </group>
 
-  <node name="tuck_arm" pkg="tiago_gazebo" type="tuck_arm.py" output="screen"/>
+  <group if="$(arg tuck_arm)">
+      <node name="tuck_arm" pkg="tiago_gazebo" type="tuck_arm.py" output="screen"/>
+  </group>
 </launch>
