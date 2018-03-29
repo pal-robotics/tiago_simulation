@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.2 (2018-03-29)
+------------------
 * Add param to skip tuck_arm
 * Contributors: Victor Lopez
 
