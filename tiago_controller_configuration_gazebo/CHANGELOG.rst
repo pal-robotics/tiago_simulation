@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.3 (2018-04-10)
+------------------
 * Merge branch 'extra_joints' into 'erbium-devel'
   added extra joints in joint state controller for simulation
   See merge request robots/tiago_simulation!30
