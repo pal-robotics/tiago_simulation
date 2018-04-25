@@ -1,0 +1,27 @@
+torso_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - torso_lift_joint
+
+  constraints:
+    goal_time: &goal_time_constraint 0.6
+    stopped_velocity_tolerance: &stopped_velocity_constraint 5.0 # FIXME: See #8429
+    torso_1_joint:
+      goal: &goal_pos_constraint 0.02
+    torso_2_joint:
+      goal: *goal_pos_constraint
+
+head_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - head_1_joint
+    - head_2_joint
+
+  constraints:
+    goal_time: 2.0
+    stopped_velocity_tolerance: *stopped_velocity_constraint
+    head_1_joint:
+      goal: 0.5
+    head_2_joint:
+      goal: 0.5
+
