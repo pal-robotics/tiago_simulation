@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.4 (2018-05-16)
+------------------
 * Merge branch 'launch-har-arm' into 'erbium-devel'
   Launch controllers depending on robot's arm exists
   See merge request robots/tiago_simulation!33
