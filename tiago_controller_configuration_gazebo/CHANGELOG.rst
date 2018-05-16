@@ -2,6 +2,18 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'launch-har-arm' into 'erbium-devel'
+  Launch controllers depending on robot's arm exists
+  See merge request robots/tiago_simulation!33
+* Launch controllers depending on robot's arm exists
+* Merge branch 'iron-config' into 'erbium-devel'
+  Add config for TIAGo Iron
+  See merge request robots/tiago_simulation!32
+* Add config for TIAGo Iron
+* Contributors: Hilario Tome, davidfernandez
+
 1.0.3 (2018-04-10)
 ------------------
 * Merge branch 'extra_joints' into 'erbium-devel'
