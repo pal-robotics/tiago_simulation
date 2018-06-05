@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.5 (2018-06-05)
+------------------
 * Merge branch 'add-simple-grasping-action' into 'erbium-devel'
   Add missing simple_grasping_action dependency
   See merge request robots/tiago_simulation!35
