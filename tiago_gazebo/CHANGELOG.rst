@@ -2,6 +2,14 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'use-gazebo-worlds' into 'erbium-devel'
+  Use pal_gazebo_worlds
+  See merge request robots/tiago_simulation!34
+* Use pal_gazebo_worlds
+* Contributors: Daniele De Cillis, Hilario Tome
+
 1.0.4 (2018-05-16)
 ------------------
 
