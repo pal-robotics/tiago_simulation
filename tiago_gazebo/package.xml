@@ -9,6 +9,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>gazebo_plugins</run_depend>
   <run_depend>pal_gazebo_plugins</run_depend>
+  <run_depend>pal_gazebo_worlds</run_depend>
   <run_depend>pal_hardware_gazebo</run_depend>
   <run_depend>tiago_bringup</run_depend>
   <run_depend>tiago_controller_configuration_gazebo</run_depend>
