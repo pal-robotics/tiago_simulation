@@ -14,6 +14,7 @@
 
   <arg name="rviz"     default="true"/>
   <arg name="gzclient" default="true"/>
+  <arg name="recording" default="false"/>
 
   <arg name="public_sim"   default="false"/>
 
@@ -30,6 +31,7 @@
       <arg name="gzpose"     value="$(arg gzpose)"/>
       <arg name="gui"        value="$(arg gzclient)"/>
       <arg name="public_sim" value="$(arg public_sim)"/>
+      <arg name="recording"  value="$(arg recording)"/>
     </include>
 
     <include file="$(find tiago_2dnav)/launch/navigation.launch">
