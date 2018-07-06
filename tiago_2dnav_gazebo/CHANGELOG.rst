@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-log-recording' into 'erbium-devel'
+  Add log recording
+  See merge request robots/tiago_simulation!36
+* Add log recording
+* Contributors: Victor Lopez
+
 1.0.5 (2018-06-05)
 ------------------
 
