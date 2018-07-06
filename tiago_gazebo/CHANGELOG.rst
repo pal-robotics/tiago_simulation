@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.6 (2018-07-06)
+------------------
 * Merge branch 'add-log-recording' into 'erbium-devel'
   Add log recording
   See merge request robots/tiago_simulation!36
