@@ -22,7 +22,7 @@
   -->
 
   <!-- Robot model -->
-  <include file="$(find tiago_description)/robots/upload_tiago.launch">
+  <include file="$(find tiago_description)/robots/upload.launch">
     <arg name="robot" value="$(arg robot)"/>
     <arg name="multi"  value="$(arg multi)"/>
   </include>
