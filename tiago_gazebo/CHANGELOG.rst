@@ -2,6 +2,14 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix-simulation-warnings' into 'erbium-devel'
+  call upload.launch rather than tiago_upload.launch
+  See merge request robots/tiago_simulation!38
+* call upload.launch rather than tiago_upload.launch
+* Contributors: Jordi Pages, Victor Lopez
+
 1.0.6 (2018-07-06)
 ------------------
 * Merge branch 'add-log-recording' into 'erbium-devel'
