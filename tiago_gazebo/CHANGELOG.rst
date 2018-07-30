@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.7 (2018-07-30)
+------------------
 * Merge branch 'fix-simulation-warnings' into 'erbium-devel'
   call upload.launch rather than tiago_upload.launch
   See merge request robots/tiago_simulation!38
