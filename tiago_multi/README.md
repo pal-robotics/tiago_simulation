@@ -34,7 +34,7 @@ In addition the following parameters may be modified:
 For the navigation launch, in addition, the following parameters may be modified:
 
 * *planner* Planner for the navigation. Default: base (move\_base planner).
-* *global_planner* Global navigation planner. Default: navfn.
+* *global_planner* Global navigation planner. Default: global_planner.
 * *local_planner* Local navigation planner. Default: eband (eband\_planner).
 * *localization* Localizacion stack. Default: amcl.
 

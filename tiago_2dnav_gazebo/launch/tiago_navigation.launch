@@ -7,7 +7,7 @@
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
 
   <arg name="planner"        default="base"/>
-  <arg name="global_planner" default="navfn"/>
+  <arg name="global_planner" default="global_planner"/>
   <arg name="local_planner"  default="pal"/>
   <arg name="localization"   default="amcl"/>
   <arg name="map"            default="$(env HOME)/.pal/tiago_maps/configurations/$(arg world)"/>
