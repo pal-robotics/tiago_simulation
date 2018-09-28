@@ -7,7 +7,7 @@
 
   <include file="$(find tiago_2dnav_gazebo)/launch/tiago_mapping.launch">
       <arg name="robot"          value="$(arg robot)"/>
-      <arg name="global_planner" value="navfn"/>
+      <arg name="global_planner" value="global_planner"/>
       <arg name="local_planner"  value="eband"/>
       <arg name="mapping"        value="gmapping"/>
       <arg name="world"          value="$(arg world)"/>
