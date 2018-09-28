@@ -2,6 +2,14 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix-default-planner' into 'erbium-devel'
+  fixed default planner to global_planner
+  See merge request robots/tiago_simulation!41
+* fixed default planner to global_planner
+* Contributors: Jordan Palacios, Procópio Stein
+
 1.0.7 (2018-07-30)
 ------------------
 

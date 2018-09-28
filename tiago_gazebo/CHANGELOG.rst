@@ -2,6 +2,9 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.7 (2018-07-30)
 ------------------
 * Merge branch 'fix-simulation-warnings' into 'erbium-devel'
