@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.9 (2018-10-26)
+------------------
 * Merge branch 'add-image-proc' into 'erbium-devel'
   Add image proc
   See merge request robots/tiago_simulation!39
