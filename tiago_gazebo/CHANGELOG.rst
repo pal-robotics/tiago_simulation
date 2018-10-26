@@ -2,6 +2,14 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-image-proc' into 'erbium-devel'
+  Add image proc
+  See merge request robots/tiago_simulation!39
+* Add image proc to emulate better robot topics
+* Contributors: Victor Lopez
+
 1.0.8 (2018-09-28)
 ------------------
 

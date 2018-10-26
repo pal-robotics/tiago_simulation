@@ -2,6 +2,9 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.0.8 (2018-09-28)
 ------------------
 * Merge branch 'fix-default-planner' into 'erbium-devel'
