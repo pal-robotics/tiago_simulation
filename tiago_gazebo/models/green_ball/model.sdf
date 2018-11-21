@@ -23,6 +23,7 @@
             </script>
           </material>
         </visual>
+      </link>
     </model>
 </sdf>
 
