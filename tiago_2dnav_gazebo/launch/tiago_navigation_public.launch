@@ -6,6 +6,7 @@
   <arg name="gzclient"     default="true"/>
   <arg name="localization"   default="amcl"/>
   <arg name="gzpose"         default="-x 0.78 -y -11.1 -z -0.003 -R 0.0 -P 0.0 -Y 70.0"/>
+  <arg name="tuck_arm"  default="true"/>
 
   <include file="$(find tiago_2dnav_gazebo)/launch/tiago_navigation.launch">
       <arg name="robot"          value="$(arg robot)"/>
@@ -14,6 +15,7 @@
       <arg name="localization"   value="$(arg localization)"/>
       <arg name="public_sim"     value="True"/>
       <arg name="gzpose"         value="$(arg gzpose)"/>
+      <arg name="tuck_arm"       value="$(arg tuck_arm)"/>
       <arg name="map"            value="$(arg map)"/>
       <arg name="rviz"           value="$(arg rviz)"/>
       <arg name="gzclient"       value="$(arg gzclient)"/>

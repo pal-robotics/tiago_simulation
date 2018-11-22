@@ -5,6 +5,7 @@
   <arg name="world"  default="small_office"/>
   <arg name="robot"  default="custom"/>
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
+  <arg name="tuck_arm"  default="true"/>
 
   <arg name="planner"        default="base"/>
   <arg name="global_planner" default="global_planner"/>
@@ -28,6 +29,7 @@
       <arg name="world"      value="$(arg world)"/>
       <arg name="robot"      value="$(arg robot)"/>
       <arg name="gzpose"     value="$(arg gzpose)"/>
+      <arg name="tuck_arm"   value="$(arg tuck_arm)"/>
       <arg name="gui"        value="$(arg gzclient)"/>
       <arg name="public_sim" value="$(arg public_sim)"/>
       <arg name="recording"  value="$(arg recording)"/>
