@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-extra-gz-args-flag' into 'erbium-devel'
+  Add extra_gazebo_args flag
+  See merge request robots/tiago_simulation!44
+* Add extra_gazebo_args flag
+* Contributors: Victor Lopez
+
 1.0.10 (2018-11-26)
 -------------------
 * Merge branch 'add-tuck-arm' into 'erbium-devel'
