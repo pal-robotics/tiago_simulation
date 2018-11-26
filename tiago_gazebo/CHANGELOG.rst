@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.10 (2018-11-26)
+-------------------
 * Merge branch 'fix_opencv_public' into 'erbium-devel'
   Fix wrong model
   See merge request robots/tiago_simulation!42
