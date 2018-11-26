@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-tuck-arm' into 'erbium-devel'
+  Add tuck_arm argument
+  See merge request robots/tiago_simulation!43
+* Add tuck_arm argument
+* Contributors: Victor Lopez
+
 1.0.9 (2018-10-26)
 ------------------
 
