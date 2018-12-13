@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="tf_prefix" default=""/>
-  <arg name="robot"     default="custom"/>
   <arg name="arm"   default="true"/>
 
   <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_trajectory_controllers.yaml" />
