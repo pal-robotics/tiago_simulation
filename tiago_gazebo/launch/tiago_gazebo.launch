@@ -2,12 +2,15 @@
 
 <launch>
   <arg name="world"  default="empty"/>  <!-- empty, ... (see ../worlds) -->
-  <arg name="robot"  default="custom"/>          <!-- see tiago_description/robots/tiago_* -->
+  <arg name="arm"  default="True"/>
+  <arg name="end_effector"  default="pal-hey5"/>
+  <arg name="ft_sensor"  default="schunk-ft"/>
+  <arg name="laser_model"  default="sick-571"/>
+  <arg name="camera_model"  default="orbbec-astra"/>
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="gui" default="true"/>
   <arg name="debug" default="false"/>
   <arg name="public_sim" default="false"/>
-  <arg name="use_moveit_camera" default="false"/>
   <arg name="tuck_arm" default="true"/>
   <arg name="recording" default="false"/>
   <arg name="extra_gazebo_args" default=""/>
@@ -26,16 +29,16 @@
   </include>
 
   <!-- spawn robot in simulation -->
-  <include file="$(find tiago_gazebo)/launch/tiago_spawn.launch">
-    <arg name="robot"  value="$(arg robot)"/>
-    <arg name="gzpose" value="$(arg gzpose)"/>
-  </include>
+  <include file="$(find tiago_gazebo)/launch/tiago_spawn.launch" pass_all_args="true"/>
 
   <!-- bring up robot -->
   <include file="$(find tiago_gazebo)/launch/simulation_tiago_bringup.launch">
-    <arg name="robot"       value="$(arg robot)"/>
+    <arg name="arm" value="$(arg arm)"/>
+    <arg name="end_effector" value="$(arg end_effector)"/>
+    <arg name="ft_sensor" value="$(arg ft_sensor)"/>
+    <arg name="laser_model" value="$(arg laser_model)"/>
+    <arg name="camera_model" value="$(arg camera_model)"/>
     <arg name="public_sim"  value="$(arg public_sim)"/>
-    <arg name="use_moveit_camera" value="$(arg use_moveit_camera)"/>
   </include>
 
   <!-- point cloud throttle and filter -->

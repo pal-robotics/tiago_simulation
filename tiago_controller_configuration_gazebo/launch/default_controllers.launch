@@ -2,23 +2,23 @@
 <launch>
   <arg name="tf_prefix" default=""/>
   <arg name="robot"     default="custom"/>
-  <arg name="has_arm"   default="true"/>
+  <arg name="arm"   default="true"/>
 
+  <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_trajectory_controllers.yaml" />
   <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_state_controller_extra_joints.yaml" ns="joint_state_controller"/>
   <rosparam command="load" file="$(find joint_state_controller)/joint_state_controller.yaml" />
-  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/joint_trajectory_controllers_$(arg robot).yaml" />
 
   <param name="mobile_base_controller/base_frame_id" value="$(arg tf_prefix)/base_footprint"/>
   <param name="mobile_base_controller/odom_frame_id" value="$(arg tf_prefix)/odom"/>
 
   <!-- Set up controllers depending of arm existance -->
-  <arg name="controller_list" if="$(arg has_arm)"
+  <arg name="controller_list" if="$(arg arm)"
        value="joint_state_controller
               torso_controller
               head_controller
               arm_controller
               mobile_base_controller"/>
-  <arg name="controller_list" unless="$(arg has_arm)"
+  <arg name="controller_list" unless="$(arg arm)"
        value="joint_state_controller
               torso_controller
               head_controller

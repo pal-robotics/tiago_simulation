@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-  <arg name="robot" default="custom"/>
+  <arg name="arm"/>
+  <arg name="end_effector"/>
+  <arg name="ft_sensor"/>
+  <arg name="laser_model"/>
+  <arg name="camera_model"/>
   <arg name="public_sim"     default="false"/>
   <arg name="tf_prefix" default=""/>
-  <arg name="use_moveit_camera" default="false"/>
 
 
-
-  <!-- Load default controllers -->
-  <include file="$(find tiago_controller_configuration_gazebo)/launch/$(arg robot)_controllers.launch">
-    <arg name="public_sim" value="$(arg public_sim)"/>
-    <arg name="tf_prefix" value="$(arg tf_prefix)"/>
-    <arg name="use_moveit_camera" value="$(arg use_moveit_camera)"/>
+  <!-- Joint trajectory and diff drive controllers -->
+  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/mobile_base_controller.yaml"/>
+  <include file="$(find tiago_controller_configuration_gazebo)/launch/tiago_controllers.launch">
+    <arg name="arm" value="$(arg arm)"/>
+    <arg name="end_effector" value="$(arg end_effector)"/>
+    <arg name="ft_sensor" value="$(arg ft_sensor)"/>
+    <arg name="laser_model" value="$(arg laser_model)"/>
+    <arg name="camera_model" value="$(arg camera_model)"/>
   </include>
-
 
   <!-- Robot state publisher -->
   <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
@@ -39,7 +43,7 @@
   <!-- Dynamic footprint -->
   <group unless="$(arg public_sim)">
     <include file="$(find tiago_bringup)/launch/dynamic_footprint.launch">
-      <arg name="robot" value="$(arg robot)"/>
+      <arg name="arm" value="$(arg arm)"/>
     </include>
   </group>
 

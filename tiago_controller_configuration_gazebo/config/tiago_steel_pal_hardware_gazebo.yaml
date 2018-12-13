@@ -1,4 +1,0 @@
-imu:
-  base_imu:
-    frame: base_imu_link
-    gazebo_sensor_name: imu_sensor
