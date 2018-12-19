@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="namespace" default="/"/>
+  <arg name="arm"  default="True"/>
+  <arg name="end_effector"  default="pal-hey5"/>
+  <arg name="ft_sensor"  default="schunk-ft"/>
+  <arg name="laser_model"  default="sick-571"/>
+  <arg name="camera_model"  default="orbbec-astra"/>
 
   <arg name="world"  default="small_office"/>
-  <arg name="robot"  default="custom"/>
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="tuck_arm"  default="true"/>
 
@@ -17,6 +21,7 @@
   <arg name="recording" default="false"/>
   <arg name="extra_gazebo_args" default=""/>
 
+  <arg name="rgbd_sensors"   default="false"/>
   <arg name="public_sim"   default="false"/>
 
   <arg name="sim_sufix" value="_public_sim"     if="$(arg public_sim)"/>
@@ -28,7 +33,11 @@
 
     <include file="$(find tiago_gazebo)/launch/tiago_gazebo.launch">
       <arg name="world"      value="$(arg world)"/>
-      <arg name="robot"      value="$(arg robot)"/>
+      <arg name="arm" value="$(arg arm)"/>
+      <arg name="end_effector" value="$(arg end_effector)"/>
+      <arg name="ft_sensor" value="$(arg ft_sensor)"/>
+      <arg name="laser_model" value="$(arg laser_model)"/>
+      <arg name="camera_model" value="$(arg camera_model)"/>
       <arg name="gzpose"     value="$(arg gzpose)"/>
       <arg name="tuck_arm"   value="$(arg tuck_arm)"/>
       <arg name="gui"        value="$(arg gzclient)"/>
@@ -44,6 +53,7 @@
       <arg name="global_planner" value="$(arg global_planner)"/>
       <arg name="local_planner"  value="$(arg local_planner)"/>
       <arg name="public_sim"     value="$(arg public_sim)"/>
+      <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
     </include>
 
     <node name="rviz" pkg="rviz" type="rviz" if="$(arg rviz)"

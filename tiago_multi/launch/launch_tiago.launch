@@ -4,7 +4,11 @@
     <arg name="x_pose"/>
     <arg name="y_pose"/>
 
-    <arg name="robot"  default="steel"/>          <!-- see tiago_description/robots/tiago_* -->
+    <arg name="arm"  default="True"/>
+    <arg name="end_effector"  default="pal-hey5"/>
+    <arg name="ft_sensor"  default="schunk-ft"/>
+    <arg name="laser_model"  default="sick-571"/>
+    <arg name="camera_model"  default="orbbec-astra"/>
     <arg name="world"  default="small_office"/>   <!-- small_office, ... (see ../worlds) -->
 
     <arg name="map"            default="$(env HOME)/.pal/tiago_maps/configurations/$(arg world)"/>
@@ -17,7 +21,11 @@
 
         <!-- spawn robot in simulation -->
         <include file="$(find tiago_gazebo)/launch/tiago_spawn.launch">
-            <arg name="robot"  value="$(arg robot)"/>
+            <arg name="arm" value="$(arg arm)"/>
+            <arg name="end_effector" value="$(arg end_effector)"/>
+            <arg name="ft_sensor" value="$(arg ft_sensor)"/>
+            <arg name="laser_model" value="$(arg laser_model)"/>
+            <arg name="camera_model" value="$(arg camera_model)"/>
             <arg name="gzpose" value="$(arg gzpose)"/>
             <arg name="multi"  value="multiple:=true namespace:=$(arg robot_name)"/>
             <arg name="model_name" value="$(arg robot_name)_$(arg robot)"/>
@@ -25,7 +33,11 @@
 
         <!-- bring up robot -->
         <include file="$(find tiago_gazebo)/launch/simulation_tiago_bringup.launch">
-            <arg name="robot"       value="$(arg robot)"/>
+            <arg name="arm" value="$(arg arm)"/>
+            <arg name="end_effector" value="$(arg end_effector)"/>
+            <arg name="ft_sensor" value="$(arg ft_sensor)"/>
+            <arg name="laser_model" value="$(arg laser_model)"/>
+            <arg name="camera_model" value="$(arg camera_model)"/>
             <arg name="public_sim"  value="$(arg public_sim)"/>
             <arg name="tf_prefix" value="$(arg robot_name)"/>
         </include>

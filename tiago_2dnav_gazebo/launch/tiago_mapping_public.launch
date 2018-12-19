@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-  <arg name="robot" default="steel"/>
+  <arg name="arm"  default="True"/>
+  <arg name="end_effector"  default="pal-gripper"/>
+  <arg name="ft_sensor"  default="false"/>
+  <arg name="laser_model"  default="sick-571"/>
+  <arg name="camera_model"  default="orbbec-astra"/>
   <arg name="world" default="small_office"/>
   <arg name="rviz"     default="true"/>
   <arg name="gzclient" default="true"/>
@@ -8,7 +12,11 @@
 
 
   <include file="$(find tiago_2dnav_gazebo)/launch/tiago_mapping.launch">
-      <arg name="robot"          value="$(arg robot)"/>
+      <arg name="arm" value="$(arg arm)"/>
+      <arg name="end_effector" value="$(arg end_effector)"/>
+      <arg name="ft_sensor" value="$(arg ft_sensor)"/>
+      <arg name="laser_model" value="$(arg laser_model)"/>
+      <arg name="camera_model" value="$(arg camera_model)"/>
       <arg name="global_planner" value="global_planner"/>
       <arg name="local_planner"  value="eband"/>
       <arg name="mapping"        value="gmapping"/>
