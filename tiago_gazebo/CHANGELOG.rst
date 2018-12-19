@@ -2,6 +2,16 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'specifics-refactor' into 'erbium-devel'
+  Add advanced navigation option to tiago_navigation.launch
+  See merge request robots/tiago_simulation!45
+* Add missing multi arg
+* Remvoe pass_all_args
+* Refactor controller configuration
+* Contributors: Victor Lopez
+
 1.0.11 (2018-11-26)
 -------------------
 * Merge branch 'add-extra-gz-args-flag' into 'erbium-devel'

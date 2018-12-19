@@ -2,6 +2,15 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'specifics-refactor' into 'erbium-devel'
+  Add advanced navigation option to tiago_navigation.launch
+  See merge request robots/tiago_simulation!45
+* Adapt launch files to new args
+* Refactor controller configuration
+* Contributors: Victor Lopez
+
 1.0.11 (2018-11-26)
 -------------------
 
