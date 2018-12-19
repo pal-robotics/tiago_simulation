@@ -2,8 +2,8 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2018-12-19)
+------------------
 * Merge branch 'specifics-refactor' into 'erbium-devel'
   Add advanced navigation option to tiago_navigation.launch
   See merge request robots/tiago_simulation!45
