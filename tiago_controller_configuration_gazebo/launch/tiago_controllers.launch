@@ -36,7 +36,7 @@
     </group>
 
       <!-- Play motion -->
-      <include file="$(find tiago_bringup)/launch/play_motion.launch"/>
+      <include file="$(find tiago_bringup)/launch/play_motion.launch" pass_all_args="true"/>
 
     <!-- Motion planning -->
     <include file="$(find tiago_moveit_config)/launch/move_group.launch">
