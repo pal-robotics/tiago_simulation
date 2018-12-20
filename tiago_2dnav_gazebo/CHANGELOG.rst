@@ -2,6 +2,9 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.0 (2018-12-19)
 ------------------
 * Merge branch 'specifics-refactor' into 'erbium-devel'
