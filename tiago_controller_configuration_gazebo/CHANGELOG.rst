@@ -2,6 +2,11 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Remove usages of pass_all_args, not supported in kinetic yet
+* Contributors: Victor Lopez
+
 2.0.1 (2018-12-20)
 ------------------
 * Add missing pass_all_arguments

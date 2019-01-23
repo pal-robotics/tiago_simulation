@@ -2,6 +2,16 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix_default_global_planner' into 'erbium-devel'
+  Set default global planner back to global_planner
+  See merge request robots/tiago_simulation!46
+* Add mapping from deprecated robot to new variables
+* Don't launch loc measure on public sim
+* Set default global planner back to global_planner
+* Contributors: Jordan Palacios, Victor Lopez
+
 2.0.1 (2018-12-20)
 ------------------
 
