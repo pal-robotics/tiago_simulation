@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-  <arg name="arm"  default="True"/>
-  <arg name="end_effector"  default="pal-gripper"/>
-  <arg name="ft_sensor"  default="false"/>
+  <!--deprecated argument, you should specify the parameters below-->
+  <!-- They are described in tiago.urdf.xacro -->
+  <arg name="robot"  default=""/>
+  <arg name="arm"  default="$(eval {'iron': False}.get(arg('robot'), True))"/>
+  <arg name="end_effector"  default="$(eval {'iron': 'false', 'steel': 'pal-gripper', 'titanium': 'pal-hey5'}.get(arg('robot'), 'pal-gripper'))"/>
+  <arg name="ft_sensor"  default="$(eval {'titanium': 'schunk-ft'}.get(arg('robot'), 'false'))"/>
   <arg name="laser_model"  default="sick-571"/>
   <arg name="camera_model"  default="orbbec-astra"/>
   <arg name="map"   default="$(env HOME)/.pal/tiago_maps/config"/>
