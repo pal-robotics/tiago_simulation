@@ -2,6 +2,12 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Change default deprecated param to titanium
+  For backwards compatibility
+* Contributors: Victor Lopez
+
 2.0.2 (2019-01-23)
 ------------------
 * Add mapping from deprecated robot to new variables
