@@ -11,6 +11,8 @@
   <arg name="map"   default="$(env HOME)/.pal/tiago_maps/config"/>
   <arg name="rviz"     default="true"/>
   <arg name="gzclient"     default="true"/>
+  <arg name="recording" default="false"/>
+  <arg name="extra_gazebo_args" default=""/>
   <arg name="localization"   default="amcl"/>
   <arg name="gzpose"         default="-x 0.78 -y -11.1 -z -0.003 -R 0.0 -P 0.0 -Y 70.0"/>
   <arg name="tuck_arm"  default="true"/>
@@ -30,6 +32,8 @@
       <arg name="map"            value="$(arg map)"/>
       <arg name="rviz"           value="$(arg rviz)"/>
       <arg name="gzclient"       value="$(arg gzclient)"/>
+      <arg name="recording"  value="$(arg recording)"/>
+      <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
     </include>
 
 </launch>

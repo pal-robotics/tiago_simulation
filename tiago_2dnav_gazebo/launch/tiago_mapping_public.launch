@@ -12,6 +12,8 @@
   <arg name="rviz"     default="true"/>
   <arg name="gzclient" default="true"/>
   <arg name="tuck_arm"  default="true"/>
+  <arg name="recording" default="false"/>
+  <arg name="extra_gazebo_args" default=""/>
 
 
   <include file="$(find tiago_2dnav_gazebo)/launch/tiago_mapping.launch">
@@ -28,6 +30,8 @@
       <arg name="rviz"           value="$(arg rviz)"/>
       <arg name="gzclient"       value="$(arg gzclient)"/>
       <arg name="tuck_arm"   value="$(arg tuck_arm)"/>
+      <arg name="recording"  value="$(arg recording)"/>
+      <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
     </include>
 
 </launch>
