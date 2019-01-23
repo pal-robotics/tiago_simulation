@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.3 (2019-01-23)
+------------------
 * Change default deprecated param to titanium
   For backwards compatibility
 * Contributors: Victor Lopez
