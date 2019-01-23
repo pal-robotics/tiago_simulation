@@ -35,5 +35,8 @@
       <arg name="recording"  value="$(arg recording)"/>
       <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
     </include>
+  <include file="$(find tiago_laser_sensors)/launch/rgbd_cloud_laser.launch">
+    <arg name="cloud" value="/xtion/depth_registered/points"/>
+  </include>
 
 </launch>
