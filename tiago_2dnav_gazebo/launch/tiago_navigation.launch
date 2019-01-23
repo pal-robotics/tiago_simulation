@@ -32,10 +32,6 @@
 
   <node name="update_maps_link" pkg="pal_navigation_sm" type="base_maps_symlink.sh" args="tiago_maps"/>
 
-  <include file="$(find pal_loc_measure)/launch/pal_loc_measure.launch">
-    <arg name="training" value="False"/>
-  </include>
-
   <group ns="$(arg namespace)">
 
     <include file="$(find tiago_gazebo)/launch/tiago_gazebo.launch">
@@ -76,6 +72,12 @@
 
   <group if="$(arg public_sim)">
     <node name="relay_map" pkg="topic_tools" type="relay" args="/map /vo_map"/>
+  </group>
+
+  <group unless="$(arg public_sim)">
+    <include file="$(find pal_loc_measure)/launch/pal_loc_measure.launch">
+      <arg name="training" value="False"/>
+    </include>
   </group>
 
   <group if="$(arg advanced_navigation)">
