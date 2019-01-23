@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.2 (2019-01-23)
+------------------
 * Add mapping from deprecated robot to new variables
 * Remove usages of pass_all_args, not supported in kinetic yet
 * Contributors: Victor Lopez

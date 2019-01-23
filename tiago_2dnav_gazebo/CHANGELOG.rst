@@ -2,8 +2,8 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.2 (2019-01-23)
+------------------
 * Merge branch 'fix_default_global_planner' into 'erbium-devel'
   Set default global planner back to global_planner
   See merge request robots/tiago_simulation!46
