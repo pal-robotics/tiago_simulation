@@ -18,6 +18,7 @@
   <arg name="tuck_arm" default="true"/>
   <arg name="recording" default="false"/>
   <arg name="extra_gazebo_args" default=""/>
+  <arg name="use_moveit_camera" default="false"/>
 
   <env name="LC_NUMERIC" value="C" />
 
@@ -51,6 +52,7 @@
     <arg name="laser_model" value="$(arg laser_model)"/>
     <arg name="camera_model" value="$(arg camera_model)"/>
     <arg name="public_sim"  value="$(arg public_sim)"/>
+    <arg name="use_moveit_camera" value="$(arg use_moveit_camera)"/>
   </include>
 
   <!-- point cloud throttle and filter -->
