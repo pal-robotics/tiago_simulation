@@ -2,6 +2,16 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'multi_simulation' into 'erbium-devel'
+  Fix multitiago simulation
+  See merge request robots/tiago_simulation!48
+* Fix multitiago simulation
+* Forward use_moveit_camera arg
+* Add use_moveit_camera
+* Contributors: Victor Lopez, davidfernandez
+
 2.0.3 (2019-01-23)
 ------------------
 * Change default deprecated param to titanium

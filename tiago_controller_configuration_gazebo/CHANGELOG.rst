@@ -2,6 +2,11 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add use_moveit_camera
+* Contributors: Victor Lopez
+
 2.0.3 (2019-01-23)
 ------------------
 

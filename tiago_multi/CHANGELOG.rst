@@ -2,6 +2,14 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'multi_simulation' into 'erbium-devel'
+  Fix multitiago simulation
+  See merge request robots/tiago_simulation!48
+* Fix multitiago simulation
+* Contributors: Victor Lopez, davidfernandez
+
 2.0.3 (2019-01-23)
 ------------------
 

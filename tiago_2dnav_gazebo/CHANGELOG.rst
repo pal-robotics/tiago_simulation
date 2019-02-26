@@ -2,6 +2,11 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add rgbd scan to public navigation
+* Contributors: Victor Lopez
+
 2.0.3 (2019-01-23)
 ------------------
 * Change default deprecated param to titanium
