@@ -2,8 +2,8 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.4 (2019-02-26)
+------------------
 * Add rgbd scan to public navigation
 * Contributors: Victor Lopez
 

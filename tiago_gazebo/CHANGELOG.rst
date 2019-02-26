@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.4 (2019-02-26)
+------------------
 * Merge branch 'multi_simulation' into 'erbium-devel'
   Fix multitiago simulation
   See merge request robots/tiago_simulation!48
