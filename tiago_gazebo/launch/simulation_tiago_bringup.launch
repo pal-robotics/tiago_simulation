@@ -18,6 +18,7 @@
     <arg name="laser_model" value="$(arg laser_model)"/>
     <arg name="camera_model" value="$(arg camera_model)"/>
     <arg name="use_moveit_camera" value="$(arg use_moveit_camera)"/>
+    <arg name="tf_prefix" value="$(arg tf_prefix)"/>
   </include>
 
   <!-- Robot state publisher -->

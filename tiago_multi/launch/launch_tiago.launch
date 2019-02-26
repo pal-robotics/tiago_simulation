@@ -28,7 +28,7 @@
             <arg name="camera_model" value="$(arg camera_model)"/>
             <arg name="gzpose" value="$(arg gzpose)"/>
             <arg name="multi"  value="multiple:=true namespace:=$(arg robot_name)"/>
-            <arg name="model_name" value="$(arg robot_name)_$(arg robot)"/>
+            <arg name="model_name" value="$(arg robot_name)"/>
         </include>
 
         <!-- bring up robot -->
