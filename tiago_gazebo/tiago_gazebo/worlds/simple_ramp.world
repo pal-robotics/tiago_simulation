@@ -1,0 +1,367 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+    <physics type="ode">
+      <gravity>0 0 -9.81</gravity>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>20</iters>
+          <sor>1.0</sor>
+        </solver>
+        <constraints>
+          <cfm>0.0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100.0</contact_max_correcting_vel>
+          <contact_surface_layer>0.0</contact_surface_layer>
+        </constraints>
+      </ode>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+    </physics>
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <!-- ================================ -->
+    <!-- room 1 -->
+    <!-- ================================ -->
+    <!-- room 1 floor -->
+    <model name="room_1_floor">
+      <static>true</static>
+      <pose>4 0 -0.049  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 6 .1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 6 .1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <!-- room 1 - wall 1 -->
+    <model name="room_1_wall_1">
+      <static>true</static>
+      <pose>8.9 0 1.25  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 6 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 6 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- room 1 - wall 2 -->
+    <model name="room_1_wall_2">
+      <static>true</static>
+      <pose>4 -3 1.25  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 0.2 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 0.2 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- room 1 - wall 3 -->
+    <model name="room_1_wall_3">
+      <static>true</static>
+      <pose>4 3 1.25  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 0.2 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 0.2 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- room 1 - wall 4 -->
+    <model name="room_1_wall_4">
+      <static>true</static>
+      <pose>-1.1 2 1.25  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 2.0 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 2.0 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- room 1 - wall 5 -->
+    <model name="room_1_wall_5">
+      <static>true</static>
+      <pose>-1.1 -2 1.25  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 2.0 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 2.0 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- ================================ -->
+    <!-- Ramp 1 between room 1 and room 2 -->
+    <!-- ================================ -->
+    <!-- ramp 1: 8% slope, angle = 4.6º  -->
+    <model name="ramp_1">
+      <static>true</static>
+      <pose>-16 0 1.15  0 0.08 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>30.1 2.0 .1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>30.1 2.0 .1</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- ramp 1 - wall left -->
+    <model name="ramp_1_wall_left">
+      <static>true</static>
+      <pose>-16 -1.1 2.46  0 0.08 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>30 0.2 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>30 0.2 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- ramp 1 - wall right -->
+    <model name="ramp_1_wall_right">
+      <static>true</static>
+      <pose>-16 1.1 2.46  0 0.08 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>30 0.2 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>30 0.2 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- ================================ -->
+    <!-- room 2 -->
+    <!-- ================================ -->
+    <!-- room 2 floor -->
+    <model name="room_2_floor">
+      <static>true</static>
+      <pose>-34.95 -3.0 2.355  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8 14 .1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8 14 .1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <!-- room 2 - wall 1 -->
+    <model name="room_1_wall_1">
+      <static>true</static>
+      <pose>-30.95 -5.5 3.605  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 9 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 9 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- room 2 - wall 2 -->
+    <model name="room_1_wall_1">
+      <static>true</static>
+      <pose>-30.95 2.5 3.605  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 3 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 3 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- room 2 - wall 3 -->
+    <model name="room_1_wall_1">
+      <static>true</static>
+      <pose>-34.95 3.9 3.605  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8.0 0.2 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8.0 0.2 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- room 2 - wall 4 -->
+    <model name="room_1_wall_1">
+      <static>true</static>
+      <pose>-39.05 -3.0 3.605  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 14 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 14 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <!-- room 2 - wall 5 -->
+    <model name="room_1_wall_1">
+      <static>true</static>
+      <pose>-34.95 -9.9 3.605  0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8.0 0.2 2.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8.0 0.2 2.5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

@@ -1,0 +1,14 @@
+material Custom/biscuits_pack
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture biscuits_pack.jpg
+			}
+		}
+	}
+}
+

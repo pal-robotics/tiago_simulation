@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<sdf version='1.4'>
+  <model name='pal_poster'>
+      <link name="link">
+      <gravity>false</gravity>
+        <inertial>
+          <mass>0.4</mass>
+          <inertia>
+            <ixx>1.0</ixx>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyy>1.0</iyy>
+            <iyz>0.0</iyz>
+            <izz>1.0</izz>
+          </inertia>
+        </inertial>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.02 0.5 0.644</size> <!-- Poster dimensions: thickness width length -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.02 0.5 0.644</size> <!-- Poster dimensions: thickness width length -->
+            </box>
+          </geometry>
+          <material>
+            <script>
+	      <uri>model://pal_poster/material/scripts</uri>
+	      <uri>model://pal_poster/material/textures</uri>
+              <name>Custom/pal_poster</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+</sdf>
+

@@ -1,0 +1,14 @@
+material Custom/coke_can_slim
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture coke_can_slim.jpg
+			}
+		}
+	}
+}
+
