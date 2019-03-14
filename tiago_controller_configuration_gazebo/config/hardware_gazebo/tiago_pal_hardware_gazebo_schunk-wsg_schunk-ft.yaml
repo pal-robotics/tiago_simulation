@@ -4,7 +4,7 @@ force_torque:
     sensor_joint: arm_7_joint
     frame: wrist_ft_link
   left_fingertip:
-    sensor_joint: gripper_finger_joint
+    sensor_joint: gripper_left_finger_joint
     frame: gripper_left_fingertip_link
   right_fingertip:
     sensor_joint: gripper_right_finger_joint

@@ -8,7 +8,7 @@ force_torque:
 @[end if]@
 @[if end_effector == "schunk-wsg"]@
   left_fingertip:
-    sensor_joint: gripper_finger_joint
+    sensor_joint: gripper_left_finger_joint
     frame: gripper_left_fingertip_link
   right_fingertip:
     sensor_joint: gripper_right_finger_joint
