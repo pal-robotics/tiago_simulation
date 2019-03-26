@@ -2,6 +2,12 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Forward missing parameter
+* Remove duplicated package
+* Contributors: Victor Lopez
+
 2.0.5 (2019-03-14)
 ------------------
 
