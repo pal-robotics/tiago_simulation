@@ -46,6 +46,7 @@
   <group unless="$(arg public_sim)">
     <include file="$(find tiago_bringup)/launch/dynamic_footprint.launch">
       <arg name="arm" value="$(arg arm)"/>
+      <arg name="end_effector" value="$(arg end_effector)"/>
     </include>
   </group>
 
