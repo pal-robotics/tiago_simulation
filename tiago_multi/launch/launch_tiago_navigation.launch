@@ -48,6 +48,7 @@
             <arg name="camera_model" value="$(arg camera_model)"/>
             <arg name="public_sim"  value="$(arg public_sim)"/>
             <arg name="tf_prefix" value="$(arg robot_name)"/>
+            <arg if="$(eval arg('local_planner') == 'teb')" name="use_dynamic_footprint" value="true"/>
         </include>
 
         <include file="$(find tiago_2dnav)/launch/navigation.launch">

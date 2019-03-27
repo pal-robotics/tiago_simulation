@@ -8,6 +8,7 @@
   <arg name="public_sim"     default="false"/>
   <arg name="tf_prefix" default=""/>
   <arg name="use_moveit_camera" default="false"/>
+  <arg name="use_dynamic_footprint" default="false"/>
 
   <!-- Joint trajectory and diff drive controllers -->
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/mobile_base_controller.yaml"/>
@@ -47,6 +48,7 @@
     <include file="$(find tiago_bringup)/launch/dynamic_footprint.launch">
       <arg name="arm" value="$(arg arm)"/>
       <arg name="end_effector" value="$(arg end_effector)"/>
+      <arg if="$(arg use_dynamic_footprint)" name="remap_footprint_to" value="/move_base/local_costmap/footprint"/>
     </include>
   </group>
 
