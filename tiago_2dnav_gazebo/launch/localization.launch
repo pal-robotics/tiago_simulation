@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <arg name="localization"  default="amcl"/>
+
+  <arg name="map"     default="$(env HOME)/.pal/tiago_maps/config"/>
+  <arg name="symlink" default="$(env HOME)/.pal/tiago_maps/config"/>
+  <arg name="multiple" default="false"/>
+  <arg name="tf_prefix" default=""/>
+
+  <arg name="mapping" default=""/>
+
+  <!-- Map -->
+  <include file="$(find pal_navigation_sm)/launch/map.launch">
+    <arg name="map"     value="$(arg map)"/>
+    <arg name="symlink" value="$(arg symlink)"/>
+    <arg name="multiple" value="$(arg multiple)"/>
+    <arg name="tf_prefix" value="$(arg tf_prefix)"/>
+  </include>
+
+  <!-- Localization -->
+  <include file="$(find tiago_2dnav)/launch/localization.launch">
+    <arg name="localization" value="$(arg localization)"/>
+    <arg name="multiple" value="$(arg multiple)"/>
+    <arg name="tf_prefix" value="$(arg tf_prefix)"/>
+  </include>
+
+</launch>

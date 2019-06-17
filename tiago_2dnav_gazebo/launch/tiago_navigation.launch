@@ -51,7 +51,7 @@
       <arg if="$(eval local_planner == 'teb')" name="use_dynamic_footprint" value="true"/>
     </include>
 
-    <include file="$(find tiago_2dnav)/launch/navigation.launch">
+    <include file="$(find tiago_2dnav_gazebo)/launch/navigation.launch">
       <arg name="state"          value="localization"/>
       <arg name="planner"        value="$(arg planner)"/>
       <arg name="global_planner" value="$(arg global_planner)"/>

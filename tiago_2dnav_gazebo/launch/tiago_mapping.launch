@@ -46,7 +46,7 @@
       <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
     </include>
 
-    <include file="$(find tiago_2dnav)/launch/navigation.launch">
+    <include file="$(find tiago_2dnav_gazebo)/launch/navigation.launch">
       <arg name="state"          value="mapping"/>
       <arg name="mapping"        value="$(arg mapping)"/>
       <arg name="planner"        value="$(arg planner)"/>

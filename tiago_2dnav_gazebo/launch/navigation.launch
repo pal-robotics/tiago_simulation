@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <arg name="state" default="localization"/>
+
+  <arg name="planner"        default="base"/>
+  <arg name="global_planner" default="global_planner"/>
+  <arg name="local_planner"  default="pal"/>
+  <arg name="localization"   default="amcl"/>
+  <arg name="mapping"        default="karto"/>
+  <arg name="octomap"        default="false"/>
+  <arg name="public_sim"     default="false"/>
+  <arg name="disable_vo"     default="false"/>
+  <arg name="rgbd_sensors"   default="false"/>
+  <arg name="tf_prefix"      default=""/>
+  <arg name="multiple"       default="false"/>
+
+  <arg name="map" default="$(env HOME)/.pal/tiago_maps/config"/>
+
+  <!-- Localization or Mapping state -->
+  <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
+        args="tiago $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg multiple) $(arg tf_prefix)" output="screen"/>
+
+  <!-- Navigation State Machine -->
+  <include file="$(find tiago_2dnav)/launch/state_machine.launch">
+    <arg name="state" value="$(arg state)"/>
+    <arg name="public_sim" value="$(arg public_sim)"/>
+    <arg if="$(arg multiple)" name="map_frame" value="/$(arg tf_prefix)/map"/>
+    <arg if="$(arg multiple)" name="base_frame" value="/$(arg tf_prefix)/base_footprint"/>
+  </include>
+
+  <!-- Planning -->
+  <include file="$(find tiago_2dnav)/launch/move_$(arg planner).launch">
+    <arg name="global_planner" value="$(arg global_planner)"/>
+    <arg name="local_planner"  value="$(arg local_planner)"/>
+    <arg name="public_sim"     value="$(arg public_sim)"/>
+    <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
+    <arg name="tf_prefix"      value="$(arg tf_prefix)"/>
+    <arg name="multiple"       value="$(arg multiple)"/>
+  </include>
+
+  <!-- VO map server -->
+  <group unless="$(arg public_sim)">
+    <include file="$(find pal_vo_server)/launch/vo_server.launch"/>
+  </group>
+
+</launch>
