@@ -2,8 +2,8 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.7 (2019-06-17)
+------------------
 * Merge branch 'new_nav_cfg' into 'erbium-devel'
   moved simulation launches from tiago_2dnav
   See merge request robots/tiago_simulation!50

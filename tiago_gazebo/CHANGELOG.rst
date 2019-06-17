@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.7 (2019-06-17)
+------------------
 * Merge branch 'cylinder_on_table' into 'erbium-devel'
   Added the world cylinder on the table for the pick and place demo
   See merge request robots/tiago_simulation!47

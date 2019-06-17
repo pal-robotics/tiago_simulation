@@ -2,8 +2,8 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.7 (2019-06-17)
+------------------
 * Merge branch 'teb_planner' into 'erbium-devel'
   Add TEB planner
   See merge request robots/tiago_simulation!49
