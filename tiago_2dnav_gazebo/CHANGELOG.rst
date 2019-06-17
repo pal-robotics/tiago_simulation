@@ -2,6 +2,18 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'new_nav_cfg' into 'erbium-devel'
+  moved simulation launches from tiago_2dnav
+  See merge request robots/tiago_simulation!50
+* moved simulation launches from tiago_2dnav
+* Merge branch 'teb_planner' into 'erbium-devel'
+  Add TEB planner
+  See merge request robots/tiago_simulation!49
+* Add TEB planner
+* Contributors: Hilario Tome, Sai Kishor Kothakota, Victor Lopez, davidfernandez
+
 2.0.6 (2019-03-26)
 ------------------
 

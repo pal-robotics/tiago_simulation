@@ -2,6 +2,18 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'cylinder_on_table' into 'erbium-devel'
+  Added the world cylinder on the table for the pick and place demo
+  See merge request robots/tiago_simulation!47
+* Merge branch 'teb_planner' into 'erbium-devel'
+  Add TEB planner
+  See merge request robots/tiago_simulation!49
+* Add TEB planner
+* Added the world cylinder on the table for the pick and place demo
+* Contributors: Jordi Pages, Victor Lopez, alessandrodifava, davidfernandez
+
 2.0.6 (2019-03-26)
 ------------------
 * Forward missing parameter
