@@ -2,6 +2,15 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'more_fixes' into 'erbium-devel'
+  more fixes on moved launch files
+  See merge request robots/tiago_simulation!51
+* removed pick_and_place.launch file
+* more fixes on moved launch files
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
 2.0.7 (2019-06-17)
 ------------------
 * Merge branch 'new_nav_cfg' into 'erbium-devel'
