@@ -2,8 +2,8 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.8 (2019-07-03)
+------------------
 * Merge branch 'more_fixes' into 'erbium-devel'
   more fixes on moved launch files
   See merge request robots/tiago_simulation!51
