@@ -2,6 +2,14 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-wsg-controller-gazebo' into 'erbium-devel'
+  Add missing wsg controller config
+  See merge request robots/tiago_simulation!52
+* Add missing wsg controller config
+* Contributors: Victor Lopez
+
 2.0.8 (2019-07-03)
 ------------------
 
