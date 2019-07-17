@@ -2,6 +2,14 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'multi_pmb2' into 'erbium-devel'
+  Fix multi tiago private simulation
+  See merge request robots/tiago_simulation!53
+* Fix multi tiago private simulation
+* Contributors: Adria Roig, Victor Lopez
+
 2.0.9 (2019-07-09)
 ------------------
 
