@@ -39,7 +39,7 @@
   </group>
   <group unless="$(arg public_sim)">
     <include file="$(find tiago_bringup)/launch/twist_mux.launch">
-      <arg name="cmd_vel_out" value="/twist_mux/cmd_vel" />
+      <arg name="cmd_vel_out" value="twist_mux/cmd_vel" />
     </include>
   </group>
 
