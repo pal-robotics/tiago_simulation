@@ -2,6 +2,9 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.10 (2019-07-17)
 -------------------
 * Merge branch 'multi_pmb2' into 'erbium-devel'

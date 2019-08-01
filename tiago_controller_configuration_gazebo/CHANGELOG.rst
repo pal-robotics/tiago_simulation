@@ -2,6 +2,14 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-extra-joints-torque-joint-state' into 'erbium-devel'
+  Add extra joints to joint_torque_states
+  See merge request robots/tiago_simulation!54
+* Add extra joints to joint_torque_states
+* Contributors: Victor Lopez
+
 2.0.10 (2019-07-17)
 -------------------
 
