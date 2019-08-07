@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'tiago_dual_cfg' into 'erbium-devel'
+  Added the parameter toallow the selection of the tiago_dual cfg package for the move_base launch
+  See merge request robots/tiago_simulation!57
+* Added the parameter toallow the selection of the tiago_dual cfg package for the move_base launch
+* Contributors: Victor Lopez, alessandrodifava
+
 2.0.11 (2019-08-01)
 -------------------
 

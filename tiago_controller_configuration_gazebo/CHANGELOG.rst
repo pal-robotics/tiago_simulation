@@ -2,6 +2,14 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'better-control' into 'erbium-devel'
+  Change PID and tolerances for better tiago simulation
+  See merge request robots/tiago_simulation!56
+* Change PID and tolerances for better tiago simulation
+* Contributors: Victor Lopez
+
 2.0.11 (2019-08-01)
 -------------------
 * Merge branch 'add-extra-joints-torque-joint-state' into 'erbium-devel'
