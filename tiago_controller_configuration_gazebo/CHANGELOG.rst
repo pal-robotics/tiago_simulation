@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.12 (2019-08-07)
+-------------------
 * Merge branch 'better-control' into 'erbium-devel'
   Change PID and tolerances for better tiago simulation
   See merge request robots/tiago_simulation!56
