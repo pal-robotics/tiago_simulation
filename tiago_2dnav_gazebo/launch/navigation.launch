@@ -14,6 +14,7 @@
   <arg name="rgbd_sensors"   default="false"/>
   <arg name="tf_prefix"      default=""/>
   <arg name="multiple"       default="false"/>
+  <arg name="config_base_path" default="$(find pal_navigation_cfg_tiago)"/>
 
   <arg name="map" default="$(env HOME)/.pal/tiago_maps/config"/>
 
@@ -37,6 +38,7 @@
     <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
     <arg name="tf_prefix"      value="$(arg tf_prefix)"/>
     <arg name="multiple"       value="$(arg multiple)"/>
+    <arg name="config_base_path" value="$(arg config_base_path)"/>
   </include>
 
   <!-- VO map server -->
