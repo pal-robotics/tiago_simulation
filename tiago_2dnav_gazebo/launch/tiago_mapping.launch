@@ -54,6 +54,7 @@
       <arg name="local_planner"  value="$(arg local_planner)"/>
       <arg name="public_sim"     value="$(arg public_sim)"/>
       <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
+      <arg name="laser_model"    value="$(arg laser_model)"/>
     </include>
 
     <node name="rviz" pkg="rviz" type="rviz" if="$(arg rviz)"

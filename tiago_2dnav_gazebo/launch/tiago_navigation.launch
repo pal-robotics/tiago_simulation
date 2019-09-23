@@ -60,6 +60,7 @@
       <arg name="map"            value="$(arg map)"/>
       <arg name="public_sim"     value="$(arg public_sim)"/>
       <arg name="rgbd_sensors"   value="$(arg advanced_navigation)"/>
+      <arg name="laser_model"    value="$(arg laser_model)"/>
     </include>
 
    <group if="$(arg advanced_navigation)">
