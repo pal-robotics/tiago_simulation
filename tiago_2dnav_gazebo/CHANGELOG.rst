@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'stockbot-carrot-migration' into 'erbium-devel'
+  use vo filling
+  See merge request robots/tiago_simulation!59
+* use vo filling
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.13 (2019-09-23)
 -------------------
 * Merge branch 'stockbot-carrot-migration' into 'erbium-devel'
