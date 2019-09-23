@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'stockbot-carrot-migration' into 'erbium-devel'
+  now uses laser filter to provide scan and scan_raw
+  See merge request robots/tiago_simulation!58
+* now uses laser filter to provide scan and scan_raw
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.12 (2019-08-07)
 -------------------
 * Merge branch 'tiago_dual_cfg' into 'erbium-devel'
