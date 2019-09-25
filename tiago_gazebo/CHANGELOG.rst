@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.15 (2019-09-25)
+-------------------
 * Merge branch 'remove-speed-limit' into 'erbium-devel'
   Remove speed limit
   See merge request robots/tiago_simulation!61
