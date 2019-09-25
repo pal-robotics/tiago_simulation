@@ -32,9 +32,7 @@
   <node pkg="tf_lookup" type="tf_lookup" name="tf_lookup" output="screen"/>
 
   <!-- Twist mux -->
-  <include file="$(find tiago_bringup)/launch/twist_mux.launch">
-    <arg name="cmd_vel_out" value="mobile_base_controller/cmd_vel" />
-  </include>
+  <include file="$(find tiago_bringup)/launch/twist_mux.launch"/>
 
   <!-- Dynamic footprint -->
   <group unless="$(arg public_sim)">
