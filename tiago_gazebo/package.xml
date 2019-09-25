@@ -19,6 +19,5 @@
 
   <run_depend>rospy</run_depend>
   <run_depend>play_motion_msgs</run_depend>
-  <run_depend>speed_limit</run_depend>
   <run_depend>sensor_to_cloud</run_depend>
 </package>
