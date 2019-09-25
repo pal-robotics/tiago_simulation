@@ -2,6 +2,15 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'remove-speed-limit' into 'erbium-devel'
+  Remove speed limit
+  See merge request robots/tiago_simulation!61
+* removed remap of twist mux topic
+* removed speed limit
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.14 (2019-09-23)
 -------------------
 
