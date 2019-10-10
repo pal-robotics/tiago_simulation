@@ -2,6 +2,15 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'remove-sonar-cloud' into 'erbium-devel'
+  Remove sonar cloud
+  See merge request robots/tiago_simulation!63
+* removed dep
+* removed sonar cloud
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.15 (2019-09-25)
 -------------------
 * Merge branch 'remove-speed-limit' into 'erbium-devel'
