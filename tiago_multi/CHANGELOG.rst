@@ -2,6 +2,15 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'refactor' into 'erbium-devel'
+  Refactor
+  See merge request robots/tiago_simulation!64
+* consolidated public launches
+* removed map relays
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.16 (2019-10-10)
 -------------------
 

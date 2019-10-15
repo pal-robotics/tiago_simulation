@@ -2,6 +2,14 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'refactor' into 'erbium-devel'
+  Refactor
+  See merge request robots/tiago_simulation!64
+* removed joystick from sim
+* Contributors: Procópio Stein, Victor Lopez
+
 2.0.16 (2019-10-10)
 -------------------
 * Merge branch 'remove-sonar-cloud' into 'erbium-devel'
