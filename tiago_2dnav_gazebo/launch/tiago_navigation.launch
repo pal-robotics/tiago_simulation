@@ -73,10 +73,6 @@
     </group>
   </group>
 
-  <group if="$(arg public_sim)">
-    <node name="relay_map" pkg="topic_tools" type="relay" args="/map /vo_map"/>
-  </group>
-
   <group unless="$(arg public_sim)">
     <include file="$(find pal_loc_measure)/launch/pal_loc_measure.launch">
       <arg name="training" value="False"/>
