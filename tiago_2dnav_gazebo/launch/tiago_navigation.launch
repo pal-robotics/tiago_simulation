@@ -83,6 +83,13 @@
     </include>
   </group>
 
+  <!-- pointcloud to laserscan-->
+  <group if="$(arg public_sim)">
+    <include file="$(find tiago_laser_sensors)/launch/rgbd_cloud_laser.launch">
+      <arg name="cloud" value="/xtion/depth_registered/points"/>
+    </include>
+  </group>
+
   <group if="$(arg advanced_navigation)">
     <!-- Advanced navigation -->
     <include file="$(find pal_head_manager)/launch/tiago_head_manager.launch"/>
