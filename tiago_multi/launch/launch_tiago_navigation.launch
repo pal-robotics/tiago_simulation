@@ -18,7 +18,7 @@
 
     <arg name="public_sim" default="true"/>
 
-    <arg name="local_planner"  default="$(eval 'teb' if arg('public_sim') else 'pal')"/> <!-- eband planner is not working -->
+    <arg name="local_planner"  default="$(eval 'teb' if arg('public_sim') else 'pal')"/> 
 
     <group ns="$(arg robot_name)">
         <arg name="gzpose" default="-x $(arg x_pose) -y $(arg y_pose) -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
@@ -63,10 +63,6 @@
             <arg name="tf_prefix"      value="$(arg robot_name)"/>
             <arg name="multiple"       value="true"/>
         </include>
-
-        <group if="$(arg public_sim)">
-            <node name="relay_map" pkg="topic_tools" type="relay" args="map vo_map"/>
-        </group>
 
         <node name="tuck_arm" pkg="tiago_gazebo" type="tuck_arm.py" output="screen"/>
     </group>

@@ -42,10 +42,6 @@
             <arg name="tf_prefix" value="$(arg robot_name)"/>
         </include>
 
-        <group if="$(arg public_sim)">
-            <node name="relay_map" pkg="topic_tools" type="relay" args="map vo_map"/>
-        </group>
-
         <node name="tuck_arm" pkg="tiago_gazebo" type="tuck_arm.py" output="screen"/>
     </group>
 </launch>
