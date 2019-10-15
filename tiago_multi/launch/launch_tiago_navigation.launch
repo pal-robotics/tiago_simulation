@@ -18,7 +18,7 @@
 
     <arg name="public_sim" default="true"/>
 
-    <arg name="local_planner"  default="$(eval 'teb' if arg('public_sim') else 'pal')"/> <!-- eband planner is not working -->
+    <arg name="local_planner"  default="$(eval 'teb' if arg('public_sim') else 'pal')"/> 
 
     <group ns="$(arg robot_name)">
         <arg name="gzpose" default="-x $(arg x_pose) -y $(arg y_pose) -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="namespace" default="/"/>
+  <arg name="public_sim"   default="false"/>
+
   <arg name="robot"  default="titanium"/>
   <arg name="arm"  default="$(eval {'iron': False}.get(arg('robot'), True))"/>
   <arg name="end_effector"  default="$(eval {'iron': 'false', 'steel': 'pal-gripper', 'titanium': 'pal-hey5'}.get(arg('robot'), 'pal-gripper'))"/>
@@ -9,12 +11,15 @@
   <arg name="camera_model"  default="orbbec-astra"/>
 
   <arg name="world"  default="small_office"/>
-  <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
   <arg name="tuck_arm"  default="true"/>
+
+  <arg name="lost" default="false"/>
+  <arg name="gzpose" default="-x 0.0  -y   0.0 -z  0.0   -R 0.0 -P 0.0 -Y  0.0" unless="$(arg lost)"/>
+  <arg name="gzpose" default="-x 0.78 -y -11.1 -z -0.003 -R 0.0 -P 0.0 -Y 70.0" if="$(arg lost)"/>
 
   <arg name="planner"        default="base"/>
   <arg name="global_planner" default="global_planner"/>
-  <arg name="local_planner"  default="pal"/>
+  <arg name="local_planner"  default="$(eval 'teb' if arg('public_sim') else 'pal')"/>
   <arg name="localization"   default="amcl"/>
   <arg name="map"            default="$(env HOME)/.pal/tiago_maps/configurations/$(arg world)"/>
 
@@ -23,7 +28,6 @@
   <arg name="recording" default="false"/>
   <arg name="extra_gazebo_args" default=""/>
 
-  <arg name="public_sim"   default="false"/>
   <arg name="advanced_navigation"   default="false"/> <!-- Requires extra software from PAL Robotics-->
 
   <arg name="sim_sufix" value="_public_sim"     if="$(arg public_sim)"/>
