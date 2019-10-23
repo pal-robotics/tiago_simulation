@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'multi-laser-fiter' into 'erbium-devel'
+  disable laser filter for multi due to tf_prefix problem
+  See merge request robots/tiago_simulation!65
+* disable laser filter for multi due to tf_prefix problem
+* Contributors: Jordan Palacios, Procópio Stein
+
 2.0.18 (2019-10-15)
 -------------------
 
