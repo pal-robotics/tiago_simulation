@@ -50,6 +50,11 @@
     </include>
   </group>
 
+  <!-- Robot Pose Publisher -->
+  <include file="$(find robot_pose)/launch/robot_pose.launch">
+    <arg name="robot_prefix"      value="$(arg tf_prefix)"/>
+  </include>
+
   <!-- Laser filter (empty for public sim) -->
   <node name="laser_filter" pkg="laser_filters" type="scan_to_scan_filter_chain">
     <rosparam file="$(find tiago_laser_sensors)/config/$(arg laser_model)_filter.yaml" 
