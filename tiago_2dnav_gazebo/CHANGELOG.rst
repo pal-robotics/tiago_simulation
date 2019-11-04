@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'robot_pose_pub' into 'erbium-devel'
+  Added robot_pose publisher
+  See merge request robots/tiago_simulation!66
+* Added robot_pose publisher
+* Contributors: Sai Kishor Kothakota, Victor Lopez
+
 2.0.19 (2019-10-23)
 -------------------
 * Merge branch 'multi-laser-fiter' into 'erbium-devel'
