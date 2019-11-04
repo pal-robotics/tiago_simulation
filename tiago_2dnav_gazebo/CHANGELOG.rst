@@ -2,8 +2,8 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.20 (2019-11-04)
+-------------------
 * Merge branch 'robot_pose_pub' into 'erbium-devel'
   Added robot_pose publisher
   See merge request robots/tiago_simulation!66
