@@ -2,6 +2,15 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix-multi-sim' into 'erbium-devel'
+  fixed multi sim rgbd scan
+  See merge request robots/tiago_simulation!67
+* cosmetic
+* fixed multi sim rgbd scan
+* Contributors: Procópio Stein, victor
+
 2.0.20 (2019-11-04)
 -------------------
 
