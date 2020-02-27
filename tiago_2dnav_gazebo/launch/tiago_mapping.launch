@@ -3,9 +3,10 @@
   <arg name="namespace" default="/"/>
   <arg name="public_sim"   default="false"/>
   
-  <arg name="arm"  default="True"/>
-  <arg name="end_effector"  default="pal-hey5"/>
-  <arg name="ft_sensor"  default="schunk-ft"/>
+  <arg name="robot"  default="titanium"/>
+  <arg name="arm"  default="$(eval {'iron': False}.get(arg('robot'), True))"/>
+  <arg name="end_effector"  default="$(eval {'iron': 'false', 'steel': 'pal-gripper', 'titanium': 'pal-hey5'}.get(arg('robot'), 'pal-gripper'))"/>
+  <arg name="ft_sensor"  default="$(eval {'titanium': 'schunk-ft'}.get(arg('robot'), 'false'))"/>
   <arg name="laser_model"  default="sick-571"/>
   <arg name="camera_model"  default="orbbec-astra"/>
 
