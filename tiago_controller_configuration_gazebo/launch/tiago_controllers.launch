@@ -7,9 +7,9 @@
     <arg name="laser_model"/>
     <arg name="camera_model"/>
     <arg name="use_moveit_camera" default="false"/>
-    <arg name="tf_prefix"         default=""/>
+    <arg name="robot_namespace"         default=""/>
     <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch">
-        <arg name="tf_prefix" value="$(arg tf_prefix)"/>
+        <arg name="robot_namespace" value="$(arg robot_namespace)"/>
         <arg name="arm" value="$(arg arm)"/>
     </include>
     <include file="$(find tiago_controller_configuration)/launch/imu_controller.launch"/>

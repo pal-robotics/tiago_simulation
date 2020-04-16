@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-  <arg name="tf_prefix" default=""/>
+  <arg name="robot_namespace" default=""/>
   <arg name="arm"   default="true"/>
 
   <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_trajectory_controllers.yaml" />
@@ -8,8 +8,8 @@
   <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_state_controller_extra_joints.yaml" ns="joint_torque_sensor_state_controller"/>
   <rosparam command="load" file="$(find joint_state_controller)/joint_state_controller.yaml" />
 
-  <param name="mobile_base_controller/base_frame_id" value="$(arg tf_prefix)/base_footprint"/>
-  <param name="mobile_base_controller/odom_frame_id" value="$(arg tf_prefix)/odom"/>
+  <param name="mobile_base_controller/base_frame_id" value="$(arg robot_namespace)/base_footprint"/>
+  <param name="mobile_base_controller/odom_frame_id" value="$(arg robot_namespace)/odom"/>
 
   <!-- Set up controllers depending of arm existance -->
   <arg name="controller_list" if="$(arg arm)"

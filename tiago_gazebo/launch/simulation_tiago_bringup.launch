@@ -6,7 +6,7 @@
   <arg name="laser_model"/>
   <arg name="camera_model"/>
   <arg name="public_sim"     default="false"/>
-  <arg name="tf_prefix" default=""/>
+  <arg name="robot_namespace" default=""/>
   <arg name="use_moveit_camera" default="false"/>
   <arg name="use_dynamic_footprint" default="false"/>
 
@@ -19,13 +19,13 @@
     <arg name="laser_model" value="$(arg laser_model)"/>
     <arg name="camera_model" value="$(arg camera_model)"/>
     <arg name="use_moveit_camera" value="$(arg use_moveit_camera)"/>
-    <arg name="tf_prefix" value="$(arg tf_prefix)"/>
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
   </include>
 
   <!-- Robot state publisher -->
   <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
     <param name="publish_frequency" type="double" value="50.0"/>
-    <param name="tf_prefix" type="string" value="$(arg tf_prefix)"/>
+    <param name="tf_prefix" type="string" value="$(arg robot_namespace)"/>
   </node>
 
   <!-- TF lookup -->
@@ -39,7 +39,8 @@
     <include file="$(find tiago_bringup)/launch/dynamic_footprint.launch">
       <arg name="arm" value="$(arg arm)"/>
       <arg name="end_effector" value="$(arg end_effector)"/>
-      <arg if="$(arg use_dynamic_footprint)" name="remap_footprint_to" value="/move_base/local_costmap/footprint"/>
+      <arg if="$(arg use_dynamic_footprint)" name="remap_footprint_to" value="move_base/local_costmap/footprint"/>
+      <arg name="robot_namespace" value="$(arg robot_namespace)"/>
     </include>
   </group>
 
