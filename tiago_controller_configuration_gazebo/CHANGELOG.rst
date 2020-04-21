@@ -2,6 +2,14 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'custom-ee' into 'erbium-devel'
+  Allow using custom end-effector
+  See merge request robots/tiago_simulation!69
+* Allow using custom end-effector
+* Contributors: davidfernandez, victor
+
 2.0.21 (2020-02-26)
 -------------------
 

@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'robot-arg-mapping' into 'erbium-devel'
+  enabled robot arg in mapping launch
+  See merge request robots/tiago_simulation!68
+* enabled robot arg in mapping launch
+* Contributors: Procópio Stein, victor
+
 2.0.21 (2020-02-26)
 -------------------
 

@@ -2,6 +2,9 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.21 (2020-02-26)
 -------------------
 * Merge branch 'fix-multi-sim' into 'erbium-devel'
