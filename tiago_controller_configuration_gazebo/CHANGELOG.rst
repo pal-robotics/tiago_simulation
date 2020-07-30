@@ -2,6 +2,14 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'rename_tf_prefix' into 'erbium-devel'
+  Rename tf_prefix to robot_namespace
+  See merge request robots/tiago_simulation!70
+* Rename tf_prefix to robot_namespace
+* Contributors: davidfernandez, victor
+
 2.0.22 (2020-04-21)
 -------------------
 * Merge branch 'custom-ee' into 'erbium-devel'
