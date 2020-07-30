@@ -12,7 +12,7 @@
   <arg name="public_sim"     default="false"/>
   <arg name="disable_vo"     default="false"/>
   <arg name="rgbd_sensors"   default="false"/>
-  <arg name="tf_prefix"      default=""/>
+  <arg name="robot_namespace"      default=""/>
   <arg name="multiple"       default="false"/>
   <arg name="config_base_path" default="$(find pal_navigation_cfg_tiago)"/>
   <arg name="laser_model"    default="sick-571"/>
@@ -21,14 +21,14 @@
 
   <!-- Localization or Mapping state -->
   <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
-        args="tiago $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg multiple) $(arg tf_prefix)" output="screen"/>
+        args="tiago $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg multiple) $(arg robot_namespace)" output="screen"/>
 
   <!-- Navigation State Machine -->
   <include file="$(find tiago_2dnav)/launch/state_machine.launch">
     <arg name="state" value="$(arg state)"/>
     <arg name="public_sim" value="$(arg public_sim)"/>
-    <arg if="$(arg multiple)" name="map_frame" value="/$(arg tf_prefix)/map"/>
-    <arg if="$(arg multiple)" name="base_frame" value="/$(arg tf_prefix)/base_footprint"/>
+    <arg if="$(arg multiple)" name="map_frame" value="/$(arg robot_namespace)/map"/>
+    <arg if="$(arg multiple)" name="base_frame" value="/$(arg robot_namespace)/base_footprint"/>
   </include>
 
   <!-- Planning -->
@@ -37,7 +37,7 @@
     <arg name="local_planner"  value="$(arg local_planner)"/>
     <arg name="public_sim"     value="$(arg public_sim)"/>
     <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
-    <arg name="tf_prefix"      value="$(arg tf_prefix)"/>
+    <arg name="robot_namespace"      value="$(arg robot_namespace)"/>
     <arg name="multiple"       value="$(arg multiple)"/>
     <arg name="config_base_path" value="$(arg config_base_path)"/>
   </include>
@@ -52,7 +52,7 @@
 
   <!-- Robot Pose Publisher -->
   <include file="$(find robot_pose)/launch/robot_pose.launch">
-    <arg name="robot_prefix"      value="$(arg tf_prefix)"/>
+    <arg name="robot_prefix"      value="$(arg robot_namespace)"/>
   </include>
 
   <!-- Laser filter (empty for public sim) -->

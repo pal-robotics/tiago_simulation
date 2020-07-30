@@ -48,7 +48,7 @@
             <arg name="laser_model" value="$(arg laser_model)"/>
             <arg name="camera_model" value="$(arg camera_model)"/>
             <arg name="public_sim"  value="$(arg public_sim)"/>
-            <arg name="tf_prefix" value="$(arg robot_name)"/>
+            <arg name="robot_namespace" value="$(arg robot_name)"/>
             <arg if="$(eval arg('local_planner') == 'teb')" name="use_dynamic_footprint" value="true"/>
         </include>
 
@@ -60,7 +60,7 @@
             <arg name="localization"   value="$(arg localization)"/>
             <arg name="map"            value="$(arg map)"/>
             <arg name="public_sim"     value="$(arg public_sim)"/>
-            <arg name="tf_prefix"      value="$(arg robot_name)"/>
+            <arg name="robot_namespace"      value="$(arg robot_name)"/>
             <arg name="multiple"       value="true"/>
         </include>
 
