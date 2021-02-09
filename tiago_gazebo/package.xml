@@ -1,22 +1,28 @@
 <?xml version="1.0"?>
-<package>
+<package format="3">
   <name>tiago_gazebo</name>
   <version>2.0.23</version>
   <description>The tiago_gazebo package</description>
   <maintainer email="jordi.pages@pal-robotics.com">Jordi Pages</maintainer>
   <license>BSD</license>
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
-  <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>gazebo_plugins</run_depend>
-  <run_depend>pal_gazebo_plugins</run_depend>
-  <run_depend>pal_gazebo_worlds</run_depend>
-  <run_depend>pal_hardware_gazebo</run_depend>
-  <run_depend>tiago_bringup</run_depend>
-  <run_depend>tiago_controller_configuration_gazebo</run_depend>
-  <run_depend>tiago_description</run_depend>
-  <run_depend>pal_gripper_controller_configuration_gazebo</run_depend>
-  <run_depend>pal_pcl_points_throttle_and_filter</run_depend>
 
-  <run_depend>rospy</run_depend>
-  <run_depend>play_motion_msgs</run_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>pal_gazebo_plugins</exec_depend>
+  <exec_depend>pal_gazebo_worlds</exec_depend>
+  <exec_depend>pal_hardware_gazebo</exec_depend>
+  <exec_depend>tiago_bringup</exec_depend>
+  <exec_depend>tiago_controller_configuration_gazebo</exec_depend>
+  <exec_depend>tiago_description</exec_depend>
+  <exec_depend>pal_gripper_controller_configuration_gazebo</exec_depend>
+  <exec_depend>pal_pcl_points_throttle_and_filter</exec_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>play_motion_msgs</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 </package>
