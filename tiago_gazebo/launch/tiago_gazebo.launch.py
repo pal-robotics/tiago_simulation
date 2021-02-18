@@ -82,7 +82,8 @@ def generate_launch_description():
                                    '-entity', 'tiago'],
                         output='screen')
 
-    packages = ['tiago_description', 'pmb2_description', 'hey5_description']
+    packages = ['tiago_description', 'pmb2_description',
+                'hey5_description', 'pal_gripper_description']
     model_path = get_model_paths(packages)
     resource_path = get_resource_paths(packages)
 
