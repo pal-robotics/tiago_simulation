@@ -73,6 +73,9 @@ def generate_launch_description():
     tiago_spawn = include_launch_py_description(
         'tiago_gazebo', ['launch', 'tiago_spawn.launch.py'])
 
+    tiago_bringup = include_launch_py_description(
+        'tiago_bringup', ['launch', 'tiago_bringup.launch.py'])
+
     packages = ['tiago_description', 'pmb2_description',
                 'hey5_description', 'pal_gripper_description']
     model_path = get_model_paths(packages)
@@ -89,5 +92,6 @@ def generate_launch_description():
         # Using this prevents shared library from being found
         # SetEnvironmentVariable("GAZEBO_RESOURCE_PATH", tiago_resource_path),
         gazebo,
-        tiago_spawn
+        tiago_spawn,
+        tiago_bringup
     ])
