@@ -30,12 +30,11 @@ from os import environ, pathsep
 from ament_index_python.packages import get_package_share_directory
 from ament_index_python.packages import get_package_prefix
 
-
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
-from launch_ros.actions import Node
+from launch_pal.include_utils import include_launch_py_description
 
 
 def get_model_paths(packages_names):
@@ -71,16 +70,8 @@ def generate_launch_description():
             'launch'), '/pal_gazebo.launch.py']),
     )
 
-    tiago_state_publisher = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('tiago_description'),
-            'launch'), '/robot_state_publisher.launch.py']),
-    )
-
-    tiago_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
-                        arguments=['-topic', 'robot_description',
-                                   '-entity', 'tiago'],
-                        output='screen')
+    tiago_spawn = include_launch_py_description(
+        'tiago_gazebo', ['launch', 'tiago_spawn.launch.py'])
 
     packages = ['tiago_description', 'pmb2_description',
                 'hey5_description', 'pal_gripper_description']
@@ -98,6 +89,5 @@ def generate_launch_description():
         # Using this prevents shared library from being found
         # SetEnvironmentVariable("GAZEBO_RESOURCE_PATH", tiago_resource_path),
         gazebo,
-        tiago_state_publisher,
-        tiago_entity,
+        tiago_spawn
     ])
