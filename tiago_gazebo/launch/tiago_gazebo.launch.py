@@ -76,6 +76,12 @@ def generate_launch_description():
     tiago_bringup = include_launch_py_description(
         'tiago_bringup', ['launch', 'tiago_bringup.launch.py'])
 
+    # @TODO: review pal_gazebo
+    # @TODO: review tiago_spawn
+    # @TODO: simulation_tiago_bringup?
+    # @TODO: pal_pcl_points_throttle_and_filter
+    # @TODO: tuck_arm
+
     packages = ['tiago_description', 'pmb2_description',
                 'hey5_description', 'pal_gripper_description']
     model_path = get_model_paths(packages)

@@ -29,6 +29,9 @@ def generate_launch_description():
     #        description='Spawn gazebo position as provided to spawn_entity.py'
     #    )
 
+    # @TODO: load PID gains? used in gazebo_ros_control fork
+    # @TODO: load tiago_pal_hardware_gazebo
+
     model_name = DeclareLaunchArgument(
         'model_name', default_value='tiago',
         description='Gazebo model name'
