@@ -19,5 +19,6 @@
   <run_depend>tiago_moveit_config</run_depend>
   <run_depend>tiago_controller_configuration</run_depend>
   <run_depend>pal_wsg_gripper_controller_configuration_gazebo</run_depend>
+  <run_depend>pal_robotiq_controller_configuration_gazebo</run_depend>
 
 </package>
