@@ -24,7 +24,7 @@
   <env name="LC_NUMERIC" value="C" />
 
   <!-- start up world -->
-  <include file="$(find pal_gazebo_worlds)/launch/pal_gazebo.launch">
+  <!--include file="$(find pal_gazebo_worlds)/launch/pal_gazebo.launch">
     <arg name="world" value="$(arg world)"/>
     <arg name="gui" value="$(arg gui)"/>
     <arg name="debug" value="$(arg debug)"/>
@@ -32,7 +32,7 @@
     <arg name="extra_gz_model_path" value="$(find tiago_gazebo)/models"/>
     <arg name="extra_gz_resource_path" value="$(find tiago_gazebo)"/>
     <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
-  </include>
+  </include-->
 
   <!-- spawn robot in simulation -->
   <include file="$(find tiago_gazebo)/launch/tiago_spawn.launch">
