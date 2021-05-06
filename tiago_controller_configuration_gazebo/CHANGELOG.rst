@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.1.0 (2021-05-06)
+------------------
 * Merge branch 'robotiq_gripper' into 'erbium-devel'
   Robotiq gripper
   See merge request robots/tiago_simulation!72
