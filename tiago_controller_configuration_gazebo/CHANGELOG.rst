@@ -2,6 +2,16 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'robotiq_gripper' into 'erbium-devel'
+  Robotiq gripper
+  See merge request robots/tiago_simulation!72
+* added missing pal_robotiq_controller_configuration_gazebo dependency
+* added robotiq gripper configuration
+* Update pal hardware gazebo files for the robotiq grippers
+* Contributors: Sai Kishor Kothakota, saikishor
+
 2.0.23 (2020-07-30)
 -------------------
 * Merge branch 'rename_tf_prefix' into 'erbium-devel'
