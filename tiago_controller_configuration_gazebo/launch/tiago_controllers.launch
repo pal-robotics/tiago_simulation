@@ -36,6 +36,20 @@
         <include file="$(find tiago_controller_configuration_gazebo)/launch/hey5_controller.launch"/>
     </group>
 
+    <group if="$(eval end_effector == 'robotiq-2f-85')">
+        <rosparam command="load" file="$(find tiago_controller_configuration)/config/robotiq-2f-85_joint_trajectory_controllers.yaml" />
+        <include file="$(find pal_robotiq_controller_configuration_gazebo)/launch/gripper_controller.launch">
+          <arg name="model" value="$(arg end_effector)" />
+        </include>
+    </group>
+
+    <group if="$(eval end_effector == 'robotiq-2f-140')">
+        <rosparam command="load" file="$(find tiago_controller_configuration)/config/robotiq-2f-140_joint_trajectory_controllers.yaml" />
+        <include file="$(find pal_robotiq_controller_configuration_gazebo)/launch/gripper_controller.launch">
+          <arg name="model" value="$(arg end_effector)" />
+        </include>
+    </group>
+
     <!-- Play motion -->
     <include file="$(find tiago_bringup)/launch/play_motion.launch">
       <arg name="arm"  value="$(arg arm)"/>
