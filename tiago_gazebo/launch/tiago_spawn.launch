@@ -33,6 +33,18 @@
 
   <!-- Spawn robot in Gazebo -->
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_model"
-    args="-urdf -param robot_description $(arg gzpose) -model $(arg model_name)" />
+    args="-urdf -param robot_description $(arg gzpose) -model $(arg model_name)
+    -J arm_1_joint 0.1999
+    -J arm_2_joint -1.3389
+    -J arm_3_joint -0.1999
+    -J arm_4_joint 1.9379
+    -J arm_5_joint -1.5701
+    -J arm_6_joint 1.3698
+    -J arm_7_joint -1.3898
+    -J gripper_left_finger_joint 0.0449
+    -J gripper_right_finger_joint 0.0450
+    -J head_1_joint 0.0
+    -J head_2_joint -0.4
+    -J torso_lift_joint 0.1498" />
 
 </launch>
