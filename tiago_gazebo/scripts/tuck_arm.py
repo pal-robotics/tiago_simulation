@@ -15,26 +15,57 @@
 # limitations under the License.
 
 import rclpy
-from rclpy.action import ActionClient
-from rclpy.node import Node
+import time
 
 from play_motion_msgs.action import PlayMotion
+from rclpy.action import ActionClient
+from rclpy.node import Node
+from std_srvs.srv import Trigger
 
 
 class PlayMotionActionClient(Node):
 
     def __init__(self):
-        super().__init__('play_motion_action_client')
-        self._action_client = ActionClient(self, PlayMotion, 'play_motion')
+        super().__init__('play_motion_play_motion_client')
+        self._play_motion_client = ActionClient(
+            self, PlayMotion, 'play_motion')
+        self._is_ready_client = self.create_client(
+            Trigger, '/play_motion/is_ready')
+
+    def wait_for_server(self):
+        self._play_motion_client.wait_for_server()
+
+        while not self._is_ready_client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().error('is_ready service not ready, waiting...')
+
+        request = Trigger.Request()
+
+        is_ready = False
+        while not is_ready:
+            time.sleep(1.0)
+            future = self._is_ready_client.call_async(request)
+            while rclpy.ok() and not is_ready:
+                rclpy.spin_once(self)
+                if future.done():
+                    try:
+                        response = future.result()
+                    except Exception as e:
+                        self.get_logger().info('Service call failed %r' % (e,))
+                    else:
+                        is_ready = response.success
+                        if is_ready:
+                            self.get_logger().info('play_motion is ready')
+                        else:
+                            self.get_logger().error('play_motion is not ready')
+                    break
 
     def send_goal(self, motion_name, skip_planning):
         goal_msg = PlayMotion.Goal()
         goal_msg.motion_name = motion_name
         goal_msg.skip_planning = skip_planning
 
-        self._action_client.wait_for_server()
-
-        self._send_goal_future = self._action_client.send_goal_async(goal_msg)
+        self._send_goal_future = \
+            self._play_motion_client.send_goal_async(goal_msg)
 
         self._send_goal_future.add_done_callback(self.goal_response_callback)
 
@@ -53,8 +84,17 @@ class PlayMotionActionClient(Node):
 
     def get_result_callback(self, future):
         result = future.result().result
-        self.get_logger().info('Result: error code ({}): {}'.format(
-            result.error_code, result.error_string))
+
+        error_code = result.error_code
+        error_string = result.error_string
+
+        if error_code == result.SUCCEEDED:
+            self.get_logger().info('Motion succeeded')
+        else:
+            self.get_logger().error(
+                'Motion failed with error ({}): {}'
+                .format(error_code, error_string))
+
         rclpy.shutdown()
 
 
@@ -62,6 +102,8 @@ def main(args=None):
     rclpy.init(args=args)
 
     action_client = PlayMotionActionClient()
+
+    action_client.wait_for_server()
 
     action_client.send_goal('home', True)
 
