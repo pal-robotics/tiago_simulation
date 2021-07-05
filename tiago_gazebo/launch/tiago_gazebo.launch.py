@@ -36,6 +36,8 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_pal.include_utils import include_launch_py_description
 
+from launch_ros.actions import Node
+
 
 def get_model_paths(packages_names):
     model_paths = ""
@@ -76,11 +78,14 @@ def generate_launch_description():
     tiago_bringup = include_launch_py_description(
         'tiago_bringup', ['launch', 'tiago_bringup.launch.py'])
 
+    tuck_arm = Node(package='tiago_gazebo',
+                    executable='tuck_arm.py',
+                    output='both')
+
     # @TODO: review pal_gazebo
     # @TODO: review tiago_spawn
     # @TODO: simulation_tiago_bringup?
     # @TODO: pal_pcl_points_throttle_and_filter
-    # @TODO: tuck_arm
 
     packages = ['tiago_description', 'pmb2_description',
                 'hey5_description', 'pal_gripper_description']
@@ -99,5 +104,6 @@ def generate_launch_description():
         # SetEnvironmentVariable("GAZEBO_RESOURCE_PATH", tiago_resource_path),
         gazebo,
         tiago_spawn,
-        tiago_bringup
+        tiago_bringup,
+        tuck_arm
     ])
