@@ -31,6 +31,10 @@ class PlayMotionActionClient(Node):
             self, PlayMotion, 'play_motion')
         self._is_ready_client = self.create_client(
             Trigger, '/play_motion/is_ready')
+        self._is_successful = None
+
+    def is_successful(self):
+        return self._is_successful
 
     def wait_for_server(self):
         self._play_motion_client.wait_for_server()
@@ -69,10 +73,17 @@ class PlayMotionActionClient(Node):
 
         self._send_goal_future.add_done_callback(self.goal_response_callback)
 
+        rclpy.spin_until_future_complete(self, self._send_goal_future)
+
+        while self._is_successful is None:
+            time.sleep(1.0)
+            rclpy.spin_once(self)
+
     def goal_response_callback(self, future):
         goal_handle = future.result()
 
         if not goal_handle.accepted:
+            self._is_successful = False
             self.get_logger().error('Goal rejected')
             return
 
@@ -89,13 +100,13 @@ class PlayMotionActionClient(Node):
         error_string = result.error_string
 
         if error_code == result.SUCCEEDED:
+            self._is_successful = True
             self.get_logger().info('Motion succeeded')
         else:
+            self._is_successful = False
             self.get_logger().error(
                 'Motion failed with error ({}): {}'
                 .format(error_code, error_string))
-
-        rclpy.shutdown()
 
 
 def main(args=None):
@@ -107,7 +118,10 @@ def main(args=None):
 
     action_client.send_goal('home', True)
 
-    rclpy.spin(action_client)
+    if action_client.is_successful():
+        action_client.get_logger().info("Arm tucked")
+
+    rclpy.shutdown()
 
 
 if __name__ == '__main__':
