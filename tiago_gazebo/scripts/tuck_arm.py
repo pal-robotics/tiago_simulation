@@ -26,7 +26,7 @@ from std_srvs.srv import Trigger
 class PlayMotionActionClient(Node):
 
     def __init__(self):
-        super().__init__('play_motion_play_motion_client')
+        super().__init__('arm_tucker')
         self._play_motion_client = ActionClient(
             self, PlayMotion, 'play_motion')
         self._is_ready_client = self.create_client(
@@ -46,7 +46,7 @@ class PlayMotionActionClient(Node):
 
         is_ready = False
         while not is_ready:
-            time.sleep(1.0)
+            time.sleep(3.0)
             future = self._is_ready_client.call_async(request)
             while rclpy.ok() and not is_ready:
                 rclpy.spin_once(self)
@@ -116,10 +116,20 @@ def main(args=None):
 
     action_client.wait_for_server()
 
-    action_client.send_goal('home', True)
+    for i in range(5):
+        action_client.get_logger().info("Tucking arm... Try {}".format(i))
+        action_client.send_goal('home', True)
 
-    if action_client.is_successful():
-        action_client.get_logger().info("Arm tucked")
+        if action_client.is_successful():
+            action_client.get_logger().info("Arm tucked")
+            break
+        else:
+            action_client.get_logger().error("Tuck failed")
+
+        time.sleep(5)
+
+    if not action_client.is_successful():
+        action_client.get_logger().error("Failed to tuck arm after 5 tries")
 
     rclpy.shutdown()
 
