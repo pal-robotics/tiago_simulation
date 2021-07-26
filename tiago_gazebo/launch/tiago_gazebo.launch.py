@@ -92,5 +92,5 @@ def generate_launch_description():
         gazebo,
         tiago_spawn,
         tiago_bringup,
-        tuck_arm
+        # tuck_arm
     ])
