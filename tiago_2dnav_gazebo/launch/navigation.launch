@@ -14,6 +14,7 @@
   <arg name="rgbd_sensors"   default="false"/>
   <arg name="robot_namespace"      default=""/>
   <arg name="multiple"       default="false"/>
+  <arg name="scan_topic"    default="scan_raw"/>
   <arg name="config_base_path" default="$(find pal_navigation_cfg_tiago)"/>
   <arg name="laser_model"    default="sick-571"/>
 
@@ -21,7 +22,7 @@
 
   <!-- Localization or Mapping state -->
   <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
-        args="tiago $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg multiple) $(arg robot_namespace)" output="screen"/>
+        args="tiago $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg scan_topic) $(arg laser_model) $(arg multiple) $(arg robot_namespace)" output="screen"/>
 
   <!-- Navigation State Machine -->
   <include file="$(find tiago_2dnav)/launch/state_machine.launch">
