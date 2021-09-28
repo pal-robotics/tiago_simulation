@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.1.1 (2021-09-28)
+------------------
 * Merge branch 'fix_world_object_on_table' into 'erbium-devel'
   Fix world object on table
   See merge request robots/tiago_simulation!73
