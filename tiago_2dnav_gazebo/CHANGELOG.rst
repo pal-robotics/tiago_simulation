@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix-navigation-simulation' into 'erbium-devel'
+  Fixed call to navigation.sh with correct order of parameters
+  See merge request robots/tiago_simulation!74
+* Fixed call to navigation.sh with correct order of parameters
+* Contributors: antoniobrandi, federiconardi
+
 2.1.0 (2021-05-06)
 ------------------
 
