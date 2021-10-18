@@ -2,10 +2,11 @@
 <launch>
   <arg name="robot_namespace" default=""/>
   <arg name="arm"   default="true"/>
+  <arg name="base_type_suffix" default=""/>
 
   <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_trajectory_controllers.yaml" />
-  <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_state_controller_extra_joints.yaml" ns="joint_state_controller"/>
-  <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_state_controller_extra_joints.yaml" ns="joint_torque_sensor_state_controller"/>
+  <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_state_controller_extra_joints$(arg base_type_suffix).yaml" ns="joint_state_controller"/>
+  <rosparam command="load" file="$(find tiago_controller_configuration)/config/joint_state_controller_extra_joints$(arg base_type_suffix).yaml" ns="joint_torque_sensor_state_controller"/>
   <rosparam command="load" file="$(find joint_state_controller)/joint_state_controller.yaml" />
 
   <param name="mobile_base_controller/base_frame_id" value="$(arg robot_namespace)/base_footprint"/>

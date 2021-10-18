@@ -34,6 +34,7 @@
   <arg name="sim_sufix" value=""                unless="$(arg public_sim)"/>
 
   <env name="PAL_HOST" value="tiago" />
+  <arg name="base_type" default="pmb2"/>
 
   <node name="update_maps_link" pkg="pal_navigation_sm" type="base_maps_symlink.sh" args="tiago_maps"/>
 
@@ -53,6 +54,7 @@
       <arg name="recording"  value="$(arg recording)"/>
       <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
       <arg if="$(eval local_planner == 'teb')" name="use_dynamic_footprint" value="true"/>
+      <arg name="base_type" value="$(arg base_type)"/>
     </include>
 
     <include file="$(find tiago_2dnav_gazebo)/launch/navigation.launch">
@@ -65,6 +67,7 @@
       <arg name="public_sim"     value="$(arg public_sim)"/>
       <arg name="rgbd_sensors"   value="$(arg advanced_navigation)"/>
       <arg name="laser_model"    value="$(arg laser_model)"/>
+      <arg name="base_type"      value="$(arg base_type)"/>
     </include>
 
    <group if="$(arg advanced_navigation)">

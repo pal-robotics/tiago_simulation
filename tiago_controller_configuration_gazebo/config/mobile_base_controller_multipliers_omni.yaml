@@ -1,0 +1,5 @@
+mobile_base_controller:
+  # Wheel separation and radius multipliers
+  wheel_separation_multiplier: 1.0
+  wheel_radius_multiplier    : 1.0 
+  axis_separation_multiplier : 1.0

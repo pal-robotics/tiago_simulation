@@ -16,7 +16,7 @@
 
   <arg name="planner"        default="base"/>
   <arg name="global_planner" default="global_planner"/>
-  <arg name="local_planner"  default="$(eval 'teb' if arg('public_sim') else 'pal')"/>
+  <arg name="local_planner"  default="teb"/>
   <arg name="mapping"        default="$(eval 'gmapping' if arg('public_sim') else 'karto')"/>
 
   <arg name="rviz"     default="true"/>
@@ -30,6 +30,7 @@
   <arg name="sim_sufix" value=""                unless="$(arg public_sim)"/>
 
   <env name="PAL_HOST" value="tiago" />
+  <arg name="base_type" default="pmb2"/>
 
   <group ns="$(arg namespace)">
 
@@ -46,6 +47,7 @@
       <arg name="public_sim" value="$(arg public_sim)"/>
       <arg name="recording"  value="$(arg recording)"/>
       <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
+      <arg name="base_type" value="$(arg base_type)"/>
     </include>
 
     <include file="$(find tiago_2dnav_gazebo)/launch/navigation.launch">

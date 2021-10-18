@@ -5,7 +5,7 @@
 
   <arg name="planner"        default="base"/>
   <arg name="global_planner" default="global_planner"/>
-  <arg name="local_planner"  default="pal"/>
+  <arg name="local_planner"  default="teb"/>
   <arg name="localization"   default="amcl"/>
   <arg name="mapping"        default="karto"/>
   <arg name="octomap"        default="false"/>
@@ -15,46 +15,63 @@
   <arg name="robot_namespace"      default=""/>
   <arg name="multiple"       default="false"/>
   <arg name="scan_topic"    default="scan_raw"/>
-  <arg name="config_base_path" default="$(find pal_navigation_cfg_tiago)"/>
+  <arg name="config_base_path" default="$(find pal_navigation_cfg_omni_base)"/>
   <arg name="laser_model"    default="sick-571"/>
+  <arg name="base_type" default="pmb2"/>
 
   <arg name="map" default="$(env HOME)/.pal/tiago_maps/config"/>
 
   <!-- Localization or Mapping state -->
-  <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
-        args="tiago $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg scan_topic) $(arg laser_model) $(arg multiple) $(arg robot_namespace)" output="screen"/>
+  <!-- <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
+        args="omni_base $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg scan_topic) $(arg laser_model) $(arg multiple) $(arg robot_namespace)" output="screen"/> -->
 
   <!-- Navigation State Machine -->
-  <include file="$(find tiago_2dnav)/launch/state_machine.launch">
+  <!-- <include file="$(find omni_base_2dnav)/launch/state_machine.launch">
     <arg name="state" value="$(arg state)"/>
     <arg name="public_sim" value="$(arg public_sim)"/>
     <arg if="$(arg multiple)" name="map_frame" value="/$(arg robot_namespace)/map"/>
     <arg if="$(arg multiple)" name="base_frame" value="/$(arg robot_namespace)/base_footprint"/>
-  </include>
+  </include> -->
 
   <!-- Planning -->
-  <include file="$(find tiago_2dnav)/launch/move_$(arg planner).launch">
+  <!-- <include file="$(find omni_base_2dnav)/launch/move_$(arg planner).launch">
     <arg name="global_planner" value="$(arg global_planner)"/>
     <arg name="local_planner"  value="$(arg local_planner)"/>
     <arg name="public_sim"     value="$(arg public_sim)"/>
     <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
-    <arg name="robot_namespace"      value="$(arg robot_namespace)"/>
-    <arg name="multiple"       value="$(arg multiple)"/>
     <arg name="config_base_path" value="$(arg config_base_path)"/>
-  </include>
+  </include> -->
 
   <!-- VO map server -->
-  <group unless="$(arg public_sim)">
+  <!-- <group unless="$(arg public_sim)">
     <include file="$(find pal_vo_server)/launch/vo_server.launch">
       <arg name="fill_with_unknown" value="true"/>
       <arg name="vo_resolution" value="0.3"/>
     </include>
-  </group>
+  </group> -->
 
   <!-- Robot Pose Publisher -->
-  <include file="$(find robot_pose)/launch/robot_pose.launch">
+  <!-- <include file="$(find robot_pose)/launch/robot_pose.launch">
     <arg name="robot_prefix"      value="$(arg robot_namespace)"/>
-  </include>
+  </include> -->
+
+  <group if="$(eval arg('base_type') == 'omni_base')">
+    <!-- Laser Scan Merger -->
+    <node pkg="ira_laser_tools" name="laserscan_multi_merger" type="laserscan_multi_merger" output="screen"
+      launch-prefix="bash -c 'sleep 5; $0 $@' ">
+      <param name="destination_frame" value="virtual_base_laser_link"/>
+      <param name="cloud_destination_topic" value="/merged_cloud"/>
+      <param name="scan_destination_topic" value="/scan_raw"/>
+      <param name="laserscan_topics" value ="/scan_front_raw /scan_rear_raw" /> 
+      <param name="time_increment" value ="0.0" /> 
+      <param name="scan_time" value ="0.0" /> 
+      <param name="range_min" value ="0.05" /> 
+      <param name="range_max" value ="25.0" /> 
+      <param name="angle_min" value ="-3.1459" /> 
+      <param name="angle_max" value ="3.1459" /> 
+      <param name="angle_increment" value ="0.005769" /> 
+    </node>
+  </group>
 
   <!-- Laser filter (empty for public sim) -->
   <node name="laser_filter" pkg="laser_filters" type="scan_to_scan_filter_chain">

@@ -1,0 +1,59 @@
+mobile_base_controller:
+  type        : "omni_drive_controller/OmniDriveController"
+  left_front_wheel  :   'wheel_front_left_joint'
+  left_back_wheel   :   'wheel_rear_left_joint'
+  right_front_wheel :   'wheel_front_right_joint'
+  right_back_wheel :    'wheel_rear_right_joint'
+  publish_rate: 0.0
+  pose_covariance_diagonal : [0.001, 0.001, 1.0e-3, 1.0e-3, 1.0e-3, 0.01]
+  twist_covariance_diagonal: [0.001, 0.001, 1.0e-3, 1.0e-3, 1.0e-3, 0.01]
+
+  enable_pose_covariance_update: true
+  error_constant_left : 0.001
+  error_constant_right: 0.001
+
+  # Velocity commands timeout [s]
+  cmd_vel_timeout: 0.25
+
+  # Base frame_id
+  base_frame_id: base_footprint
+
+  # Base frame_id
+  odom_frame_id: odom
+
+  # Preserve turning radius when limiting speed/acceleration/jerk
+  preserve_turning_radius: true
+
+  # Publish limited velocity
+  publish_cmd: false
+
+  # Publish wheel data
+  publish_wheel_data: true
+
+  # Velocity and acceleration limits
+  # Whenever a min_* is unspecified, default to -max_*
+  linear:
+    x:
+      has_velocity_limits    : true
+      max_velocity           :  1.0 # m/s
+      min_velocity           : -1.0 # m/s
+      has_acceleration_limits: true
+      max_acceleration       :  1.0 # m/s^2
+      has_jerk_limits        : false
+      max_jerk               :  5.0 # m/s^3
+    y:
+      has_velocity_limits    : true
+      max_velocity           :  1.0 # m/s
+      min_velocity           : -1.0 # m/s
+      has_acceleration_limits: true
+      max_acceleration       :  1.0 # m/s^2
+      has_jerk_limits        : false
+      max_jerk               :  5.0 # m/s^3
+  angular:
+    z:
+      has_velocity_limits    : true
+      max_velocity           : !degrees 120.0 # reduce pendulum effect
+      has_acceleration_limits: true
+      max_acceleration       : !degrees 120.0
+      has_jerk_limits        : false
+      max_jerk               : !degrees 600.0
