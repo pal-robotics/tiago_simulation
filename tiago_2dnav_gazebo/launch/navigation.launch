@@ -5,7 +5,7 @@
 
   <arg name="planner"        default="base"/>
   <arg name="global_planner" default="global_planner"/>
-  <arg name="local_planner"  default="teb"/>
+  <arg name="local_planner"  default="pal"/>
   <arg name="localization"   default="amcl"/>
   <arg name="mapping"        default="karto"/>
   <arg name="octomap"        default="false"/>
@@ -15,45 +15,49 @@
   <arg name="robot_namespace"      default=""/>
   <arg name="multiple"       default="false"/>
   <arg name="scan_topic"    default="scan_raw"/>
-  <arg name="config_base_path" default="$(find pal_navigation_cfg_omni_base)"/>
+  <arg name="config_base_path" default="$(find pal_navigation_cfg_tiago)"/>
   <arg name="laser_model"    default="sick-571"/>
-  <arg name="base_type" default="pmb2"/>
+  <arg name="base_type"     default="pmb2"/>
 
   <arg name="map" default="$(env HOME)/.pal/tiago_maps/config"/>
 
   <!-- Localization or Mapping state -->
-  <!-- <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
-        args="omni_base $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg scan_topic) $(arg laser_model) $(arg multiple) $(arg robot_namespace)" output="screen"/> -->
+  <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
+        args="tiago $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg scan_topic) $(arg laser_model) $(arg base_type) $(arg multiple) $(arg robot_namespace)" output="screen"/>
 
   <!-- Navigation State Machine -->
-  <!-- <include file="$(find omni_base_2dnav)/launch/state_machine.launch">
+  <include file="$(find tiago_2dnav)/launch/state_machine.launch">
     <arg name="state" value="$(arg state)"/>
     <arg name="public_sim" value="$(arg public_sim)"/>
     <arg if="$(arg multiple)" name="map_frame" value="/$(arg robot_namespace)/map"/>
     <arg if="$(arg multiple)" name="base_frame" value="/$(arg robot_namespace)/base_footprint"/>
-  </include> -->
+    <arg name="base_type"       value="$(arg base_type)"/>
+  </include>
 
   <!-- Planning -->
-  <!-- <include file="$(find omni_base_2dnav)/launch/move_$(arg planner).launch">
+  <include file="$(find tiago_2dnav)/launch/move_$(arg planner).launch">
     <arg name="global_planner" value="$(arg global_planner)"/>
     <arg name="local_planner"  value="$(arg local_planner)"/>
     <arg name="public_sim"     value="$(arg public_sim)"/>
     <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
+    <arg name="robot_namespace"      value="$(arg robot_namespace)"/>
+    <arg name="multiple"       value="$(arg multiple)"/>
     <arg name="config_base_path" value="$(arg config_base_path)"/>
-  </include> -->
+    <arg name="base_type"       value="$(arg base_type)"/>
+  </include>
 
   <!-- VO map server -->
-  <!-- <group unless="$(arg public_sim)">
+  <group unless="$(arg public_sim)">
     <include file="$(find pal_vo_server)/launch/vo_server.launch">
       <arg name="fill_with_unknown" value="true"/>
       <arg name="vo_resolution" value="0.3"/>
     </include>
-  </group> -->
+  </group>
 
   <!-- Robot Pose Publisher -->
-  <!-- <include file="$(find robot_pose)/launch/robot_pose.launch">
+  <include file="$(find robot_pose)/launch/robot_pose.launch">
     <arg name="robot_prefix"      value="$(arg robot_namespace)"/>
-  </include> -->
+  </include>
 
   <group if="$(eval arg('base_type') == 'omni_base')">
     <!-- Laser Scan Merger -->

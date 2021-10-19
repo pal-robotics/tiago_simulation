@@ -9,6 +9,7 @@
   <arg name="ft_sensor"  default="$(eval {'titanium': 'schunk-ft'}.get(arg('robot'), 'false'))"/>
   <arg name="laser_model"  default="sick-571"/>
   <arg name="camera_model"  default="orbbec-astra"/>
+  <arg name="base_type" default="pmb2"/>
 
   <arg name="world"  default="small_office"/>
   <arg name="tuck_arm"  default="true"/>
@@ -19,7 +20,7 @@
 
   <arg name="planner"        default="base"/>
   <arg name="global_planner" default="global_planner"/>
-  <arg name="local_planner"  default="$(eval 'teb' if arg('public_sim') else 'pal')"/>
+  <arg name="local_planner"  default="$(eval 'teb' if (arg('public_sim') or arg('base_type')=='omni_base') else 'pal')"/>
   <arg name="localization"   default="amcl"/>
   <arg name="map"            default="$(env HOME)/.pal/tiago_maps/configurations/$(arg world)"/>
 
@@ -34,7 +35,6 @@
   <arg name="sim_sufix" value=""                unless="$(arg public_sim)"/>
 
   <env name="PAL_HOST" value="tiago" />
-  <arg name="base_type" default="pmb2"/>
 
   <node name="update_maps_link" pkg="pal_navigation_sm" type="base_maps_symlink.sh" args="tiago_maps"/>
 
@@ -54,7 +54,7 @@
       <arg name="recording"  value="$(arg recording)"/>
       <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
       <arg if="$(eval local_planner == 'teb')" name="use_dynamic_footprint" value="true"/>
-      <arg name="base_type" value="$(arg base_type)"/>
+      <arg name="base_type"  value="$(arg base_type)"/>
     </include>
 
     <include file="$(find tiago_2dnav_gazebo)/launch/navigation.launch">
