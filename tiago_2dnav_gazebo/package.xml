@@ -1,15 +1,25 @@
 <?xml version="1.0"?>
-<package>
+<package format="3">
   <name>tiago_2dnav_gazebo</name>
-  <version>2.0.23</version>
-  <description>TiaGo-specific launch files needed to run
-    navigation on the TiaGo robot.</description>
-  <maintainer email="jordi.pages@pal-robotics.com">Jordi Pages</maintainer>
+  <version>3.0.2</version>
+  <description>tiago-specific launch files needed to run
+    navigation on the tiago robot.</description>
+  <maintainer email="victor.lopez@pal-robotics.com">Victor Lopez</maintainer>
+  <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
+  <maintainer email="tiago_support@pal-robotics.com">TIAGo support PAL Robotics</maintainer>
   <license>Modified BSD</license>
-  <author email="enrique.fernandez@pal-robotics.com">Enrique Fernandez</author>
+  <author email="victor.lopez@pal-robotics.com">Victor Lopez</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
-  <run_depend>tiago_gazebo</run_depend>
-  <run_depend>tiago_2dnav</run_depend>
+  <exec_depend>tiago_gazebo</exec_depend>
+  <exec_depend>tiago_2dnav</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
 </package>
