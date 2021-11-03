@@ -9,9 +9,12 @@
   <arg name="robot_namespace" default=""/>
   <arg name="use_moveit_camera" default="false"/>
   <arg name="use_dynamic_footprint" default="false"/>
+  <arg name="base_type" default="pmb2"/>
+  <arg name="base_type_suffix" value="" unless="$(eval arg('base_type') == 'omni_base')"/>
+  <arg name="base_type_suffix" value="_omni" if="$(eval arg('base_type') == 'omni_base')"/>
 
   <!-- Joint trajectory and diff drive controllers -->
-  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/mobile_base_controller.yaml"/>
+  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/mobile_base_controller$(arg base_type_suffix).yaml"/>
   <include file="$(find tiago_controller_configuration_gazebo)/launch/tiago_controllers.launch">
     <arg name="arm" value="$(arg arm)"/>
     <arg name="end_effector" value="$(arg end_effector)"/>
@@ -20,6 +23,7 @@
     <arg name="camera_model" value="$(arg camera_model)"/>
     <arg name="use_moveit_camera" value="$(arg use_moveit_camera)"/>
     <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="base_type_suffix"  value="$(arg base_type_suffix)"/>
   </include>
 
   <!-- Robot state publisher -->
@@ -41,6 +45,7 @@
       <arg name="end_effector" value="$(arg end_effector)"/>
       <arg if="$(arg use_dynamic_footprint)" name="remap_footprint_to" value="move_base/local_costmap/footprint"/>
       <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+      <arg name="base_type_suffix"  value="$(arg base_type_suffix)"/>
     </include>
   </group>
 

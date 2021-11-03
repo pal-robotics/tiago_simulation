@@ -8,9 +8,11 @@
     <arg name="camera_model"/>
     <arg name="use_moveit_camera" default="false"/>
     <arg name="robot_namespace"         default=""/>
+    <arg name="base_type_suffix" default=""/>
     <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch">
         <arg name="robot_namespace" value="$(arg robot_namespace)"/>
         <arg name="arm" value="$(arg arm)"/>
+        <arg name="base_type_suffix"  value="$(arg base_type_suffix)"/>
     </include>
     <include file="$(find tiago_controller_configuration)/launch/imu_controller.launch"/>
     <group if="$(eval ft_sensor == 'schunk-ft')">

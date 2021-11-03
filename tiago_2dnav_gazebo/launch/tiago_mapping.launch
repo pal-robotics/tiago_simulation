@@ -9,6 +9,7 @@
   <arg name="ft_sensor"  default="$(eval {'titanium': 'schunk-ft'}.get(arg('robot'), 'false'))"/>
   <arg name="laser_model"  default="sick-571"/>
   <arg name="camera_model"  default="orbbec-astra"/>
+  <arg name="base_type" default="pmb2"/>
 
   <arg name="world"  default="small_office"/>
   <arg name="gzpose" default="-x 0.0 -y 0.0 -z 0.0 -R 0.0 -P 0.0 -Y 0.0"/>
@@ -16,7 +17,7 @@
 
   <arg name="planner"        default="base"/>
   <arg name="global_planner" default="global_planner"/>
-  <arg name="local_planner"  default="$(eval 'teb' if arg('public_sim') else 'pal')"/>
+  <arg name="local_planner"  default="$(eval 'teb' if (arg('public_sim') or arg('base_type')=='omni_base') else 'pal')"/>
   <arg name="mapping"        default="$(eval 'gmapping' if arg('public_sim') else 'karto')"/>
 
   <arg name="rviz"     default="true"/>
@@ -46,6 +47,7 @@
       <arg name="public_sim" value="$(arg public_sim)"/>
       <arg name="recording"  value="$(arg recording)"/>
       <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
+      <arg name="base_type"  value="$(arg base_type)"/>
     </include>
 
     <include file="$(find tiago_2dnav_gazebo)/launch/navigation.launch">
@@ -57,6 +59,7 @@
       <arg name="public_sim"     value="$(arg public_sim)"/>
       <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
       <arg name="laser_model"    value="$(arg laser_model)"/>
+      <arg name="base_type"      value="$(arg base_type)"/>
     </include>
 
     <node name="rviz" pkg="rviz" type="rviz" if="$(arg rviz)"
