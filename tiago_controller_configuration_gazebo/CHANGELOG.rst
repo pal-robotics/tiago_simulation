@@ -2,6 +2,15 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'omni_base_robot' into 'erbium-devel'
+  Omni base robot
+  See merge request robots/tiago_simulation!75
+* tiago navigation with omni base
+* omni base robot
+* Contributors: antoniobrandi, saikishor
+
 2.1.1 (2021-09-28)
 ------------------
 
