@@ -2,6 +2,14 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'update_robot_state_publisher_type' into 'erbium-devel'
+  Update robot_state_publisher type
+  See merge request robots/tiago_simulation!77
+* Update robot_state_publisher type
+* Contributors: Jordan Palacios, cescfolch
+
 2.2.0 (2021-11-03)
 ------------------
 * Merge branch 'omni_base_robot' into 'erbium-devel'
