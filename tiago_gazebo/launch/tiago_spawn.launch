@@ -12,7 +12,16 @@
   <arg name="base_type_suffix" value="" unless="$(eval arg('base_type') == 'omni_base')"/>
   <arg name="base_type_suffix" value="_omni" if="$(eval arg('base_type') == 'omni_base')"/>
   <arg name="file_suffix" value="$(eval ('no-arm' if not arm else end_effector+ ('' if not ft_sensor else '_'+ft_sensor)))"/>
-  <rosparam ns="pal_robot_info" param="type">"tiago"</rosparam>
+  
+  <rosparam ns="pal_robot_info" subst_value="true">
+    type: "tiago_dual"
+    end_effector: $(arg end_effector)
+    ft_sensor: $(arg ft_sensor)
+    laser_model: $(arg laser_model)
+    camera_model: $(arg camera_model)
+    base_type: $(arg base_type)
+    arm: $(arg arm)
+  </rosparam>
 
   <!-- PID gains -->
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/pids$(arg base_type_suffix).yaml"/>
