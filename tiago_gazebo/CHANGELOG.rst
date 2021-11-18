@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.2.2 (2021-11-18)
+------------------
 * Merge branch 'pal_robot_info' into 'erbium-devel'
   Setup the info of all the robot configuration in pal_robot_info
   See merge request robots/tiago_simulation!78
