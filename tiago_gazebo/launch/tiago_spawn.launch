@@ -9,8 +9,6 @@
   <arg name="multi" default=""/>
   <arg name="model_name" default="tiago"/>
   <arg name="base_type" default="pmb2"/>
-  <arg name="base_type_suffix" value="" unless="$(eval arg('base_type') == 'omni_base')"/>
-  <arg name="base_type_suffix" value="_omni" if="$(eval arg('base_type') == 'omni_base')"/>
   <arg name="file_suffix" value="$(eval ('no-arm' if not arm else end_effector+ ('' if not ft_sensor else '_'+ft_sensor)))"/>
   
   <rosparam ns="pal_robot_info" subst_value="true">
@@ -24,7 +22,7 @@
   </rosparam>
 
   <!-- PID gains -->
-  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/pids$(arg base_type_suffix).yaml"/>
+  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/pids.yaml"/>
 
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/hardware_gazebo/tiago_pal_hardware_gazebo_$(arg file_suffix).yaml"/>
 

@@ -57,3 +57,10 @@ mobile_base_controller:
       max_acceleration       : !degrees 120.0
       has_jerk_limits        : false
       max_jerk               : !degrees 600.0
+  space:
+    xy:
+      max_velocity             : 0.7
+    xz:
+      max_velocity             : 0.5
+    xyz:
+      max_velocity             : 0.4
