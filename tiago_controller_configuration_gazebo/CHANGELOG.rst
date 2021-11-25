@@ -2,6 +2,15 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix-omni-base' into 'erbium-devel'
+  Removed duplicated pid file
+  See merge request robots/tiago_simulation!79
+* adapting to the new omni drive controlle rfilters
+* removing the needs for two pids files
+* Contributors: antoniobrandi, saikishor
+
 2.2.2 (2021-11-18)
 ------------------
 
