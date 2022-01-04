@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fix the robot type parameter
+* Contributors: Sai Kishor Kothakota
+
 2.2.3 (2021-11-25)
 ------------------
 * Merge branch 'fix-omni-base' into 'erbium-devel'

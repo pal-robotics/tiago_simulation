@@ -2,6 +2,9 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.2.3 (2021-11-25)
 ------------------
 * Merge branch 'fix-omni-base' into 'erbium-devel'
