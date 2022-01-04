@@ -12,7 +12,7 @@
   <arg name="file_suffix" value="$(eval ('no-arm' if not arm else end_effector+ ('' if not ft_sensor else '_'+ft_sensor)))"/>
   
   <rosparam ns="pal_robot_info" subst_value="true">
-    type: "tiago_dual"
+    type: "tiago"
     end_effector: $(arg end_effector)
     ft_sensor: $(arg ft_sensor)
     laser_model: $(arg laser_model)
