@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.2.4 (2022-01-04)
+------------------
 * fix the robot type parameter
 * Contributors: Sai Kishor Kothakota
 
