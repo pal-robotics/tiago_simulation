@@ -48,10 +48,7 @@
 
   <!-- VO map server -->
   <group unless="$(arg public_sim)">
-    <include file="$(find pal_vo_server)/launch/vo_server.launch">
-      <arg name="fill_with_unknown" value="true"/>
-      <arg name="vo_resolution" value="0.3"/>
-    </include>
+    <include file="$(find pal_vo_server)/launch/vo_server.launch"/>
   </group>
 
   <!-- Robot Pose Publisher -->
