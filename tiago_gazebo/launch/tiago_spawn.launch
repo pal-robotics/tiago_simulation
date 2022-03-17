@@ -9,8 +9,13 @@
   <arg name="multi" default=""/>
   <arg name="model_name" default="tiago"/>
   <arg name="base_type" default="pmb2"/>
-  <arg name="file_suffix" value="$(eval ('no-arm' if not arm else end_effector+ ('' if not ft_sensor else '_'+ft_sensor)))"/>
-  
+
+  <arg name="file_suffix" 
+       value="$(eval (('no-arm' if not arm else
+        (end_effector if end_effector else 'no-ee') + 
+        ('_' +  ft_sensor if ft_sensor else ''))))"
+        />  
+                          
   <rosparam ns="pal_robot_info" subst_value="true">
     type: "tiago"
     end_effector: $(arg end_effector)
