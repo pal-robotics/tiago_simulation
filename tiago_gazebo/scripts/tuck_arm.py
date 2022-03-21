@@ -22,4 +22,5 @@ if __name__ == "__main__":
 
   client.send_goal(goal)
   client.wait_for_result(rospy.Duration(10.0))
+
   rospy.loginfo("Arm tucked.")
