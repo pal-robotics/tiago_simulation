@@ -2,6 +2,14 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add_robotiq_epick_gripper' into 'erbium-devel'
+  Add config files for epick gripper on Gazebo
+  See merge request robots/tiago_simulation!81
+* Add config files for epick gripper on Gazebo
+* Contributors: saikishor, thomaspeyrucain
+
 2.2.5 (2022-02-23)
 ------------------
 

@@ -2,6 +2,9 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.2.5 (2022-02-23)
 ------------------
 * Merge branch 'layered_costmap' into 'erbium-devel'
