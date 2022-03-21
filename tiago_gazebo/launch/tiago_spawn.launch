@@ -29,7 +29,9 @@
   </rosparam>
 
   <!-- PID gains -->
-  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/pids.yaml"/>
+
+  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/pids.yaml" unless="$(eval ee_suffix == 'no-ee')"/>
+  <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/pids_no_ee.yaml" if="$(eval ee_suffix == 'no-ee')"/>
 
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/hardware_gazebo/tiago_pal_hardware_gazebo_$(arg file_suffix).yaml"/>
 
