@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>tiago_multi</name>
-  <version>2.2.5</version>
+  <version>2.2.6</version>
   <description>The tiago_multi package</description>
 
   <maintainer email="david.fernandez@pal-robotics.com">davidfernandez</maintainer>
