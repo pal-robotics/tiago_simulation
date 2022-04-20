@@ -31,7 +31,7 @@
   <!-- PID gains -->
 
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/pids.yaml"/>
-  <!-- Override PID gain for arm_7_joint in case of no end-effector -->
+  <!-- Override Gazebo Joint PID gain for arm_7_joint in case of no end-effector -->
   <param name="gains/arm_7_joint/p" value="10" if="$(eval ee_suffix == 'no-ee')"/>
 
 
