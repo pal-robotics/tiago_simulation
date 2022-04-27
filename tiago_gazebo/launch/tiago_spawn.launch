@@ -10,11 +10,7 @@
   <arg name="model_name" default="tiago"/>
   <arg name="base_type" default="pmb2"/>
 
-  <arg name="file_suffix" 
-       value="$(eval (('no-arm' if not arm else
-        (end_effector if end_effector else 'no-ee') + 
-        ('_' +  ft_sensor if ft_sensor else ''))))"
-        />  
+  <arg name="file_suffix" value="$(eval (('no-arm' if not arm else (end_effector if end_effector else 'no-ee') + ('_' +  ft_sensor if ft_sensor else ''))))"/>  
    
   <arg name="ee_suffix" value="$(eval (end_effector if end_effector else 'no-ee'))"/>
                 
