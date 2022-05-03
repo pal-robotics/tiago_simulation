@@ -9,11 +9,14 @@
   <arg name="multi" default=""/>
   <arg name="model_name" default="tiago"/>
   <arg name="base_type" default="pmb2"/>
-  <arg name="file_suffix" value="$(eval ('no-arm' if not arm else end_effector+ ('' if not ft_sensor else '_'+ft_sensor)))"/>
-  
+
+  <arg name="file_suffix" value="$(eval (('no-arm' if not arm else (end_effector if end_effector else 'no-ee') + ('_' +  ft_sensor if ft_sensor else ''))))"/>  
+   
+  <arg name="ee_suffix" value="$(eval (end_effector if end_effector else 'no-ee'))"/>
+                
   <rosparam ns="pal_robot_info" subst_value="true">
     type: "tiago"
-    end_effector: $(arg end_effector)
+    end_effector: $(arg ee_suffix)
     ft_sensor: $(arg ft_sensor)
     laser_model: $(arg laser_model)
     camera_model: $(arg camera_model)
@@ -23,6 +26,9 @@
 
   <!-- PID gains -->
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/pids.yaml"/>
+  <!-- Override Gazebo Joint PID gain for arm_7_joint in case of no end-effector -->
+  <param name="gains/arm_7_joint/p" value="10" if="$(eval ee_suffix == 'no-ee')"/>
+
 
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/hardware_gazebo/tiago_pal_hardware_gazebo_$(arg file_suffix).yaml"/>
 
