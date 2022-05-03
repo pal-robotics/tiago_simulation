@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.0 (2022-05-03)
+------------------
 * Merge branch 'no-end-effector-bugfix' into 'erbium-devel'
   No end effector bugfix
   See merge request robots/tiago_simulation!82
