@@ -2,6 +2,19 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'no-end-effector-bugfix' into 'erbium-devel'
+  No end effector bugfix
+  See merge request robots/tiago_simulation!82
+* fix pid with param override
+* Add pid configuration for no end-effector
+* update eval function and generate config files
+* fix pid with param override
+* Add pid configuration for no end-effector
+* update eval function and generate config files
+* Contributors: David ter Kuile, saikishor
+
 2.2.6 (2022-03-21)
 ------------------
 * Merge branch 'add_robotiq_epick_gripper' into 'erbium-devel'

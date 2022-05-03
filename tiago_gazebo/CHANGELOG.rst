@@ -2,6 +2,26 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'no-end-effector-bugfix' into 'erbium-devel'
+  No end effector bugfix
+  See merge request robots/tiago_simulation!82
+* file_suffix consistency
+* remove redundant spaces
+* Merge branch 'no-end-effector-bugfix' of gitlab:robots/tiago_simulation into no-end-effector-bugfix
+* remove default test args in launch files
+* Apply 2 suggestion(s) to 2 file(s)
+* fix pid with param override
+* Add pid configuration for no end-effector
+* minor changes
+* update eval function and generate config files
+* fix pid with param override
+* Add pid configuration for no end-effector
+* minor changes
+* update eval function and generate config files
+* Contributors: David ter Kuile, saikishor
+
 2.2.6 (2022-03-21)
 ------------------
 
