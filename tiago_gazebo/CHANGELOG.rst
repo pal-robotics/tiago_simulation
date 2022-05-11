@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.1 (2022-05-11)
+------------------
 * Merge branch 'almi' into 'erbium-devel'
   Add world for grasping bt demo + adapt the biscuit box object
   See merge request robots/tiago_simulation!83
