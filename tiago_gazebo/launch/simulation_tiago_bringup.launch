@@ -24,6 +24,7 @@
     <arg name="use_moveit_camera" value="$(arg use_moveit_camera)"/>
     <arg name="robot_namespace" value="$(arg robot_namespace)"/>
     <arg name="base_type_suffix"  value="$(arg base_type_suffix)"/>
+    <arg name="base_type" value="$(arg base_type)"/>
   </include>
 
   <!-- Robot state publisher -->
