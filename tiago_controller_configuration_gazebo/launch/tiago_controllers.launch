@@ -58,6 +58,7 @@
       <arg name="arm"  value="$(arg arm)"/>
       <arg name="end_effector"  value="$(arg end_effector)"/>
       <arg name="ft_sensor"  value="$(arg ft_sensor)"/>
+      <arg name="base_type"  value="$(arg base_type)"/>
     </include>
 
     <!-- Motion planning -->
