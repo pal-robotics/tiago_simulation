@@ -2,8 +2,8 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.2 (2022-07-19)
+------------------
 * Merge branch 'fix/add-highways-server' into 'erbium-devel'
   Add highways server
   See merge request robots/tiago_simulation!85
