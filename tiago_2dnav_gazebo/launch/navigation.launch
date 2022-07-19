@@ -46,9 +46,12 @@
     <arg name="base_type"       value="$(arg base_type)"/>
   </include>
 
-  <!-- VO map server -->
   <group unless="$(arg public_sim)">
+    <!-- VO map server -->
     <include file="$(find pal_vo_server)/launch/vo_server.launch"/>
+
+    <!-- Highways server -->
+    <include file="$(find highways_server)/launch/highways_server.launch"/>
   </group>
 
   <!-- Robot Pose Publisher -->
