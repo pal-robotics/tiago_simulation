@@ -2,6 +2,14 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add_omni_tiago' into 'erbium-devel'
+  Add base_type to the missing launch files
+  See merge request robots/tiago_simulation!84
+* =Add base_type to the missing launch files
+* Contributors: saikishor, thomaspeyrucain
+
 2.3.2 (2022-07-19)
 ------------------
 
