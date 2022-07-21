@@ -9,6 +9,7 @@
     <arg name="use_moveit_camera" default="false"/>
     <arg name="robot_namespace"         default=""/>
     <arg name="base_type_suffix" default=""/>
+    <arg name="base_type" default="pmb2"/>
     <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch">
         <arg name="robot_namespace" value="$(arg robot_namespace)"/>
         <arg name="arm" value="$(arg arm)"/>
@@ -57,6 +58,7 @@
       <arg name="arm"  value="$(arg arm)"/>
       <arg name="end_effector"  value="$(arg end_effector)"/>
       <arg name="ft_sensor"  value="$(arg ft_sensor)"/>
+      <arg name="base_type"  value="$(arg base_type)"/>
     </include>
 
     <!-- Motion planning -->
@@ -67,5 +69,6 @@
       <arg name="laser_model" value="$(arg laser_model)"/>
       <arg name="camera_model" value="$(arg camera_model)"/>
       <arg name="camera" value="$(arg use_moveit_camera)"/>
+      <arg name="base_type" value="$(arg base_type)"/>
     </include>
 </launch>
