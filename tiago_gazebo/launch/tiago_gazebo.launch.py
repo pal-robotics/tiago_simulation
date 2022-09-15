@@ -18,7 +18,8 @@ from os import environ, pathsep
 from ament_index_python.packages import get_package_share_directory, get_package_prefix
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
+
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_pal.include_utils import include_launch_py_description
@@ -53,6 +54,13 @@ def get_resource_paths(packages_names):
 
 
 def generate_launch_description():
+
+    declare_robot_name = DeclareLaunchArgument(
+        'robot_name',
+        default_value='tiago',
+        description='Name of the robot. '
+    )
+
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('pal_gazebo_worlds'),
@@ -89,6 +97,7 @@ def generate_launch_description():
         SetEnvironmentVariable("GAZEBO_MODEL_PATH", model_path),
         # Using this prevents shared library from being found
         # SetEnvironmentVariable("GAZEBO_RESOURCE_PATH", tiago_resource_path),
+        declare_robot_name,
         gazebo,
         tiago_spawn,
         tiago_bringup,
