@@ -3,6 +3,8 @@
   <name>tiago_simulation</name>
   <version>2.0.23</version>
   <description>The tiago_simulation package</description>
+  <maintainer email="jordan.palacios@pal-robotics.com">Jordan Palacios</maintainer>
+  <maintainer email="noel.jimenez@pal-robotics.com">Noel Jimenez</maintainer>
   <maintainer email="jordi.pages@pal-robotics.com">Jordi Pages</maintainer>
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
   <license>BSD</license>
