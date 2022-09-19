@@ -87,12 +87,16 @@ def generate_launch_description():
     if 'GAZEBO_RESOURCE_PATH' in environ:
         resource_path += pathsep + environ['GAZEBO_RESOURCE_PATH']
 
-    return LaunchDescription([
-        SetEnvironmentVariable("GAZEBO_MODEL_PATH", model_path),
-        # Using this prevents shared library from being found
-        # SetEnvironmentVariable("GAZEBO_RESOURCE_PATH", tiago_resource_path),
-        gazebo,
-        tiago_spawn,
-        tiago_bringup,
-        # tuck_arm
-    ])
+    # Create the launch description and populate
+    ld = LaunchDescription()
+
+    ld.add_action(SetEnvironmentVariable("GAZEBO_MODEL_PATH", model_path))
+    # Using this prevents shared library from being found
+    # ld.add_action(SetEnvironmentVariable("GAZEBO_RESOURCE_PATH", tiago_resource_path))
+
+    ld.add_action(gazebo)
+    ld.add_action(tiago_spawn)
+    ld.add_action(tiago_bringup)
+    # ld.add_action(tuck_arm)
+
+    return ld
