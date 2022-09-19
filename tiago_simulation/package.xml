@@ -7,7 +7,7 @@
   <maintainer email="noel.jimenez@pal-robotics.com">Noel Jimenez</maintainer>
   <maintainer email="jordi.pages@pal-robotics.com">Jordi Pages</maintainer>
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
-  <license>BSD</license>
+  <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
