@@ -7,7 +7,7 @@
   <maintainer email="jordan.palacios@pal-robotics.com">Jordan Palacios</maintainer>
   <maintainer email="noel.jimenez@pal-robotics.com">Noel Jimenez</maintainer>
   <maintainer email="tiago-support@pal-robotics.com">TIAGo support PAL Robotics</maintainer>
-  <license>Modified BSD</license>
+  <license>Apache License 2.0</license>
   <author email="victor.lopez@pal-robotics.com">Victor Lopez</author>
 
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
