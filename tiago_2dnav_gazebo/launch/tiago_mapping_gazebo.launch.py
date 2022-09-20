@@ -17,18 +17,21 @@ from launch_pal.include_utils import include_launch_py_description
 
 
 def generate_launch_description():
+
+    tiago_gazebo_launch = include_launch_py_description(
+        'tiago_gazebo', ['launch', 'tiago_gazebo.launch.py'],
+    )
+
+    tiago_nav_bringup_launch = include_launch_py_description(
+        'tiago_2dnav', ['launch', 'tiago_nav_bringup.launch.py'],
+        launch_arguments={
+            'slam': 'True'
+        }.items())
+
     # Create the launch description and populate
-    ld = LaunchDescription([
-        include_launch_py_description(
-            'tiago_gazebo', ['launch', 'tiago_gazebo.launch.py'],
-            launch_arguments={
-                'world_name': 'pal_office',
-                }.items()),
-        include_launch_py_description(
-            'tiago_2dnav', ['launch', 'tiago_nav_bringup.launch.py'],
-            launch_arguments={
-                'slam': 'True'
-                }.items()),
-    ])
+    ld = LaunchDescription()
+
+    ld.add_action(tiago_gazebo_launch)
+    ld.add_action(tiago_nav_bringup_launch)
 
     return ld
