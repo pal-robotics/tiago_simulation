@@ -4,9 +4,9 @@
   <version>3.0.2</version>
   <description>tiago-specific launch files needed to run
     navigation on the tiago robot.</description>
-  <maintainer email="victor.lopez@pal-robotics.com">Victor Lopez</maintainer>
-  <maintainer email="info@pal-robotics.com">PAL Robotics</maintainer>
-  <maintainer email="tiago_support@pal-robotics.com">TIAGo support PAL Robotics</maintainer>
+  <maintainer email="jordan.palacios@pal-robotics.com">Jordan Palacios</maintainer>
+  <maintainer email="noel.jimenez@pal-robotics.com">Noel Jimenez</maintainer>
+  <maintainer email="tiago-support@pal-robotics.com">TIAGo support PAL Robotics</maintainer>
   <license>Modified BSD</license>
   <author email="victor.lopez@pal-robotics.com">Victor Lopez</author>
 
