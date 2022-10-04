@@ -15,7 +15,7 @@
 import os
 from os import environ, pathsep
 
-from ament_index_python.packages import get_package_share_directory, get_package_prefix
+from ament_index_python.packages import get_package_prefix, get_package_share_directory
 
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
@@ -24,17 +24,17 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 from launch_pal.include_utils import include_launch_py_description
 
-from launch_ros.actions import Node
+# from launch_ros.actions import Node
 
 
 def get_model_paths(packages_names):
-    model_paths = ""
+    model_paths = ''
     for package_name in packages_names:
-        if model_paths != "":
+        if model_paths != '':
             model_paths += pathsep
 
         package_path = get_package_prefix(package_name)
-        model_path = os.path.join(package_path, "share")
+        model_path = os.path.join(package_path, 'share')
 
         model_paths += model_path
 
@@ -42,9 +42,9 @@ def get_model_paths(packages_names):
 
 
 def get_resource_paths(packages_names):
-    resource_paths = ""
+    resource_paths = ''
     for package_name in packages_names:
-        if resource_paths != "":
+        if resource_paths != '':
             resource_paths += pathsep
 
         package_path = get_package_prefix(package_name)
@@ -67,9 +67,9 @@ def generate_launch_description():
     tiago_bringup = include_launch_py_description(
         'tiago_bringup', ['launch', 'tiago_bringup.launch.py'])
 
-    tuck_arm = Node(package='tiago_gazebo',
-                    executable='tuck_arm.py',
-                    output='both')
+    # tuck_arm = Node(package='tiago_gazebo',
+    #                 executable='tuck_arm.py',
+    #                 output='both')
 
     # @TODO: review pal_gazebo
     # @TODO: review tiago_spawn
@@ -90,9 +90,9 @@ def generate_launch_description():
     # Create the launch description and populate
     ld = LaunchDescription()
 
-    ld.add_action(SetEnvironmentVariable("GAZEBO_MODEL_PATH", model_path))
+    ld.add_action(SetEnvironmentVariable('GAZEBO_MODEL_PATH', model_path))
     # Using this prevents shared library from being found
-    # ld.add_action(SetEnvironmentVariable("GAZEBO_RESOURCE_PATH", tiago_resource_path))
+    # ld.add_action(SetEnvironmentVariable('GAZEBO_RESOURCE_PATH', tiago_resource_path))
 
     ld.add_action(gazebo)
     ld.add_action(tiago_spawn)
