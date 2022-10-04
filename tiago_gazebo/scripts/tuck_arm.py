@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import rclpy
 import time
 
 from play_motion_msgs.action import PlayMotion
+import rclpy
 from rclpy.action import ActionClient
 from rclpy.node import Node
 from std_srvs.srv import Trigger
@@ -117,19 +117,19 @@ def main(args=None):
     action_client.wait_for_server()
 
     for i in range(5):
-        action_client.get_logger().info("Tucking arm... Try {}".format(i))
+        action_client.get_logger().info('Tucking arm... Try {}'.format(i))
         action_client.send_goal('home', True)
 
         if action_client.is_successful():
-            action_client.get_logger().info("Arm tucked")
+            action_client.get_logger().info('Arm tucked')
             break
         else:
-            action_client.get_logger().error("Tuck failed")
+            action_client.get_logger().error('Tuck failed')
 
         time.sleep(5)
 
     if not action_client.is_successful():
-        action_client.get_logger().error("Failed to tuck arm after 5 tries")
+        action_client.get_logger().error('Failed to tuck arm after 5 tries')
 
     rclpy.shutdown()
 
