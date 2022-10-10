@@ -18,7 +18,7 @@ from os import environ, pathsep
 from ament_index_python.packages import get_package_prefix, get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
 
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
@@ -54,6 +54,10 @@ def get_resource_paths(packages_names):
 
 
 def generate_launch_description():
+    world_name_arg = DeclareLaunchArgument(
+        'world_name', default_value='pal_office',
+        description="Specify world name, we'll convert to full path"
+    )
 
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
@@ -94,6 +98,7 @@ def generate_launch_description():
     # Using this prevents shared library from being found
     # ld.add_action(SetEnvironmentVariable('GAZEBO_RESOURCE_PATH', tiago_resource_path))
 
+    ld.add_action(world_name_arg)
     ld.add_action(gazebo)
     ld.add_action(tiago_spawn)
     ld.add_action(tiago_bringup)
