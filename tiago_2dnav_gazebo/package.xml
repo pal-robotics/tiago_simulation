@@ -12,6 +12,7 @@
 
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
+  <exec_depend>launch_pal</exec_depend>
   <exec_depend>tiago_gazebo</exec_depend>
   <exec_depend>tiago_2dnav</exec_depend>
 
