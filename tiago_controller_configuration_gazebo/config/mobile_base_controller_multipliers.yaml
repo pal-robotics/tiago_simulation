@@ -1,4 +1,0 @@
-mobile_base_controller:
-  # Wheel separation and radius multipliers for PMB2
-  wheel_separation_multiplier: 1.0
-  wheel_radius_multiplier    : 1.0 
