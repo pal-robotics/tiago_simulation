@@ -20,9 +20,7 @@ def generate_launch_description():
 
     tiago_gazebo_launch = include_launch_py_description(
         'tiago_gazebo', ['launch', 'tiago_gazebo.launch.py'],
-        launch_arguments={
-            'world_name': 'pal_office',
-        }.items())
+    )
 
     tiago_nav_bringup_launch = include_launch_py_description(
         'tiago_2dnav', ['launch', 'tiago_nav_bringup.launch.py'],
