@@ -3,35 +3,38 @@
 
   <arg name="state" default="localization"/>
 
-  <arg name="planner"        default="base"/>
-  <arg name="global_planner" default="global_planner"/>
-  <arg name="local_planner"  default="pal"/>
-  <arg name="localization"   default="amcl"/>
-  <arg name="mapping"        default="karto"/>
-  <arg name="octomap"        default="false"/>
-  <arg name="public_sim"     default="false"/>
-  <arg name="disable_vo"     default="false"/>
-  <arg name="rgbd_sensors"   default="false"/>
-  <arg name="robot_namespace"      default=""/>
-  <arg name="multiple"       default="false"/>
-  <arg name="scan_topic"    default="scan_raw"/>
-  <arg name="config_base_path" default="$(find pal_navigation_cfg_tiago)"/>
-  <arg name="laser_model"    default="sick-571"/>
-  <arg name="base_type"     default="pmb2"/>
+  <arg name="planner"           default="base"/>
+  <arg name="global_planner"    default="global_planner"/>
+  <arg name="local_planner"     default="pal"/>
+  <arg name="localization"      default="amcl"/>
+  <arg name="mapping"           default="karto"/>
+  <arg name="public_sim"        default="false"/>
+  <arg name="disable_vo"        default="false"/>
+  <arg name="rgbd_sensors"      default="false"/>
+  <arg name="is_sim"            default="true"/>
+  <arg name="robot_namespace"   default=""/>
+  <arg name="multiple"          default="false"/>
+  <arg name="scan_topic"        default="scan_raw"/>
+  <arg name="config_base_path"  default="$(find pal_navigation_cfg_tiago)"/>
+  <arg name="laser_model"       default="sick-571"/>
+  <arg name="base_type"         default="pmb2"/>
+  <arg name="map"               default=""/>
 
-  <arg name="map" default="$(env HOME)/.pal/tiago_maps/config"/>
-
-  <!-- Localization or Mapping state -->
-  <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
-        args="tiago $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg octomap) $(arg scan_topic) $(arg laser_model) $(arg base_type) $(arg multiple) $(arg robot_namespace)" output="screen"/>
+  <!-- Map -->
+  <include file="$(find pal_map_manager)/launch/pal_map_manager.launch">
+    <arg name="map"       value="$(arg map)"/>
+    <arg name="namespace" value="$(arg robot_namespace)"/>
+  </include>
 
   <!-- Navigation State Machine -->
   <include file="$(find tiago_2dnav)/launch/state_machine.launch">
-    <arg name="state" value="$(arg state)"/>
-    <arg name="public_sim" value="$(arg public_sim)"/>
-    <arg if="$(arg multiple)" name="map_frame" value="/$(arg robot_namespace)/map"/>
-    <arg if="$(arg multiple)" name="base_frame" value="/$(arg robot_namespace)/base_footprint"/>
-    <arg name="base_type"       value="$(arg base_type)"/>
+    <arg name="state"           value="$(arg state)"/>
+    <arg name="public_sim"      value="$(arg public_sim)"/>
+    <arg name="is_sim"          value="$(arg is_sim)"/>
+    <arg name="multiple"        value="$(arg multiple)"/>
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg if="$(arg multiple)"   name="map_frame" value="/$(arg robot_namespace)/map"/>
+    <arg if="$(arg multiple)"   name="base_frame" value="/$(arg robot_namespace)/base_footprint"/>
   </include>
 
   <!-- Planning -->
