@@ -40,7 +40,7 @@ Install dependencies using rosdep
 ```console
 sudo rosdep init
 rosdep update
-rosdep install --from-paths src -y --ignore-src --skip-keys="robot_control"
+rosdep install --from-paths src -y --ignore-src
 ```
 
 Source the environment and build
@@ -66,7 +66,7 @@ Also you can add it to your .bashrc
 Launch gazebo simulation:
 
 ```console
-ros2 launch tiago_gazebo tiago_gazebo.launch.py
+ros2 launch tiago_gazebo tiago_gazebo.launch.py [arm:=no-arm]
 ```
 
 <img src="doc/media/tiago_gazebo.png" title="TIAGo simulation" width="85%">
@@ -98,7 +98,7 @@ Then, you can send a goal with rviz2
 You can also start the simulation and navigation together by using
 
 ```console
-ros2 launch tiago_2dnav_gazebo tiago_navigation_gazebo.launch.py
+ros2 launch tiago_2dnav_gazebo tiago_navigation_gazebo.launch.py arm:=no-arm
 ```
 
 Then, rviz2 can be used in the same way.
