@@ -57,6 +57,7 @@
       <arg name="global_planner" value="$(arg global_planner)"/>
       <arg name="local_planner"  value="$(arg local_planner)"/>
       <arg name="public_sim"     value="$(arg public_sim)"/>
+      <arg name="is_sim"         value="true"/>
       <arg name="rgbd_sensors"   value="$(arg rgbd_sensors)"/>
       <arg name="laser_model"    value="$(arg laser_model)"/>
       <arg name="base_type"      value="$(arg base_type)"/>
