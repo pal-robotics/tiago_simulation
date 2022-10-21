@@ -11,7 +11,6 @@
   <arg name="public_sim"        default="false"/>
   <arg name="disable_vo"        default="false"/>
   <arg name="rgbd_sensors"      default="false"/>
-  <arg name="is_sim"            default="true"/>
   <arg name="robot_namespace"   default=""/>
   <arg name="multiple"          default="false"/>
   <arg name="scan_topic"        default="scan_raw"/>
@@ -30,7 +29,7 @@
   <include file="$(find tiago_2dnav)/launch/state_machine.launch">
     <arg name="state"           value="$(arg state)"/>
     <arg name="public_sim"      value="$(arg public_sim)"/>
-    <arg name="is_sim"          value="$(arg is_sim)"/>
+    <arg name="is_sim"          value="true"/>
     <arg name="multiple"        value="$(arg multiple)"/>
     <arg name="robot_namespace" value="$(arg robot_namespace)"/>
     <arg if="$(arg multiple)"   name="map_frame" value="/$(arg robot_namespace)/map"/>
