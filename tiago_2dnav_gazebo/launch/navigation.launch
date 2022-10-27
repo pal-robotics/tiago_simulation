@@ -22,7 +22,6 @@
   <!-- Map -->
   <include file="$(find pal_map_manager)/launch/pal_map_manager.launch">
     <arg name="map"       value="$(arg map)"/>
-    <arg name="namespace" value="$(arg robot_namespace)"/>
   </include>
 
   <!-- Navigation State Machine -->
