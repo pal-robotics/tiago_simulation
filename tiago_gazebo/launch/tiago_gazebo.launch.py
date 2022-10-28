@@ -56,6 +56,11 @@ def get_resource_paths(packages_names):
 
 def generate_launch_description():
 
+    navigation_arg = DeclareLaunchArgument(
+        'navigation', default_value='false',
+        description='Specify if launching Navigation2'
+    )
+
     moveit_arg = DeclareLaunchArgument(
         'moveit', default_value='false',
         description='Specify if launching MoveIt2'
@@ -77,6 +82,10 @@ def generate_launch_description():
 
     tiago_bringup = include_launch_py_description(
         'tiago_bringup', ['launch', 'tiago_bringup.launch.py'])
+
+    navigation = include_launch_py_description(
+        'tiago_2dnav', ['launch', 'tiago_nav_bringup.launch.py'],
+        condition=IfCondition(LaunchConfiguration('navigation')))
 
     move_group = include_launch_py_description(
         'tiago_moveit_config', ['launch', 'move_group.launch.py'],
@@ -113,6 +122,9 @@ def generate_launch_description():
     ld.add_action(gazebo)
     ld.add_action(tiago_spawn)
     ld.add_action(tiago_bringup)
+
+    ld.add_action(navigation_arg)
+    ld.add_action(navigation)
 
     ld.add_action(moveit_arg)
     ld.add_action(move_group)

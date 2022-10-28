@@ -19,6 +19,7 @@
   <exec_depend>tiago_bringup</exec_depend>
   <exec_depend>tiago_description</exec_depend>
   <exec_depend>tiago_moveit_config</exec_depend>
+  <exec_depend>tiago_2dnav</exec_depend>
   <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>gazebo_ros2_control</exec_depend>
 
