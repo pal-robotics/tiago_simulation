@@ -98,17 +98,17 @@ Then, you can send a goal with rviz2
 You can also start the simulation and navigation together by using
 
 ```console
-ros2 launch tiago_2dnav_gazebo tiago_navigation_gazebo.launch.py arm:=no-arm
+ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=true [arm:=no-arm]
 ```
 
 Then, rviz2 can be used in the same way.
 
-### MoveIt 2
+### Simulation + MoveIt 2
 
-By default, TIAGo simulation already launches MoveIt 2
+To launch TIAGo simulation with MoveIt 2 you can use
 
 ```console
-ros2 launch tiago_gazebo tiago_gazebo.launch.py
+ros2 launch tiago_gazebo tiago_gazebo.launch.py moveit:=true
 ```
 
 You can move the robot by:
@@ -122,3 +122,11 @@ You can move the robot by:
     <img src="doc/media/rviz_execute_movement.gif" title="Movement with rviz2 and MoveIt 2" width="85%">
 
 - Using MoveIt 2 API. For further information see [MoveIt 2 Tutorials](https://moveit.picknik.ai/humble/doc/tutorials/tutorials.html)
+
+### Simulation + Navigation 2 + MoveIt 2
+
+Finally, to launch all together:
+
+```console
+ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=true moveit:=true
+```
