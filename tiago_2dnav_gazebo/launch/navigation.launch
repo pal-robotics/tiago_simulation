@@ -17,12 +17,20 @@
   <arg name="config_base_path"  default="$(find pal_navigation_cfg_tiago)"/>
   <arg name="laser_model"       default="sick-571"/>
   <arg name="base_type"         default="pmb2"/>
-  <arg name="map"               default=""/>
+  <arg name="map"               default="$(env HOME)/.pal/tiago_maps/config"/>
 
   <!-- Map -->
-  <include file="$(find pal_map_manager)/launch/pal_map_manager.launch">
-    <arg name="map"       value="$(arg map)"/>
-  </include>
+  <!-- Localization or Mapping state -->
+  <group if="$(arg public_sim)">
+    <node pkg="pal_navigation_sm" type="navigation.sh" name="navigation"
+        args="tiago $(arg state) $(arg localization) $(arg mapping) $(arg map) $(arg scan_topic) $(arg laser_model) $(arg base_type) $(arg multiple) $(arg robot_namespace)" output="screen"/>
+  </group>
+
+  <group unless="$(arg public_sim)">
+    <include file="$(find pal_map_manager)/launch/pal_map_manager.launch">
+      <arg name="map"       value="$(arg map)"/>
+    </include>
+  </group>
 
   <!-- Navigation State Machine -->
   <include file="$(find tiago_2dnav)/launch/state_machine.launch">
