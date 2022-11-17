@@ -70,5 +70,6 @@
       <arg name="camera_model" value="$(arg camera_model)"/>
       <arg name="camera" value="$(arg use_moveit_camera)"/>
       <arg name="base_type" value="$(arg base_type)"/>
+      <arg name="capabilities" value="move_group/CapabilityLoader" unless="$(arg public_sim)"/>
     </include>
 </launch>

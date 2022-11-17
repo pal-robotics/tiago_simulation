@@ -25,6 +25,7 @@
     <arg name="robot_namespace" value="$(arg robot_namespace)"/>
     <arg name="base_type_suffix"  value="$(arg base_type_suffix)"/>
     <arg name="base_type" value="$(arg base_type)"/>
+    <arg name="public_sim" value="$(arg public_sim)"/>
   </include>
 
   <!-- Robot state publisher -->
