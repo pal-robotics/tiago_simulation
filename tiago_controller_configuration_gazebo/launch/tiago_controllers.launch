@@ -71,5 +71,6 @@
       <arg name="camera" value="$(arg use_moveit_camera)"/>
       <arg name="base_type" value="$(arg base_type)"/>
       <arg name="capabilities" value="move_group/CapabilityLoader" unless="$(arg public_sim)"/>
+      <arg name="moveit_sensor_manager" value="public" if="$(arg public_sim)"/>
     </include>
 </launch>
