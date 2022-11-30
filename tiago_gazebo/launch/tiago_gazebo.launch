@@ -23,7 +23,6 @@
   <arg name="base_type" default="pmb2"/>
   <arg name="advanced_grasping" default="false"/> <!-- Requires extra software from PAL Robotics -->
 
-
   <env name="LC_NUMERIC" value="C" />
 
   <!-- start up world -->
