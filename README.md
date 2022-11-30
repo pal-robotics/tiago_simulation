@@ -82,7 +82,7 @@ The velocities can be modified by changing the values of x and z.
 
 ### Navigation 2
 
-You can launch PMB2 navigation by executing 
+You can launch TIAGo navigation by executing 
 
 ```console
 ros2 launch tiago_2dnav tiago_nav_bringup.launch.py
