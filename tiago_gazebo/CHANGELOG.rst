@@ -2,6 +2,70 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix_dependency' into 'humble-devel'
+  Fix buildtool dependency
+  See merge request robots/tiago_simulation!102
+* fix buildtool dependency
+* Merge branch 'refactor_simulation_launchers' into 'humble-devel'
+  Refactor simulation launchers
+  See merge request robots/tiago_simulation!98
+* move navigation to simulation launcher
+* add moveit to simulation launcher
+* Merge branch 'cleanup' into 'humble-devel'
+  Cleanup
+  See merge request robots/tiago_simulation!95
+* update package deps
+* Merge branch 'fix_world_name_arg' into 'humble-devel'
+  fix world_name arg
+  See merge request robots/tiago_simulation!94
+* add world_name arg to simulation
+* Merge branch 'linters' into 'humble-devel'
+  Linters
+  See merge request robots/tiago_simulation!93
+* linters
+* add linters
+* Merge branch 'cleanup' into 'humble-devel'
+  Cleanup
+  See merge request robots/tiago_simulation!91
+* rm ros1 launchers
+* Merge branch 'refactor_ld' into 'humble-devel'
+  Refactor LaunchDescription population
+  See merge request robots/tiago_simulation!90
+* refactor LaunchDescription population
+* Merge branch 'update_copyright' into 'humble-devel'
+  Update copyright
+  See merge request robots/tiago_simulation!89
+* update license
+* update copyright
+* Merge branch 'update_maintainers' into 'humble-devel'
+  Update maintainers
+  See merge request robots/tiago_simulation!88
+* update maintainers
+* Merge branch 'del_arg' into 'humble-devel'
+  Remove robot_name arg
+  See merge request robots/tiago_simulation!87
+* del unnecesary arg robot_name
+* Merge branch 'humble_fixes' into 'humble-devel'
+  Add robot name arg to rewrite default
+  See merge request robots/tiago_simulation!86
+* robot name arg
+* Since play motion is not started by default can't tuck arm
+* Cleanup
+* Added tuck_arm script to tiago_gazebo.launch.py
+* Added retries
+* Don't use spin() and check for goal result
+* Wait for play_motion is_ready to be successfull
+* Migrated tuck_arm.py to ros2
+* Added some ToDo's
+* tiago_gazebo now also launches the tiago_bringup
+* Moved the tiago spawn to its own launch.py
+* Added pal_gripper_description package
+* Added tiago_gazebo.launch.py
+* package.xml and CMakeLists.txt to ros2 format
+* Contributors: Jordan Palacios, Noel Jimenez, Victor Lopez
+
 2.0.23 (2020-07-30)
 -------------------
 * Merge branch 'rename_tf_prefix' into 'erbium-devel'

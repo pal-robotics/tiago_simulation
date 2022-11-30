@@ -2,6 +2,19 @@
 Changelog for package tiago_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'update_copyright' into 'humble-devel'
+  Update copyright
+  See merge request robots/tiago_simulation!89
+* update license
+* Merge branch 'update_maintainers' into 'humble-devel'
+  Update maintainers
+  See merge request robots/tiago_simulation!88
+* update maintainers
+* package.xml and CMakeLists.txt to ros2 format
+* Contributors: Jordan Palacios, Noel Jimenez
+
 2.0.23 (2020-07-30)
 -------------------
 
