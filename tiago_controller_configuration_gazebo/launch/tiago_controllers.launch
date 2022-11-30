@@ -70,7 +70,7 @@
       <arg name="ft_sensor" value="$(arg ft_sensor)"/>
       <arg name="laser_model" value="$(arg laser_model)"/>
       <arg name="camera_model" value="$(arg camera_model)"/>
-      <arg name="camera" value="$(eval (use_moveit_camera if not advanced_grasping else true))"/>
+      <arg name="camera" value="$(arg use_moveit_camera)"/>
       <arg name="base_type" value="$(arg base_type)"/>
       <arg name="capabilities" value="move_group/CapabilityLoader" unless="$(arg public_sim)"/>
       <arg name="moveit_sensor_manager" value="advanced_grasping" if="$(arg advanced_grasping)"/>
