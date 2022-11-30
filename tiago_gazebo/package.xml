@@ -9,7 +9,7 @@
   <license>Apache License 2.0</license>
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_pal</exec_depend>
