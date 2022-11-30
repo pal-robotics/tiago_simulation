@@ -82,16 +82,19 @@ The velocities can be modified by changing the values of x and z.
 
 ### Navigation 2
 
-You can launch PMB2 navigation by executing 
+You can launch TIAGo navigation by executing 
 
 ```console
 ros2 launch tiago_2dnav tiago_nav_bringup.launch.py
 ```
 
-Then, you can send a goal with rviz2
+Then, you can send a goal:
+
+- With rviz2
 
 <img src="doc/media/rviz_send_goal.gif" title="Send goal with rviz2" width="85%">
 
+- By using Navigation 2 API. For further information see [Navigation 2 Tutorials](https://navigation.ros.org/tutorials/index.html)
 
 ### Simulation + Navigation 2
 
@@ -101,7 +104,7 @@ You can also start the simulation and navigation together by using
 ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=true [arm:=no-arm]
 ```
 
-Then, rviz2 can be used in the same way.
+Then, goals can be sent in the same way.
 
 ### Simulation + MoveIt 2
 
