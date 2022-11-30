@@ -10,6 +10,8 @@
     <arg name="robot_namespace"         default=""/>
     <arg name="base_type_suffix" default=""/>
     <arg name="base_type" default="pmb2"/>
+    <arg name="advanced_grasping" default="false"/> <!-- Requires extra software from PAL Robotics -->
+
     <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch">
         <arg name="robot_namespace" value="$(arg robot_namespace)"/>
         <arg name="arm" value="$(arg arm)"/>
@@ -71,6 +73,6 @@
       <arg name="camera" value="$(arg use_moveit_camera)"/>
       <arg name="base_type" value="$(arg base_type)"/>
       <arg name="capabilities" value="move_group/CapabilityLoader" unless="$(arg public_sim)"/>
-      <arg name="moveit_sensor_manager" value="public" if="$(arg public_sim)"/>
+      <arg name="moveit_sensor_manager" value="advanced_grasping" if="$(arg advanced_grasping)"/>
     </include>
 </launch>

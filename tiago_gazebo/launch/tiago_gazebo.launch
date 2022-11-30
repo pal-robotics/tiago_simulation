@@ -21,6 +21,8 @@
   <arg name="use_moveit_camera" default="false"/>
   <arg name="use_dynamic_footprint" default="false"/>
   <arg name="base_type" default="pmb2"/>
+  <arg name="advanced_grasping" default="false"/> <!-- Requires extra software from PAL Robotics -->
+
 
   <env name="LC_NUMERIC" value="C" />
 
@@ -58,6 +60,7 @@
     <arg name="use_moveit_camera" value="$(arg use_moveit_camera)"/>
     <arg name="use_dynamic_footprint" value="$(arg use_dynamic_footprint)"/>
     <arg name="base_type" value="$(arg base_type)"/>
+    <arg name="advanced_grasping" value="$(arg advanced_grasping)" unless="$(arg public_sim)"/>
   </include>
 
   <!-- point cloud throttle and filter -->
