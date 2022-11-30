@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.0 (2022-11-30)
+------------------
 * Merge branch 'fix_dependency' into 'humble-devel'
   Fix buildtool dependency
   See merge request robots/tiago_simulation!102
