@@ -11,7 +11,7 @@
     <arg name="base_type_suffix" default=""/>
     <arg name="base_type" default="pmb2"/>
     <arg name="advanced_grasping" default="false"/> <!-- Requires extra software from PAL Robotics -->
-    <arg name="enable_moveit_camera" value="true" if="$(eval arg('use_moveit_camera') or arg('advanced_grasping'))"/>
+    <arg name="enable_moveit_camera" value="$(eval arg('use_moveit_camera') or arg('advanced_grasping'))" />
 
     <include file="$(find tiago_controller_configuration_gazebo)/launch/default_controllers.launch">
         <arg name="robot_namespace" value="$(arg robot_namespace)"/>
