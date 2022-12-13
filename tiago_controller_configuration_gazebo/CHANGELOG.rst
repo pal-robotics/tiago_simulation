@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.4 (2022-12-13)
+------------------
 * Merge branch 'add-moveit-capability-loader' into 'erbium-devel'
   Add capability unless public sim
   See merge request robots/tiago_simulation!100
