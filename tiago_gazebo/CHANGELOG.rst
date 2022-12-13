@@ -2,6 +2,19 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'add-moveit-capability-loader' into 'erbium-devel'
+  Add capability unless public sim
+  See merge request robots/tiago_simulation!100
+* Add table with two cylinders world
+* Set enable_moveit_camera arg in tiago_controllers.launch
+* set use_moveit_camera arg in tiago_controllers correct
+* Ensure moveit camera is always on when advanced grasping is loaded
+* Add argument for advanced grasping
+* Add capability unless public sim
+* Contributors: David ter Kuile, saikishor
+
 2.3.3 (2022-07-21)
 ------------------
 * Merge branch 'add_omni_tiago' into 'erbium-devel'
