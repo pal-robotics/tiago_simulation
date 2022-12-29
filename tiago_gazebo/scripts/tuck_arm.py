@@ -16,11 +16,12 @@
 
 import time
 
-from play_motion_msgs.action import PlayMotion
+from play_motion2_msgs.action import PlayMotion2
+from play_motion2_msgs.srv import IsMotionReady
+
 import rclpy
 from rclpy.action import ActionClient
 from rclpy.node import Node
-from std_srvs.srv import Trigger
 
 
 class PlayMotionActionClient(Node):
@@ -28,9 +29,9 @@ class PlayMotionActionClient(Node):
     def __init__(self):
         super().__init__('arm_tucker')
         self._play_motion_client = ActionClient(
-            self, PlayMotion, 'play_motion')
+            self, PlayMotion2, 'play_motion2')
         self._is_ready_client = self.create_client(
-            Trigger, '/play_motion/is_ready')
+            IsMotionReady, '/play_motion2/is_motion_ready')
         self._is_successful = None
 
     def is_successful(self):
@@ -42,7 +43,8 @@ class PlayMotionActionClient(Node):
         while not self._is_ready_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().error('is_ready service not ready, waiting...')
 
-        request = Trigger.Request()
+        request = IsMotionReady.Request()
+        request.motion_key = 'home'
 
         is_ready = False
         while not is_ready:
@@ -56,15 +58,15 @@ class PlayMotionActionClient(Node):
                     except Exception as e:
                         self.get_logger().info('Service call failed %r' % (e,))
                     else:
-                        is_ready = response.success
+                        is_ready = response.is_ready
                         if is_ready:
-                            self.get_logger().info('play_motion is ready')
+                            self.get_logger().info('play_motion2 is ready')
                         else:
-                            self.get_logger().error('play_motion is not ready')
+                            self.get_logger().error('play_motion2 is not ready')
                     break
 
     def send_goal(self, motion_name, skip_planning):
-        goal_msg = PlayMotion.Goal()
+        goal_msg = PlayMotion2.Goal()
         goal_msg.motion_name = motion_name
         goal_msg.skip_planning = skip_planning
 
@@ -96,17 +98,16 @@ class PlayMotionActionClient(Node):
     def get_result_callback(self, future):
         result = future.result().result
 
-        error_code = result.error_code
-        error_string = result.error_string
+        error = result.error
 
-        if error_code == result.SUCCEEDED:
+        if error == '':
             self._is_successful = True
             self.get_logger().info('Motion succeeded')
         else:
             self._is_successful = False
             self.get_logger().error(
-                'Motion failed with error ({}): {}'
-                .format(error_code, error_string))
+                'Motion failed with error {}'
+                .format(error))
 
 
 def main(args=None):
