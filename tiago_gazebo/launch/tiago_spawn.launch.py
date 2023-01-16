@@ -16,7 +16,6 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
 
-from launch_pal.include_utils import include_launch_py_description
 from launch_ros.actions import Node
 
 
@@ -36,10 +35,6 @@ def generate_launch_description():
         description='Gazebo model name'
     )
 
-    tiago_state_publisher = include_launch_py_description(
-        'tiago_description',
-        ['launch', 'robot_state_publisher.launch.py'])
-
     tiago_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
                                    '-entity', LaunchConfiguration(
@@ -53,7 +48,6 @@ def generate_launch_description():
 
     # ld.add_action(gz_pose)
     ld.add_action(model_name)
-    ld.add_action(tiago_state_publisher)
     ld.add_action(tiago_entity)
 
     return ld
