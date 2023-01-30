@@ -2,6 +2,19 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'feat/map-manager' into 'erbium-devel'
+  move to map manager
+  See merge request robots/tiago_simulation!96
+* adapting for public simulations
+* removing namespace from map_manager
+* simplified launch file
+* added is_sim parameter to mapping sim
+* removed pal_nav_sm bash script
+* move to map manager
+* Contributors: antoniobrandi
+
 2.3.4 (2022-12-13)
 ------------------
 
