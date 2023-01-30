@@ -35,8 +35,7 @@
   <arg name="sim_sufix" value=""                unless="$(arg public_sim)"/>
 
   <env name="PAL_HOST" value="tiago" />
-
-  <node name="update_maps_link" pkg="pal_navigation_sm" type="base_maps_symlink.sh" args="tiago_maps"/>
+  
 
   <group ns="$(arg namespace)">
 
