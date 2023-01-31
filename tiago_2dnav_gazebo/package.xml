@@ -12,4 +12,5 @@
 
   <run_depend>tiago_gazebo</run_depend>
   <run_depend>tiago_2dnav</run_depend>
+  <run_depend>pal_map_manager</run_depend>
 </package>
