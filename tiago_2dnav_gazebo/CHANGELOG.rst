@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/missing-deps' into 'erbium-devel'
+  added missing pal_loc_measure dependency
+  See merge request robots/tiago_simulation!108
+* added missing pal_loc_measure dependency
+* Contributors: antoniobrandi, saikishor
+
 2.3.7 (2023-01-31)
 ------------------
 * Merge branch 'fix/missing-deps' into 'erbium-devel'
