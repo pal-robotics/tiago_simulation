@@ -102,9 +102,6 @@
     <include file="$(find tiago_laser_sensors)/launch/rgbd_cloud_laser.launch">
       <arg name="cloud"  value="/xtion/depth_registered/points"/>
     </include>
-    <include file="$(find pal_map_utils)/launch/map_configuration_server.launch">
-      <env name="PAL_HOST" value="tiagoc"/>
-    </include>
   </group>
 
 </launch>
