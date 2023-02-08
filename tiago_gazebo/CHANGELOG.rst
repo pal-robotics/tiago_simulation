@@ -2,6 +2,14 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'robot_state_publisher' into 'humble-devel'
+  Remove robot_state_publisher from tiago_spawn
+  See merge request robots/tiago_simulation!105
+* remove robot_state_publisher from tiago_spawn
+* Contributors: Jordan Palacios, Noel Jimenez
+
 4.0.0 (2022-11-30)
 ------------------
 * Merge branch 'fix_dependency' into 'humble-devel'
