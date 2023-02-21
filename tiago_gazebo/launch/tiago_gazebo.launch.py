@@ -25,7 +25,7 @@ from launch.substitutions import LaunchConfiguration
 
 from launch_pal.include_utils import include_launch_py_description
 
-# from launch_ros.actions import Node
+from launch_ros.actions import Node
 
 
 def get_model_paths(packages_names):
@@ -91,9 +91,10 @@ def generate_launch_description():
         'tiago_moveit_config', ['launch', 'move_group.launch.py'],
         condition=IfCondition(LaunchConfiguration('moveit')))
 
-    # tuck_arm = Node(package='tiago_gazebo',
-    #                 executable='tuck_arm.py',
-    #                 output='both')
+    tuck_arm = Node(package='tiago_gazebo',
+                    executable='tuck_arm.py',
+                    emulate_tty=True,
+                    output='both')
 
     # @TODO: review pal_gazebo
     # @TODO: review tiago_spawn
@@ -128,6 +129,6 @@ def generate_launch_description():
 
     ld.add_action(moveit_arg)
     ld.add_action(move_group)
-    # ld.add_action(tuck_arm)
+    ld.add_action(tuck_arm)
 
     return ld
