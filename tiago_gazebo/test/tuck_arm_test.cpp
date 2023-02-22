@@ -42,6 +42,11 @@ void wait_play_motion2_state(
   rclcpp::Client<IsMotionReady>::SharedPtr client,
   play_motion_state state)
 {
+  RCLCPP_INFO_EXPRESSION(
+    node->get_logger(), state == play_motion_state::BUSY, "waiting for state BUSY");
+  RCLCPP_INFO_EXPRESSION(
+    node->get_logger(), state == play_motion_state::AVAILABLE, "waiting for state AVAILABLE");
+
   auto request = std::make_shared<IsMotionReady::Request>();
   request->motion_key = "home";
 
