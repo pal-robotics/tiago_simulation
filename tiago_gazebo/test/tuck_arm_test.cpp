@@ -75,7 +75,7 @@ void wait_play_motion2_state(
 void check_joint_position(
   const sensor_msgs::msg::JointState & joint_states,
   const std::string & joint_name,
-  const double expected_position)
+  double expected_position)
 {
   auto position =
     std::distance(
