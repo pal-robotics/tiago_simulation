@@ -2,6 +2,9 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.3.8 (2023-02-01)
 ------------------
 
