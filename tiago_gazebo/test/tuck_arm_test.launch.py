@@ -14,7 +14,7 @@
 
 import os
 import unittest
-import subprocess
+# import subprocess
 
 from ament_index_python.packages import get_package_share_directory
 
@@ -49,10 +49,10 @@ def generate_test_description():
 
 class TestStarted(unittest.TestCase):
 
-    @classmethod
-    def tearDownClass(self):
-        # gzserver and gzclient aren't always killed on exit
-        subprocess.call(['pkill gz'], shell=True, stdout=subprocess.PIPE)
+    # @classmethod
+    # def tearDownClass(self):
+    #     # gzserver and gzclient aren't always killed on exit
+    #     subprocess.call(['pkill gz'], shell=True, stdout=subprocess.PIPE)
 
     def test_tuck_arm(self, proc_info, proc_output, tuck_arm_test):
         # Wait until process ends
