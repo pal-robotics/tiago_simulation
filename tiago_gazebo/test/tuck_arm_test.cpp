@@ -71,7 +71,7 @@ void wait_play_motion2_state(
     timeout = node->now() - start_time > PLAY_MOTION_STATE_TIMEOUT;
 
     // sleep to avoid spamming many messages of play_motion2
-    std::this_thread::sleep_for(1s);
+    std::this_thread::sleep_for(100ms);
   } while (!timeout && !play_motion_state);
 
   ASSERT_FALSE(timeout) << "Timeout while waiting for play_motion2 state";
