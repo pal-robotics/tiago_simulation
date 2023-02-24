@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.2 (2023-02-24)
+------------------
 * Merge branch 'tuck_arm' into 'humble-devel'
   tuck_arm for play_motion2
   See merge request robots/tiago_simulation!103
