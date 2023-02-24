@@ -2,6 +2,21 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'tuck_arm' into 'humble-devel'
+  tuck_arm for play_motion2
+  See merge request robots/tiago_simulation!103
+* comment subprocess to kill gazebo at the end of the test
+* remove unused deps and reorder
+* reduce sleep time
+* log waiting for state
+* remove unnecessary const
+* tuck arm test
+* launch tuck arm
+* tuck_arm for play_motion2
+* Contributors: Jordan Palacios, Noel Jimenez
+
 4.0.1 (2023-02-08)
 ------------------
 * Merge branch 'robot_state_publisher' into 'humble-devel'
