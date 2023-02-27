@@ -17,7 +17,7 @@ This repository contains the launch files to simulate the TIAGo robot in ROS 2.
 ```console
 sudo apt-get update
 
-sudo apt-get install git python3-vcstool python3-rosinstall python3-rosdep python3-colcon-common-extensions
+sudo apt-get install git python3-vcstool python3-rosdep python3-colcon-common-extensions
 ```
 
 > **Disclaimer**: In our testing environment, we've found out that the simulation is more reliable if we switch to Cyclone DDS. You can do this by installing it with `sudo apt install ros-humble-rmw-cyclonedds-cpp` and setting the `RMW_IMPLEMENTATION` environment variable: `export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp`. More information on working with different DDS implementations [here](https://docs.ros.org/en/humble/How-To-Guides/Working-with-multiple-RMW-implementations.html).
@@ -32,7 +32,7 @@ Create a workspace and clone all repositories:
 ```console
 mkdir -p ~/tiago_public_ws/src
 cd ~/tiago_public_ws
-vcs import --input https://raw.githubusercontent.com/pal-robotics/tiago_tutorials/humble-devel/tiago_public.rosinstall src
+vcs import --input https://raw.githubusercontent.com/pal-robotics/tiago_tutorials/humble-devel/tiago_public.repos src
 ```
 
 Install dependencies using rosdep
