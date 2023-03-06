@@ -94,14 +94,16 @@
 
   <group if="$(arg advanced_navigation)">
     <!-- Advanced navigation -->
+    <arg name="filter_suffix" value="xtion"/>
     <include file="$(find pal_head_manager)/launch/tiago_head_manager.launch"/>
     <node pkg="tiago_2dnav" type="navigation_camera_mgr.py" name="navigation_camera_mgr" />
     <node pkg="pal_zoi_detector" type="zoi_detector_node" name="zoi_detector" />
     <include file="$(find pal_waypoint)/launch/pal_waypoint.launch"/>
     <include file="$(find pal_navigation_manager)/launch/poi_navigation_server.launch"/>
-    <include file="$(find tiago_laser_sensors)/launch/rgbd_cloud_laser.launch">
-      <arg name="cloud"  value="/xtion/depth_registered/points"/>
-    </include>
+    <node name="roof_rgbd_camera_filter" pkg="pal_pcl" type="pal_stockbot_floor_filter_node" respawn="true" output="screen">
+      <remap from="cloud1" to="xtion/depth_registered/points"/>
+      <rosparam command="load" file="$(find tiago_rgbd_sensors)/config/roof_floor_filter_$(arg filter_suffix).yaml" />
+    </node>
   </group>
 
 </launch>
