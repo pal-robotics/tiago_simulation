@@ -94,7 +94,8 @@
 
   <group if="$(arg advanced_navigation)">
     <!-- Advanced navigation -->
-    <arg name="filter_suffix" value="xtion"/>
+    <arg name="filter_suffix" value="xtion"               if="$(eval arg('camera_model') == 'orbbec-astra' or arg('camera_model') == 'orbbec-astra-pro' or arg('camera_model') == 'asus-xtion')"/>
+    <arg name="filter_suffix" value=""               unless="$(eval arg('camera_model') == 'orbbec-astra' or arg('camera_model') == 'orbbec-astra-pro' or arg('camera_model') == 'asus-xtion')"/>
     <include file="$(find pal_head_manager)/launch/tiago_head_manager.launch"/>
     <node pkg="tiago_2dnav" type="navigation_camera_mgr.py" name="navigation_camera_mgr" />
     <node pkg="pal_zoi_detector" type="zoi_detector_node" name="zoi_detector" />
