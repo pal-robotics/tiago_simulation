@@ -63,15 +63,7 @@
             <arg name="robot_namespace"      value="$(arg robot_name)"/>
             <arg name="multiple"       value="true"/>
         </include>
-
-        <!-- pointcloud to laserscan-->
-        <group if="$(arg public_sim)">
-            <include file="$(find tiago_laser_sensors)/launch/rgbd_cloud_laser.launch">
-                <arg name="cloud" value="xtion/depth_registered/points"/>
-            </include>
-            <param name="pointcloud_to_laserscan/target_frame" value="$(arg robot_name)/rgbd_laser_link"/>
-        </group>
-
+        
         <node name="tuck_arm" pkg="tiago_gazebo" type="tuck_arm.py" output="screen"/>
     </group>
 </launch>

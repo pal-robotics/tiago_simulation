@@ -85,13 +85,6 @@
     </include>
   </group>
 
-  <!-- pointcloud to laserscan-->
-  <group if="$(arg public_sim)">
-    <include file="$(find tiago_laser_sensors)/launch/rgbd_cloud_laser.launch">
-      <arg name="cloud" value="/xtion/depth_registered/points"/>
-    </include>
-  </group>
-
   <group if="$(arg advanced_navigation)">
     <!-- Advanced navigation -->
     <arg name="filter_suffix" value="xtion"               if="$(eval arg('camera_model') == 'orbbec-astra' or arg('camera_model') == 'orbbec-astra-pro' or arg('camera_model') == 'asus-xtion')"/>
