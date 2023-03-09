@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/removed-pointcloud-to-laserscan' into 'erbium-devel'
+  removed pointcloud to laser_scan
+  See merge request robots/tiago_simulation!113
+* removed pointcloud to laser_scan
+* Contributors: andreacapodacqua, antoniobrandi
+
 2.3.10 (2023-03-07)
 -------------------
 * Merge branch 'feat/stvl-obstacle-rgbd-layer' into 'erbium-devel'
