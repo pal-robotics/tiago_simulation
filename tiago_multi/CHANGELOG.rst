@@ -2,8 +2,8 @@
 Changelog for package tiago_multi
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.11 (2023-03-09)
+-------------------
 * Merge branch 'fix/removed-pointcloud-to-laserscan' into 'erbium-devel'
   removed pointcloud to laser_scan
   See merge request robots/tiago_simulation!113
