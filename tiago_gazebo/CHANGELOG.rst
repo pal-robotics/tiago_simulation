@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.12 (2023-04-04)
+-------------------
 * Merge branch 'fix_world' into 'erbium-devel'
   Move worlds and models fix to pal_gazebo_worlds_package
   See merge request robots/tiago_simulation!111
