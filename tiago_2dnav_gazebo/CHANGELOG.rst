@@ -2,6 +2,9 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.3.11 (2023-03-09)
 -------------------
 * Merge branch 'fix/removed-pointcloud-to-laserscan' into 'erbium-devel'

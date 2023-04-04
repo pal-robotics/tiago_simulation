@@ -2,6 +2,16 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix_world' into 'erbium-devel'
+  Move worlds and models fix to pal_gazebo_worlds_package
+  See merge request robots/tiago_simulation!111
+* Remove folders from the CMakelist
+* Remove Media, models and worlds folders
+* Move worlds and models fix to pal_gazebo_worlds_package
+* Contributors: saikishor, thomaspeyrucain
+
 2.3.11 (2023-03-09)
 -------------------
 
