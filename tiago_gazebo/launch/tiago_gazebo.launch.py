@@ -84,9 +84,8 @@ def generate_launch_description():
         'tiago_bringup', ['launch', 'tiago_bringup.launch.py'])
 
     navigation = include_launch_py_description(
-        'tiago_2dnav', ['launch', 'tiago_nav_bringup.launch.py'],
-        condition=IfCondition(LaunchConfiguration('navigation')),
-        launch_arguments={"is_robot": "False"}.items())
+        'tiago_2dnav', ['launch', 'tiago_sim_nav_bringup.launch.py'],
+        condition=IfCondition(LaunchConfiguration('navigation')))
 
     move_group = include_launch_py_description(
         'tiago_moveit_config', ['launch', 'move_group.launch.py'],
