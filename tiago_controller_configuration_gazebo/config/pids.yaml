@@ -1,20 +1,20 @@
 gains:
   suspension_left_joint:  {p: 30000,  d: 250, i: 0.1, i_clamp: 1.5}
   suspension_right_joint: {p: 30000,  d: 250, i: 0.1, i_clamp: 1.5}
-  torso_lift_joint: {p: 900000,  d: 250, i: 0.2, i_clamp: 1.5}
+  torso_lift_joint: {p: 90000,  d: 25, i: 0.02, i_clamp: 1.5}
   head_1_joint: {p: 100,  d: 0, i: 10, i_clamp: 1.5}
   head_2_joint: {p: 100,  d: 0, i: 10, i_clamp: 1.5}
   xtion_frame_joint: {p: 0.5,  d: 0, i: 0, i_clamp: 1.5}
 
-  arm_1_joint: {p: 3000, d: 5, i: 1,   i_clamp: 3, torque_clamp: 60}
-  arm_2_joint: {p: 3000, d: 5, i: 1,   i_clamp: 3, torque_clamp: 50}
-  arm_3_joint: {p: 3000, d: 5, i: 1,   i_clamp: 3, torque_clamp: 50}
-  arm_4_joint: {p: 3000, d: 5, i: 1,   i_clamp: 3, torque_clamp: 50}
-  arm_5_joint: {p: 500,  d: 1, i: 0.1, i_clamp: 3, torque_clamp: 50}
-  arm_6_joint: {p: 500,  d: 1, i: 0.1, i_clamp: 3, torque_clamp: 50}
-  arm_7_joint: {p: 500,  d: 1, i: 0.1, i_clamp: 3, torque_clamp: 50}
+  arm_1_joint: {p: 400, d: 0.5, i: 0.0,   i_clamp: 3, torque_clamp: 60}
+  arm_2_joint: {p: 500, d: 5.0, i: 0.0,   i_clamp: 3, torque_clamp: 50}
+  arm_3_joint: {p: 400, d: 0.5, i: 0.1,   i_clamp: 3, torque_clamp: 50}
+  arm_4_joint: {p: 400, d: 1.0, i: 0.1,   i_clamp: 3, torque_clamp: 50}
+  arm_5_joint: {p: 100,  d: 0.1, i: 0.01, i_clamp: 3, torque_clamp: 50}
+  arm_6_joint: {p: 100,  d: 0.1, i: 0.01, i_clamp: 3, torque_clamp: 50}
+  arm_7_joint: {p: 50,  d: 0.1, i: 0.01, i_clamp: 3, torque_clamp: 50}
 
-  hand_index_joint: &finger_gains {p: 50,  d: 0.1,  i: 0.1, i_clamp: 1}
+  hand_index_joint: &finger_gains {p: 5,  d: 0.01,  i: 0.01, i_clamp: 1}
   hand_thumb_joint: *finger_gains
   hand_mrl_joint: *finger_gains
   hand_index_abd_joint: *finger_gains
@@ -56,11 +56,11 @@ gains:
   hand_thumb_joint: *finger_gains
   hand_mrl_joint: *finger_gains
 
-  gripper_left_finger_joint: &gripper_finger_gains {p: 2000,  d: 0,  i: 0, p_gain: 2000}
+  gripper_left_finger_joint: &gripper_finger_gains {p: 200,  d: 0,  i: 0, p_gain: 200}
   gripper_right_finger_joint: *gripper_finger_gains
   gripper_finger_joint: *gripper_finger_gains
 
-  FFJ4: &shadow_gains {p: 100,  d: 0,  i: 10}
+  FFJ4: &shadow_gains {p: 10,  d: 0,  i: 1}
   FFJ3: *shadow_gains
   FFJ2: *shadow_gains
   FFJ1: *shadow_gains
