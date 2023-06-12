@@ -2,6 +2,16 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'control-period-reduced' into 'erbium-devel'
+  gazebo pids updated for the arms and the pal-gripper for control period of 0.01
+  See merge request robots/tiago_simulation!118
+* Apply 2 suggestion(s) to 1 file(s)
+* gazebo pids updated for the arms and the pal-gripper after the reduction of
+  the control period
+* Contributors: Sai Kishor Kothakota, ileniaperrella
+
 2.3.13 (2023-06-12)
 -------------------
 
