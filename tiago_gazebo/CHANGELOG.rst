@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.3 (2023-06-16)
+------------------
 * Merge branch 'fix/set-is-robot' into 'humble-devel'
   Use a different navigation launcher for simulation
   See merge request robots/tiago_simulation!116
