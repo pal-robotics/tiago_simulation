@@ -2,6 +2,20 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/set-is-robot' into 'humble-devel'
+  Use a different navigation launcher for simulation
+  See merge request robots/tiago_simulation!116
+* use tiago_sim_navigation
+* using is_robot argument in simulation
+* Merge branch 'ros1_cleanup' into 'humble-devel'
+  ROS 1 cleanup for humble-devel
+  See merge request robots/tiago_simulation!117
+* remove not ported grasping demo
+* Remove Media, models and worlds folders
+* Contributors: Noel Jimenez, Sai Kishor Kothakota, antoniobrandi, thomaspeyrucain
+
 4.0.2 (2023-02-24)
 ------------------
 * Merge branch 'tuck_arm' into 'humble-devel'
