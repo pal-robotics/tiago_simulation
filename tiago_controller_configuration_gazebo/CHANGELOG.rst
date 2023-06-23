@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.15 (2023-06-23)
+-------------------
 * Merge branch 'update-params' into 'erbium-devel'
   Update params
   See merge request robots/tiago_simulation!119
