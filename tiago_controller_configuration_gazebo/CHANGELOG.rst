@@ -2,6 +2,16 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'update-params' into 'erbium-devel'
+  Update params
+  See merge request robots/tiago_simulation!119
+* Load simulation params instead real params
+* Update PID Values for arm_2_joint
+* Update joint tolerance limits
+* Contributors: Sai Kishor Kothakota, sergiacosta
+
 2.3.14 (2023-06-12)
 -------------------
 * Merge branch 'control-period-reduced' into 'erbium-devel'
