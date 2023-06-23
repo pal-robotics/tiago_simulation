@@ -7,7 +7,7 @@ torso_controller:
     goal_time: 0.6
     stopped_velocity_tolerance: 5.0 # FIXME: See #8429
     torso_lift_joint:
-      goal: 0.001
+      goal: 0.02
 
 head_controller:
   type: "position_controllers/JointTrajectoryController"
@@ -37,16 +37,16 @@ arm_controller:
     goal_time: 0.6
     stopped_velocity_tolerance: 5.0
     arm_1_joint:
-      goal: 0.02
+      goal: 0.025
     arm_2_joint:
-      goal: 0.02
+      goal: 0.025
     arm_3_joint:
-      goal: 0.02
+      goal: 0.025
     arm_4_joint:
-      goal: 0.02
+      goal: 0.025
     arm_5_joint:
-      goal: 0.02
+      goal: 0.025
     arm_6_joint:
-      goal: 0.02
+      goal: 0.025
     arm_7_joint:
-      goal: 0.02
+      goal: 0.025
