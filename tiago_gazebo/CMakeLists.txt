@@ -2,9 +2,7 @@ cmake_minimum_required(VERSION 3.4.0)
 project(tiago_gazebo)
 
 find_package(ament_cmake_auto REQUIRED)
-
-# PAL Robotics stricter build flags, other developers should not worry about this
-find_package(ament_cmake_pal QUIET)
+ament_auto_find_build_dependencies()
 
 install(
   PROGRAMS scripts/tuck_arm.py
