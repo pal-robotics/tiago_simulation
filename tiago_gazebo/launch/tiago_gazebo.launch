@@ -31,8 +31,8 @@
     <arg name="gui" value="$(arg gui)"/>
     <arg name="debug" value="$(arg debug)"/>
     <arg name="recording" value="$(arg recording)"/>
-    <arg name="extra_gz_model_path" value="$(find tiago_gazebo)/models"/>
-    <arg name="extra_gz_resource_path" value="$(find tiago_gazebo)"/>
+    <arg name="extra_gz_model_path" value=""/>
+    <arg name="extra_gz_resource_path" value=""/>
     <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
   </include>
 
