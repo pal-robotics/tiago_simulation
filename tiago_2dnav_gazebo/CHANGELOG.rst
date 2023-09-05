@@ -2,6 +2,14 @@
 Changelog for package tiago_2dnav_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'fix/multi-robot' into 'erbium-devel'
+  added support to multi robot
+  See merge request robots/tiago_simulation!123
+* added support to multi robot
+* Contributors: AntoBrandi, antoniobrandi
+
 2.3.15 (2023-06-23)
 -------------------
 

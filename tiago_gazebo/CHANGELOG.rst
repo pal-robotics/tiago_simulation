@@ -2,6 +2,14 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'davidterkuile-erbium-devel-patch-42969' into 'erbium-devel'
+  Remove resources path that is no longer pointing to correct folders
+  See merge request robots/tiago_simulation!121
+* Remove resources path that is no longer pointing to correct folders
+* Contributors: Sai Kishor Kothakota, davidterkuile
+
 2.3.15 (2023-06-23)
 -------------------
 
