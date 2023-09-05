@@ -29,6 +29,8 @@
   <group unless="$(arg public_sim)">
     <include file="$(find pal_map_manager)/launch/pal_map_manager.launch">
       <arg name="map"       value="$(arg map)"/>
+      <arg name="namespace"     value="$(arg robot_namespace)"/>
+      <arg name="use_hostname"  value="false"/>
     </include>
   </group>
 
