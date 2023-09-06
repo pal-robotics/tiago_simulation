@@ -16,6 +16,7 @@
                 
   <rosparam ns="pal_robot_info" subst_value="true">
     type: "tiago"
+    arm_type: "tiago_arm"
     end_effector: $(arg ee_suffix)
     ft_sensor: $(arg ft_sensor)
     laser_model: $(arg laser_model)
