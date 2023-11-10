@@ -78,23 +78,28 @@ def generate_launch_description():
     )
 
     tiago_spawn = include_launch_py_description(
-        'tiago_gazebo', ['launch', 'tiago_spawn.launch.py'])
+        'tiago_gazebo', ['launch', 'tiago_spawn.launch.py'],
+        launch_arguments={'use_sim_time': 'True'}.items())
 
     tiago_bringup = include_launch_py_description(
-        'tiago_bringup', ['launch', 'tiago_bringup.launch.py'])
+        'tiago_bringup', ['launch', 'tiago_bringup.launch.py'],
+        launch_arguments={'use_sim_time': 'True'}.items())
 
     navigation = include_launch_py_description(
         'tiago_2dnav', ['launch', 'tiago_sim_nav_bringup.launch.py'],
+        launch_arguments={'use_sim_time': 'True'}.items(),
         condition=IfCondition(LaunchConfiguration('navigation')))
 
     move_group = include_launch_py_description(
         'tiago_moveit_config', ['launch', 'move_group.launch.py'],
+        launch_arguments={'use_sim_time': 'True'}.items(),
         condition=IfCondition(LaunchConfiguration('moveit')))
 
     tuck_arm = Node(package='tiago_gazebo',
                     executable='tuck_arm.py',
                     emulate_tty=True,
-                    output='both')
+                    output='both',
+                    parameters=[{'use_sim_time': True}])
 
     # @TODO: review pal_gazebo
     # @TODO: review tiago_spawn
