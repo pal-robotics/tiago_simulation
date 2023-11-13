@@ -2,6 +2,12 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Set use_sim_time true
+* Remove pal flags dependency
+* Contributors: Noel Jimenez
+
 4.0.3 (2023-06-16)
 ------------------
 * Merge branch 'fix/set-is-robot' into 'humble-devel'
