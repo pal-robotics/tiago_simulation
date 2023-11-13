@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.4 (2023-11-13)
+------------------
 * Set use_sim_time true
 * Remove pal flags dependency
 * Contributors: Noel Jimenez
