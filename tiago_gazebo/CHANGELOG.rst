@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add website tag
+* Contributors: Noel Jimenez
+
 4.0.4 (2023-11-13)
 ------------------
 * Set use_sim_time true

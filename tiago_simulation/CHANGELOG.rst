@@ -2,6 +2,11 @@
 Changelog for package tiago_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add website tag
+* Contributors: Noel Jimenez
+
 4.0.4 (2023-11-13)
 ------------------
 
