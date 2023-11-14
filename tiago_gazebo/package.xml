@@ -9,6 +9,8 @@
   <license>Apache License 2.0</license>
   <author email="bence.magyar@pal-robotics.com">Bence Magyar</author>
 
+  <url type="website">https://github.com/pal-robotics/tiago_simulation</url>
+
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
 
   <exec_depend>gazebo_plugins</exec_depend>

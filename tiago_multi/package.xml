@@ -6,6 +6,9 @@
 
   <maintainer email="david.fernandez@pal-robotics.com">davidfernandez</maintainer>
   <license>BSD</license>
+
+  <url type="website">https://github.com/pal-robotics/tiago_simulation</url>
+
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>tiago_gazebo</run_depend>
 </package>
