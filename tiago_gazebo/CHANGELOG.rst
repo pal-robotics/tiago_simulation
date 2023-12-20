@@ -2,6 +2,12 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* move world_name to pal_gazebo_worlds
+* Disable tuck_arm_test
+* Contributors: Noel Jimenez, antoniobrandi
+
 4.0.5 (2023-11-14)
 ------------------
 * Add website tag
