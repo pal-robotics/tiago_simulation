@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.7 (2023-12-22)
+------------------
 * changing package name of hey5 into the new one: pal_hey5
 * Contributors: Aina Irisarri
 
