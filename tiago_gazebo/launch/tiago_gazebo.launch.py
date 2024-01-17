@@ -102,7 +102,8 @@ def generate_launch_description():
     # @TODO: pal_pcl_points_throttle_and_filter
 
     packages = ['tiago_description', 'pmb2_description',
-                'pal_hey5_description', 'pal_gripper_description']
+                'pal_hey5_description', 'pal_gripper_description',
+                'pal_robotiq_description']
     model_path = get_model_paths(packages)
     resource_path = get_resource_paths(packages)
 
