@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.8 (2024-01-19)
+------------------
 * Adding pal_robotiq_description in the package list
 * Contributors: Aina Irisarri
 
