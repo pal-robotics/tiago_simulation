@@ -85,7 +85,7 @@ The velocities can be modified by changing the values of x and z.
 You can launch TIAGo navigation by executing 
 
 ```console
-ros2 launch tiago_2dnav tiago_nav_bringup.launch.py
+ros2 launch tiago_2dnav tiago_nav_bringup.launch.py is_public_sim:=true
 ```
 
 Then, you can send a goal:
@@ -101,7 +101,7 @@ Then, you can send a goal:
 You can also start the simulation and navigation together by using
 
 ```console
-ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=true [arm:=no-arm]
+ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=true is_public_sim:=true [arm:=no-arm]
 ```
 
 Then, goals can be sent in the same way.
@@ -131,5 +131,5 @@ You can move the robot by:
 Finally, to launch all together:
 
 ```console
-ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=true moveit:=true
+ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=true moveit:=true is_public_sim:=true
 ```
