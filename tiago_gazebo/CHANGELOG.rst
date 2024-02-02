@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.0.9 (2024-02-02)
+------------------
 * Merge branch 'feat/register-components' into 'humble-devel'
   use single entry point for navigation
   See merge request robots/tiago_simulation!133
