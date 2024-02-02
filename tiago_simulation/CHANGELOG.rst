@@ -2,6 +2,9 @@
 Changelog for package tiago_simulation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 4.0.8 (2024-01-19)
 ------------------
 

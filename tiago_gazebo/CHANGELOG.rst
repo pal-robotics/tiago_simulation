@@ -2,6 +2,14 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'feat/register-components' into 'humble-devel'
+  use single entry point for navigation
+  See merge request robots/tiago_simulation!133
+* use single entry point for navigation
+* Contributors: antoniobrandi
+
 4.0.8 (2024-01-19)
 ------------------
 * Adding pal_robotiq_description in the package list
