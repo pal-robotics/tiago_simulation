@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.1.0 (2024-02-28)
+------------------
 * Launch MoveIt 2 by default
 * Contributors: Noel Jimenez
 
