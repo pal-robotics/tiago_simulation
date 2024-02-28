@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Launch MoveIt 2 by default
+* Contributors: Noel Jimenez
+
 4.0.9 (2024-02-02)
 ------------------
 * Merge branch 'feat/register-components' into 'humble-devel'
