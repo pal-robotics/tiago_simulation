@@ -55,6 +55,8 @@
           <arg name="model" value="$(arg end_effector)" />
         </include>
     </group>
+    
+    <include file="$(find tiago_controller_configuration)/launch/joint_trajectory_controllers_velocity.launch"/>
 
     <!-- Play motion -->
     <include file="$(find tiago_bringup)/launch/play_motion.launch">
