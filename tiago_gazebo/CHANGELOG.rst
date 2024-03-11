@@ -2,6 +2,22 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* remove the velocity_interface arg with review suggestions
+  agree
+  agree
+  agree
+  agree
+  agree
+  Apply 1 suggestion(s) to 1 file(s)
+* add arg velocity_interface that loads the velocity controllers as stopped
+* Merge branch 'arm-type-param' into 'erbium-devel'
+  Add arm type to pal_robot_info
+  See merge request robots/tiago_simulation!124
+* Add arm type to pal_robot_info
+* Contributors: David ter Kuile, Jordan Palacios, Sai Kishor Kothakota, ileniaperrella
+
 2.3.16 (2023-09-05)
 -------------------
 * Merge branch 'davidterkuile-erbium-devel-patch-42969' into 'erbium-devel'

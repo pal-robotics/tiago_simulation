@@ -2,6 +2,21 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'velocity_interface' into 'erbium-devel'
+  velocity inteface
+  See merge request robots/tiago_simulation!134
+* remove the velocity_interface arg with review suggestions
+  agree
+  agree
+  agree
+  agree
+  agree
+  Apply 1 suggestion(s) to 1 file(s)
+* add arg velocity_interface that loads the velocity controllers as stopped
+* Contributors: Sai Kishor Kothakota, ileniaperrella
+
 2.3.16 (2023-09-05)
 -------------------
 
