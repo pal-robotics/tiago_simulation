@@ -13,7 +13,6 @@
   <arg name="base_type" default="pmb2"/>
   <arg name="base_type_suffix" value="" unless="$(eval arg('base_type') == 'omni_base')"/>
   <arg name="base_type_suffix" value="_omni" if="$(eval arg('base_type') == 'omni_base')"/>
-  <arg name="velocity_interface" default="false"/>
 
   <!-- Joint trajectory and diff drive controllers -->
   <rosparam command="load" file="$(find tiago_controller_configuration_gazebo)/config/mobile_base_controller$(arg base_type_suffix).yaml"/>
@@ -29,7 +28,6 @@
     <arg name="base_type" value="$(arg base_type)"/>
     <arg name="public_sim" value="$(arg public_sim)"/>
     <arg name="advanced_grasping" value="$(arg advanced_grasping)" unless="$(arg public_sim)"/>
-    <arg name="velocity_interface" value="$(arg velocity_interface)"/>
   </include>
 
   <!-- Robot state publisher -->
