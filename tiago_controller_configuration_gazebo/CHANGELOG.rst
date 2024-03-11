@@ -2,8 +2,8 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.17 (2024-03-11)
+-------------------
 * Merge branch 'velocity_interface' into 'erbium-devel'
   velocity inteface
   See merge request robots/tiago_simulation!134

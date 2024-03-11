@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.17 (2024-03-11)
+-------------------
 * remove the velocity_interface arg with review suggestions
   agree
   agree
