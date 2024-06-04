@@ -1,0 +1,91 @@
+gains:
+  suspension_left_joint:  {p: 30000,  d: 250, i: 0.1, i_clamp: 1.5}
+  suspension_right_joint: {p: 30000,  d: 250, i: 0.1, i_clamp: 1.5}
+  torso_lift_joint: {p: 900000,  d: 250, i: 0.2, i_clamp: 1.5}
+  head_1_joint: {p: 100,  d: 0, i: 10, i_clamp: 1.5}
+  head_2_joint: {p: 100,  d: 0, i: 10, i_clamp: 1.5}
+  xtion_frame_joint: {p: 0.5,  d: 0, i: 0, i_clamp: 1.5}
+
+  arm_1_joint: {p: 3000, d: 5, i: 1,   i_clamp: 3, torque_clamp: 60}
+  arm_2_joint: {p: 3000, d: 5, i: 1,   i_clamp: 3, torque_clamp: 50}
+  arm_3_joint: {p: 3000, d: 5, i: 1,   i_clamp: 3, torque_clamp: 50}
+  arm_4_joint: {p: 3000, d: 5, i: 1,   i_clamp: 3, torque_clamp: 50}
+  arm_5_joint: {p: 500,  d: 1, i: 0.1, i_clamp: 3, torque_clamp: 50}
+  arm_6_joint: {p: 500,  d: 1, i: 0.1, i_clamp: 3, torque_clamp: 50}
+  arm_7_joint: {p: 500,  d: 1, i: 0.1, i_clamp: 3, torque_clamp: 50}
+
+  hand_index_joint: &finger_gains {p: 50,  d: 0.1,  i: 0.1, i_clamp: 1}
+  hand_thumb_joint: *finger_gains
+  hand_mrl_joint: *finger_gains
+  hand_index_abd_joint: *finger_gains
+  hand_index_virtual_1_joint: *finger_gains
+  hand_index_virtual_2_joint: *finger_gains
+  hand_index_virtual_3_joint: *finger_gains
+  hand_index_flex_1_joint: *finger_gains
+  hand_index_flex_2_joint: *finger_gains
+  hand_index_flex_3_joint: *finger_gains
+  hand_index_joint: *finger_gains
+  hand_little_abd_joint: *finger_gains
+  hand_little_virtual_1_joint: *finger_gains
+  hand_little_virtual_2_joint: *finger_gains
+  hand_little_virtual_3_joint: *finger_gains
+  hand_little_flex_1_joint: *finger_gains
+  hand_little_flex_2_joint: *finger_gains
+  hand_little_flex_3_joint: *finger_gains
+  hand_middle_abd_joint: *finger_gains
+  hand_middle_virtual_1_joint: *finger_gains
+  hand_middle_virtual_2_joint: *finger_gains
+  hand_middle_virtual_3_joint: *finger_gains
+  hand_middle_flex_1_joint: *finger_gains
+  hand_middle_flex_2_joint: *finger_gains
+  hand_middle_flex_3_joint: *finger_gains
+  hand_ring_abd_joint: *finger_gains
+  hand_ring_virtual_1_joint: *finger_gains
+  hand_ring_virtual_2_joint: *finger_gains
+  hand_ring_virtual_3_joint: *finger_gains
+  hand_ring_flex_1_joint: *finger_gains
+  hand_ring_flex_2_joint: *finger_gains
+  hand_ring_flex_3_joint: *finger_gains
+  hand_thumb_abd_joint: *finger_gains
+  hand_thumb_virtual_1_joint: *finger_gains
+  hand_thumb_virtual_2_joint: *finger_gains
+  hand_thumb_virtual_3_joint: *finger_gains
+  hand_thumb_flex_1_joint: *finger_gains
+  hand_thumb_flex_2_joint: *finger_gains
+  hand_thumb_flex_3_joint: *finger_gains
+  hand_thumb_joint: *finger_gains
+  hand_mrl_joint: *finger_gains
+
+  gripper_left_finger_joint: &gripper_finger_gains {p: 2000,  d: 0,  i: 0, p_gain: 2000}
+  gripper_right_finger_joint: *gripper_finger_gains
+  gripper_finger_joint: *gripper_finger_gains
+
+  FFJ4: &shadow_gains {p: 100,  d: 0,  i: 10}
+  FFJ3: *shadow_gains
+  FFJ2: *shadow_gains
+  FFJ1: *shadow_gains
+  MFJ4: *shadow_gains
+  MFJ3: *shadow_gains
+  MFJ2: *shadow_gains
+  MFJ1: *shadow_gains
+  RFJ4: *shadow_gains
+  RFJ3: *shadow_gains
+  RFJ2: *shadow_gains
+  RFJ1: *shadow_gains
+  THJ5: *shadow_gains
+  THJ4: *shadow_gains
+  THJ2: *shadow_gains
+  THJ1: *shadow_gains
+
+velocity:
+  pid_gains:
+     wheel_right_joint: {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     wheel_left_joint:  {p: 30,  d: 0, i: 0, i_clamp: 1.0}
+     caster_front_right_1_joint: {p: 0,  d: 0,  i: 0, i_clamp: 0}
+     caster_front_right_2_joint: {p: 0,  d: 0,  i: 0, i_clamp: 0}
+     caster_front_left_1_joint: {p: 0,  d: 0,  i: 0, i_clamp: 0}
+     caster_front_left_2_joint: {p: 0,  d: 0,  i: 0, i_clamp: 0}
+     caster_back_right_1_joint: {p: 0,  d: 0,  i: 0, i_clamp: 0}
+     caster_back_right_2_joint: {p: 0,  d: 0,  i: 0, i_clamp: 0}
+     caster_back_left_1_joint: {p: 0,  d: 0,  i: 0, i_clamp: 0}
+     caster_back_left_2_joint: {p: 0,  d: 0,  i: 0, i_clamp: 0}
