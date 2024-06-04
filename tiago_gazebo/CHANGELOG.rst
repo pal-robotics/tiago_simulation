@@ -2,6 +2,15 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge branch 'ipe/gazebo-control-period' into 'erbium-devel'
+  split the pids for different control periods
+  See merge request robots/tiago_simulation!152
+* set a boolean arg to enable the control_period to 100Hz
+* split the pids for different control periods
+* Contributors: davidterkuile, ileniaperrella
+
 2.3.17 (2024-03-11)
 -------------------
 * remove the velocity_interface arg with review suggestions
