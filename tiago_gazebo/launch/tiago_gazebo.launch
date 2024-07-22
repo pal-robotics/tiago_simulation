@@ -23,6 +23,7 @@
   <arg name="base_type" default="pmb2"/>
   <arg name="advanced_grasping" default="false"/> <!-- Requires extra software from PAL Robotics -->
   <arg name="slow_control_period" default="false"/>
+  <arg name="has_screen"  default="false"/>
 
 
   <env name="LC_NUMERIC" value="C" />
@@ -49,6 +50,7 @@
     <arg name="gzpose" value="$(arg gzpose)"/>
     <arg name="base_type" value="$(arg base_type)"/>
     <arg name="slow_control_period" value="$(arg slow_control_period)"/>
+    <arg name="has_screen"  value="$(arg has_screen)"/>
   </include>
 
   <!-- bring up robot -->

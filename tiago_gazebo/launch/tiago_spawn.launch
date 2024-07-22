@@ -14,6 +14,7 @@
   <arg name="gazebo_control_period" value="0.001" unless="$(arg slow_control_period)"/>
   <arg name="pids_filename" value="$(eval str(arg('gazebo_control_period')).replace('.', ''))" />
   <arg name="file_suffix" value="$(eval (('no-arm' if not arm else (end_effector if end_effector else 'no-ee') + ('_' +  ft_sensor if ft_sensor else ''))))"/>  
+  <arg name="has_screen" default="False"/>
 
   <arg name="ee_suffix" value="$(eval (end_effector if end_effector else 'no-ee'))"/>
                 
@@ -26,6 +27,7 @@
     camera_model: $(arg camera_model)
     base_type: $(arg base_type)
     arm: $(arg arm)
+    has_screen: $(arg has_screen)
   </rosparam>
 
   <!-- PID gains -->
@@ -51,6 +53,7 @@
     <arg name="multi"  value="$(arg multi)"/>
     <arg name="base_type"  value="$(arg base_type)"/>
     <arg name="gazebo_control_period" value="$(arg gazebo_control_period)"/>
+    <arg name="has_screen" value="$(arg has_screen)"/>
   </include>
 
   <!-- Spawn robot in Gazebo -->
