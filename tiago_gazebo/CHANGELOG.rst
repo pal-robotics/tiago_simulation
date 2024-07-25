@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.19 (2024-07-25)
+-------------------
 * Merge branch 'feat/add_screen' into 'erbium-devel'
   Add screen parameter
   See merge request robots/tiago_simulation!158
