@@ -2,6 +2,9 @@
 Changelog for package tiago_controller_configuration_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.3.18 (2024-06-04)
 -------------------
 * Merge branch 'ipe/gazebo-control-period' into 'erbium-devel'
