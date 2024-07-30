@@ -34,6 +34,7 @@ class LaunchArguments(LaunchArgumentsBase):
     base_type: DeclareLaunchArgument = TiagoArgs.base_type
     has_screen: DeclareLaunchArgument = TiagoArgs.has_screen
     arm_type: DeclareLaunchArgument = TiagoArgs.arm_type
+    arm_motor_model: DeclareLaunchArgument = TiagoArgs.arm_motor_model
     end_effector: DeclareLaunchArgument = TiagoArgs.end_effector
     ft_sensor: DeclareLaunchArgument = TiagoArgs.ft_sensor
     wrist_model: DeclareLaunchArgument = TiagoArgs.wrist_model
@@ -153,6 +154,7 @@ def declare_actions(
         launch_arguments={
             "use_sim_time": LaunchConfiguration("use_sim_time"),
             "arm_type": launch_args.arm_type,
+            "arm_motor_model": launch_args.arm_motor_model,
             "laser_model": launch_args.laser_model,
             "camera_model": launch_args.camera_model,
             "base_type": launch_args.base_type,
