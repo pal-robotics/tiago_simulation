@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
   <name>tiago_gazebo</name>
-  <version>4.1.9</version>
+  <version>4.2.0</version>
   <description>The tiago_gazebo package</description>
   <maintainer email="jordan.palacios@pal-robotics.com">Jordan Palacios</maintainer>
   <maintainer email="noel.jimenez@pal-robotics.com">Noel Jimenez</maintainer>
