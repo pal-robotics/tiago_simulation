@@ -108,6 +108,7 @@ def declare_actions(
             "world_name": launch_args.world_name,
             'slam': launch_args.slam,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
+            "advanced_navigation": launch_args.advanced_navigation,
         },
         condition=IfCondition(LaunchConfiguration('navigation')))
 
