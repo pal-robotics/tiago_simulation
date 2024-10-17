@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.3.0 (2024-10-17)
+------------------
 * Merge branch 'man/feta/nav-rviz-config' into 'humble-devel'
   added advanced nav launch arg to navigation
   See merge request robots/tiago_simulation!160
