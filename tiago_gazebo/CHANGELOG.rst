@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Use motion information to check final positions
+* Contributors: vamsiguda
+
 4.3.0 (2024-10-17)
 ------------------
 * Merge branch 'man/feta/nav-rviz-config' into 'humble-devel'
