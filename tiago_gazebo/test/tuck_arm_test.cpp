@@ -17,6 +17,7 @@
 #include <thread>
 
 #include "play_motion2_msgs/srv/is_motion_ready.hpp"
+#include "play_motion2_msgs/srv/get_motion_info.hpp"
 #include "rclcpp/executors.hpp"
 #include "rclcpp/node.hpp"
 #include "rclcpp/wait_for_message.hpp"
@@ -24,6 +25,7 @@
 
 using namespace std::chrono_literals;
 using IsMotionReady = play_motion2_msgs::srv::IsMotionReady;
+using GetMotionInfo = play_motion2_msgs::srv::GetMotionInfo;
 
 const auto TIMEOUT = 10s;
 const auto PLAY_MOTION_STATE_TIMEOUT = 30s;
@@ -82,59 +84,97 @@ void check_joint_position(
   const std::string & joint_name,
   double expected_position)
 {
-  auto position =
-    std::distance(
-    joint_states.name.cbegin(),
-    std::find(joint_states.name.cbegin(), joint_states.name.cend(), joint_name));
-  ASSERT_NEAR(joint_states.position.at(position), expected_position, MAX_ABS_ERROR);
+  auto it = std::find(joint_states.name.cbegin(), joint_states.name.cend(), joint_name);
+
+  // Ensure the joint exists
+  ASSERT_NE(
+    it,
+    joint_states.name.cend()) << "Joint name " << joint_name << " not found in joint_states.";
+
+  auto position = std::distance(joint_states.name.cbegin(), it);
+
+  // Ensure the position index is within valid bounds
+  ASSERT_LT(position, joint_states.position.size())
+    << "Position index out of range for joint " << joint_name;
+
+  // Perform the position check
+  ASSERT_NEAR(joint_states.position.at(position), expected_position, MAX_ABS_ERROR)
+    << "Position mismatch for joint " << joint_name;
 }
+
 
 TEST(TuckArmTest, TuckArmTest)
 {
   const auto node = rclcpp::Node::make_shared("tuck_arm_test_node");
-  auto client = node->create_client<IsMotionReady>(
-    "play_motion2/is_motion_ready");
+  // Create clients for the two services
+  auto is_motion_ready_client = node->create_client<IsMotionReady>("play_motion2/is_motion_ready");
+  auto get_motion_info_client = node->create_client<GetMotionInfo>("play_motion2/get_motion_info");
 
-  ASSERT_TRUE(client->wait_for_service(TIMEOUT));
+  ASSERT_TRUE(is_motion_ready_client->wait_for_service(TIMEOUT)) <<
+    "Service /play_motion2/is_motion_ready not available.";
+  ASSERT_TRUE(get_motion_info_client->wait_for_service(TIMEOUT)) <<
+    "Service /play_motion2/get_motion_info not available.";
 
   // wait until play_motion is ready
-  wait_play_motion2_state(node, client, play_motion_state::AVAILABLE);
+  wait_play_motion2_state(node, is_motion_ready_client, play_motion_state::AVAILABLE);
 
   // wait until play_motion is busy -> tuck_arm execution
-  wait_play_motion2_state(node, client, play_motion_state::BUSY);
+  wait_play_motion2_state(node, is_motion_ready_client, play_motion_state::BUSY);
 
   // wait until play_motion is ready -> tuck_arm finished
-  wait_play_motion2_state(node, client, play_motion_state::AVAILABLE);
+  wait_play_motion2_state(node, is_motion_ready_client, play_motion_state::AVAILABLE);
+
+  // Get the expected joint positions from the service
+  auto request = std::make_shared<GetMotionInfo::Request>();
+  request->motion_key = "home";
+  auto future_result = get_motion_info_client->async_send_request(request);
+  ASSERT_EQ(
+    rclcpp::spin_until_future_complete(
+      node,
+      future_result), rclcpp::FutureReturnCode::SUCCESS)
+    << "Service call to /play_motion2/get_motion_info failed.";
+
+  ASSERT_EQ(future_result.wait_for(TIMEOUT), std::future_status::ready);
+
+  auto motion = future_result.get()->motion;
+  // Extract joint names and positions from the motion
+  auto joint_names = motion.joints;
+  auto joint_positions = motion.positions;
+
+  // Extract only the first position for each joint
+  std::vector<double> correct_positions;
+  // Select the third row (index 2) as the expected joint positions
+  size_t num_positions_per_joint = joint_positions.size() / joint_names.size();
+  size_t selected_row = num_positions_per_joint - 1;
+  ASSERT_LT(selected_row, num_positions_per_joint) << "Invalid selected row index.";
+
+  for (size_t i = 0; i < joint_names.size(); ++i) {
+    correct_positions.push_back(joint_positions[i + (selected_row * joint_names.size())]);
+  }
+
+  // Ensure sizes match after extraction
+  ASSERT_EQ(joint_names.size(), correct_positions.size())
+    << "Mismatch between joint names and extracted positions sizes.";
+
+  // Combine joint names and positions into a map for comparison
+  std::map<std::string, double> expected_joint_positions;
+  for (size_t i = 0; i < joint_names.size(); ++i) {
+    expected_joint_positions[joint_names[i]] =
+      joint_positions[i + (selected_row * joint_names.size())];
+  }
 
   // Check joint_states
   sensor_msgs::msg::JointState joint_states;
-  rclcpp::wait_for_message<sensor_msgs::msg::JointState>(
-    joint_states,
-    node, "/joint_states");
+  bool success = rclcpp::wait_for_message<sensor_msgs::msg::JointState>(
+    joint_states, node, "/joint_states");
+  ASSERT_TRUE(success) << "Failed to receive joint states from /joint_states topic.";
 
-  constexpr double TORSO_LIFT_JOINT_HOME_POS = 0.15;
-  check_joint_position(joint_states, "torso_lift_joint", TORSO_LIFT_JOINT_HOME_POS);
-
-  constexpr double ARM_1_JOINT_HOME_POS = 0.50;
-  check_joint_position(joint_states, "arm_1_joint", ARM_1_JOINT_HOME_POS);
-
-  constexpr double ARM_2_JOINT_HOME_POS = -1.34;
-  check_joint_position(joint_states, "arm_2_joint", ARM_2_JOINT_HOME_POS);
-
-  constexpr double ARM_3_JOINT_HOME_POS = -0.48;
-  check_joint_position(joint_states, "arm_3_joint", ARM_3_JOINT_HOME_POS);
-
-  constexpr double ARM_4_JOINT_HOME_POS = 1.94;
-  check_joint_position(joint_states, "arm_4_joint", ARM_4_JOINT_HOME_POS);
-
-  constexpr double ARM_5_JOINT_HOME_POS = -1.49;
-  check_joint_position(joint_states, "arm_5_joint", ARM_5_JOINT_HOME_POS);
-
-  constexpr double ARM_6_JOINT_HOME_POS = 1.37;
-  check_joint_position(joint_states, "arm_6_joint", ARM_6_JOINT_HOME_POS);
-
-  constexpr double ARM_7_JOINT_HOME_POS = 0.0;
-  check_joint_position(joint_states, "arm_7_joint", ARM_7_JOINT_HOME_POS);
+  // Compare actual joint positions to expected positions from the service
+  for (const auto & joint_position : expected_joint_positions) {
+    const auto & joint_name = joint_position.first;
+    const auto & expected_position = joint_position.second;
+    check_joint_position(joint_states, joint_name, expected_position);
+  }
 }
 
 int main(int argc, char * argv[])
