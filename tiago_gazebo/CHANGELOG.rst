@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.3.1 (2025-03-14)
+------------------
 * Use motion information to check final positions
 * Contributors: vamsiguda
 
