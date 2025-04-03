@@ -39,4 +39,4 @@ if(BUILD_TESTING)
   )
 endif()
 
-ament_auto_package(INSTALL_TO_SHARE launch)
+ament_auto_package(INSTALL_TO_SHARE config launch)

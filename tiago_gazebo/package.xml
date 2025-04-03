@@ -34,6 +34,7 @@
   <test_depend>play_motion2_msgs</test_depend>
   <test_depend>rclcpp</test_depend>
   <test_depend>sensor_msgs</test_depend>
+  <exec_depend condition="$PAL_DISTRO >= alum">robot_info_publisher</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
