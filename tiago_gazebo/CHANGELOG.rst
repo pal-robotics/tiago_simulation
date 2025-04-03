@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.4.0 (2025-04-03)
+------------------
 * adopt pal_configuration
 * Contributors: antoniobrandi
 
