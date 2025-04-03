@@ -1,9 +1,0 @@
-robot_info_publisher:
-  ros__parameters:
-    robot_type: tiago
-    base_type: pmb2
-    add_on_module: no-add-on
-    laser_model: sick-571
-    camera_model: orbbec-astra
-    advanced_navigation: False
-    has_dock: False
