@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* adopt pal_configuration
+* Contributors: antoniobrandi
+
 4.3.1 (2025-03-14)
 ------------------
 * Use motion information to check final positions
