@@ -229,9 +229,6 @@ def public_navigation(context, *args, **kwargs):
     rviz_bringup_launch = include_scoped_launch_py_description(
         pkg_name='nav2_bringup',
         paths=['launch', 'rviz_launch.py'],
-        launch_arguments={
-            'rviz': param_file
-        },
     )
     actions.append(rviz_bringup_launch)
     return actions
