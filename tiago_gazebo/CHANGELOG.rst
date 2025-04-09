@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.5.1 (2025-04-09)
+------------------
 * rviz_config_file public_nav
 * Contributors: salvatorepiccolo
 
