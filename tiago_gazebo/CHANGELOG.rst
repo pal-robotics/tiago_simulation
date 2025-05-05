@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.5.2 (2025-05-05)
+------------------
 * fix nav deps
 * Contributors: andreacapodacqua
 
