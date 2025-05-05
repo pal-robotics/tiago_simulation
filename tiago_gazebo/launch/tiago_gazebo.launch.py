@@ -174,6 +174,7 @@ def private_navigation(context, *args, **kwargs):
             'rviz',
             'navigation.rviz',
         )],
+        parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}],
         output='screen',
     )
     actions.append(rviz_bringup_launch)
