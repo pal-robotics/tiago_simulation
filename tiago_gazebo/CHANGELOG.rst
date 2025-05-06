@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.6.0 (2025-05-06)
+------------------
 * rviz use_sim_time
 * Contributors: antoniobrandi
 
