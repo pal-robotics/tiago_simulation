@@ -69,6 +69,7 @@ def private_navigation(context, *args, **kwargs):
     camera_model = read_launch_argument('camera_model', context)
     docking = read_launch_argument('docking', context)
     advanced_navigation = read_launch_argument('advanced_navigation', context)
+    use_sim_time = read_launch_argument('use_sim_time', context)
     rviz_cfg_pkg = base_type + '_2dnav'
     if advanced_navigation == 'True':
         rviz_cfg_pkg = base_type + '_advanced_2dnav'
@@ -82,6 +83,7 @@ def private_navigation(context, *args, **kwargs):
                 "camera_model": camera_model,
                 "advanced_navigation": (advanced_navigation == 'True'),
                 "has_dock": (docking == 'True'),
+                "use_sim_time": (use_sim_time == 'True'),
             }
         }
     }
