@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.7.0 (2025-05-07)
+------------------
 * add use_sim_time to robot_info
 * Contributors: antoniobrandi
 
