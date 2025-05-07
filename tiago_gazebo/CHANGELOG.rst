@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add use_sim_time to robot_info
+* Contributors: antoniobrandi
+
 4.6.0 (2025-05-06)
 ------------------
 * rviz use_sim_time
