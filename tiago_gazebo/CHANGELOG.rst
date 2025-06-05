@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add pal udf utils pkg as dependency and env variable
+* Contributors: Aina
+
 4.7.0 (2025-05-07)
 ------------------
 * add use_sim_time to robot_info
