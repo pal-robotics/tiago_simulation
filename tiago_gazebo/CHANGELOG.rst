@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.7.1 (2025-06-05)
+------------------
 * Add pal udf utils pkg as dependency and env variable
 * Contributors: Aina
 
