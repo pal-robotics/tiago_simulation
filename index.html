@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTAB-Map Integration with TIAGo in ROS 2 Humble</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 0;
+            margin: 0;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .robot-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .robot {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: pulse 3s infinite;
+        }
+        
+        .robot::before {
+            content: "";
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 25px;
+            background-color: var(--light);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        
+        .robot::after {
+            content: "";
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 10px;
+            background-color: var(--light);
+            border-radius: 5px;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(52, 152, 219, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); }
+        }
+        
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            background-color: var(--light);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--dark);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        .tab-btn.active {
+            background-color: var(--secondary);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .step {
+            counter-increment: step-counter;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .step::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .code-block {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        .code-header {
+            background-color: #3a3a3a;
+            padding: 0.5rem 1rem;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            margin: -1rem -1rem 1rem -1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copy-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .copy-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        .tip-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .warning-box {
+            background-color: #ffecb3;
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .success-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid var(--success);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .diagram {
+            max-width: 100%;
+            margin: 1.5rem auto;
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--light);
+            border-radius: 8px;
+        }
+        
+        .architecture {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .arch-node {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .arch-node h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .arch-node.robot { background-color: #e3f2fd; }
+        .arch-node.slam { background-color: #e8f5e9; }
+        .arch-node.nav { background-color: #ffecb3; }
+        
+        .connector {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .connector::after {
+            content: "→";
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .architecture {
+                grid-template-columns: 1fr;
+            }
+            
+            .connector::after {
+                content: "↓";
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="robot-container">
+                <div class="robot"></div>
+            </div>
+            <h1>Integrating RTAB-Map with TIAGo Robot</h1>
+            <p class="subtitle">A Comprehensive Guide to 3D SLAM and Navigation in ROS 2 Humble</p>
+        </div>
+    </header>
+    
+    <div class="nav-tabs">
+        <button class="tab-btn active" data-tab="overview">Overview</button>
+        <button class="tab-btn" data-tab="setup">Setup TIAGo</button>
+        <button class="tab-btn" data-tab="rtabmap">Install RTAB-Map</button>
+        <button class="tab-btn" data-tab="integration">Integration</button>
+        <button class="tab-btn" data-tab="launch">Launch File</button>
+        <button class="tab-btn" data-tab="troubleshooting">Troubleshooting</button>
+    </div>
+    
+    <div class="container">
+        <section id="overview" class="content-section active">
+            <h2>RTAB-Map and TIAGo Integration Overview</h2>
+            
+            <p>This guide will walk you through integrating RTAB-Map, a powerful SLAM solution, with the TIAGo robot in ROS 2 Humble. RTAB-Map (Real-Time Appearance-Based Mapping) is a RGB-D Graph SLAM approach that creates detailed 3D maps of environments.</p>
+            
+            <div class="architecture">
+                <div class="arch-node robot">
+                    <h4>TIAGo Robot</h4>
+                    <p>Mobile base with RGB-D camera and LiDAR</p>
+                </div>
+                <div class="connector"></div>
+                <div class="arch-node slam">
+                    <h4>RTAB-Map</h4>
+                    <p>3D SLAM processing sensor data</p>
+                </div>
+                <div class="connector"></div>
+                <div class="arch-node nav">
+                    <h4>Navigation Stack</h4>
+                    <p>Path planning and obstacle avoidance</p>
+                </div>
+            </div>
+            
+            <h3>Why Use RTAB-Map with TIAGo?</h3>
+            <p>TIAGo's sensor suite (RGB-D camera and LiDAR) is ideal for RTAB-Map's capabilities:</p>
+            <ul>
+                <li><strong>3D Mapping:</strong> Create detailed volumetric maps of environments</li>
+                <li><strong>Loop Closure Detection:</strong> Robust recognition of previously visited locations</li>
+                <li><strong>Multi-Session Mapping:</strong> Extend maps across multiple sessions</li>
+                <li><strong>Localization:</strong> Precise position estimation in known environments</li>
+            </ul>
+            
+            <div class="tip-box">
+                <p><strong>Tip:</strong> RTAB-Map can process data from both RGB-D cameras and LiDAR simultaneously, creating more robust maps than using either sensor alone.</p>
+            </div>
+        </section>
+        
+        <section id="setup" class="content-section">
+            <h2>Setting Up TIAGo Simulation</h2>
+            
+            <div class="step">
+                <h3>Install Dependencies</h3>
+                <p>Start by installing required tools:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Terminal Commands
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre>sudo apt-get update
+sudo apt-get install git python3-vcstool \
+    python3-rosdep python3-colcon-common-extensions</pre>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Create Workspace and Import TIAGo Packages</h3>
+                <p>Set up the TIAGo workspace and import the necessary repositories:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Terminal Commands
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre>mkdir -p ~/tiago_public_ws/src
+cd ~/tiago_public_ws
+vcs import --input https://raw.githubusercontent.com/pal-robotics/tiago_tutorials/humble-devel/tiago_public.repos src</pre>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Resolve Dependencies and Build</h3>
+                <p>Install dependencies and build the workspace:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Terminal Commands
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre>sudo rosdep init
+rosdep update
+rosdep install --from-paths src -y --ignore-src
+
+source /opt/ros/humble/setup.bash
+colcon build --symlink-install
+source ~/tiago_public_ws/install/setup.bash</pre>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Launch TIAGo in Simulation</h3>
+                <p>Test your setup by launching TIAGo in Gazebo:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Terminal Commands
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre># Basic simulation
+ros2 launch tiago_gazebo tiago_gazebo.launch.py is_public_sim:=True
+
+# With PAL office world
+ros2 launch tiago_gazebo tiago_gazebo.launch.py \
+  is_public_sim:=True world_name:=pal_office
+
+# With navigation
+ros2 launch tiago_gazebo tiago_gazebo.launch.py \
+  navigation:=True is_public_sim:=True</pre>
+                </div>
+                
+                <div class="tip-box">
+                    <p><strong>Verification:</strong> After launching, test robot movement:</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            Terminal Commands
+                            <button class="copy-btn">Copy</button>
+                        </div>
+                        <pre>ros2 topic pub /mobile_base_controller/cmd_vel_unstamped \
+  geometry_msgs/msg/Twist '{linear: {x: 0.5}, angular: {z: 0.3}}' -r10</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="rtabmap" class="content-section">
+            <h2>Installing RTAB-Map for ROS 2</h2>
+            
+            <div class="step">
+                <h3>Clone RTAB-Map Repositories</h3>
+                <p>Navigate to your workspace and clone the required repositories:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Terminal Commands
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre>cd ~/tiago_public_ws/src
+
+# Clone core library
+git clone https://github.com/introlab/rtabmap.git src/rtabmap
+
+# Clone ROS 2 wrapper (humble branch)
+git clone --branch humble https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros</pre>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Install Dependencies and Build</h3>
+                <p>Resolve dependencies and build RTAB-Map:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Terminal Commands
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre>rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+
+# Optimize build for performance
+export MAKEFLAGS="-j6"  # Adjust based on your CPU cores
+
+# Build with release flags
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release</pre>
+                </div>
+                
+                <div class="warning-box">
+                    <p><strong>Note:</strong> Building RTAB-Map requires significant RAM (at least 16GB recommended). If you encounter memory issues, remove the MAKEFLAGS export.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Install Additional Packages</h3>
+                <p>Install ROS packages for RTAB-Map functionality:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Terminal Commands
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre>sudo apt install -y \
+    ros-humble-rtabmap \
+    ros-humble-rtabmap-ros \
+    ros-humble-rtabmap-slam \
+    ros-humble-rtabmap-viz \
+    ros-humble-rtabmap-sync \
+    ros-humble-rtabmap-util</pre>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Test RTAB-Map Installation</h3>
+                <p>Verify your installation with sample demonstrations:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Terminal Commands
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre># SLAM demo (requires downloaded dataset)
+ros2 launch rtabmap_demos robot_mapping_demo.launch.py
+
+# Object detection demo
+ros2 launch rtabmap_demos find_object_demo.launch.py</pre>
+                </div>
+                
+                <div class="tip-box">
+                    <p><strong>Data Sources:</strong> Sample datasets are available from the RTAB-Map project page. Test with these before integrating with TIAGo.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="integration" class="content-section">
+            <h2>Integrating RTAB-Map with TIAGo</h2>
+            
+            <div class="step">
+                <h3>Launch TIAGo with Navigation</h3>
+                <p>Start the TIAGo simulation with navigation enabled:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Terminal Commands
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre>ros2 launch tiago_gazebo tiago_gazebo.launch.py \
+  navigation:=True is_public_sim:=True</pre>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Disable AMCL</h3>
+                <p>RTAB-Map will replace AMCL for localization. Create a script to stop AMCL:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        kill_amcl.sh
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre>#!/bin/bash
+
+# Find AMCL process
+PID=$(ps aux | grep '[a]mcl' | awk '{print $2}')
+
+if [ -z "$PID" ]; then
+  echo "AMCL process not found."
+  exit 1
+fi
+
+echo "Stopping AMCL (PID: $PID)"
+kill $PID
+
+# Wait for shutdown
+sleep 2
+
+# Force kill if still running
+if ps -p $PID > /dev/null; then
+  echo "Force killing AMCL..."
+  kill -9 $PID
+fi
+
+echo "AMCL stopped"</pre>
+                </div>
+                <p>Make the script executable and run it:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Terminal Commands
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre>chmod +x kill_amcl.sh
+./kill_amcl.sh</pre>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Launch RTAB-Map with TIAGo</h3>
+                <p>Start RTAB-Map configured for TIAGo's sensors:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Terminal Commands
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre>ros2 launch tiago_gazebo tiago_rtabmap.launch.py</pre>
+                </div>
+                
+                <div class="tip-box">
+                    <p><strong>Understanding Remappings:</strong> RTAB-Map needs to know which topics to listen to. The TIAGo-specific remappings are critical:</p>
+                    <ul>
+                        <li>RGB Camera: <code>/head_front_camera/rgb/image_raw</code></li>
+                        <li>Depth Camera: <code>/head_front_camera/depth/image_raw</code></li>
+                        <li>LiDAR: <code>/scan_raw</code></li>
+                        <li>Odometry: <code>/mobile_base_controller/odom</code></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Key Configuration Considerations</h3>
+                <p>For successful integration, pay attention to:</p>
+                
+                <div class="warning-box">
+                    <p><strong>TF Frames:</strong> Ensure consistency between:</p>
+                    <ul>
+                        <li><code>base_footprint</code> (TIAGo's base frame)</li>
+                        <li><code>camera_link</code> (RGB-D sensor frame)</li>
+                        <li><code>base_scan</code> (LiDAR frame)</li>
+                    </ul>
+                </div>
+                
+                <div class="tip-box">
+                    <p><strong>Parameter Tuning:</strong> Adjust these RTAB-Map parameters for TIAGo:</p>
+                    <ul>
+                        <li><code>Reg/Strategy</code>: Set to 1 (Vis+ICP)</li>
+                        <li><code>RGBD/NeighborLinkRefining</code>: True</li>
+                        <li><code>Grid/RangeMin</code>: 0.2 (filter close points)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="launch" class="content-section">
+            <h2>RTAB-Map Launch File for TIAGo</h2>
+            
+            <div class="step">
+                <h3>Custom Launch File</h3>
+                <p>Create a launch file that configures RTAB-Map specifically for TIAGo:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        tiago_rtabmap.launch.py
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre>from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
+from launch.conditions import IfCondition, UnlessCondition
+from launch_ros.actions import Node
+import os
+from ament_index_python.packages import get_package_share_directory
+
+def generate_launch_description():
+    use_sim_time = LaunchConfiguration('use_sim_time')
+    qos = LaunchConfiguration('qos')
+    localization = LaunchConfiguration('localization')
+    base_frame = 'base_footprint'  # TIAGo's base frame
+
+    parameters = {
+        'frame_id': base_frame,
+        'use_sim_time': use_sim_time,
+        'subscribe_depth': True,
+        'subscribe_rgb': True,
+        'subscribe_scan': True,
+        'subscribe_scan_cloud': True,
+        'approx_sync': True,
+        'use_action_for_goal': True,
+        'qos_scan': qos,
+        'qos_imu': qos,
+        'Reg/Strategy': '1',           # Vis+ICP registration
+        'Reg/Force3DoF': 'true',        # 3DoF for ground robots
+        'RGBD/NeighborLinkRefining': 'True',
+        'Grid/RangeMin': '0.2',         # Min range for points
+        'Optimizer/GravitySigma': '0'   # Ignore gravity for ground robots
+    }
+
+    # Remap to TIAGo's topics
+    remappings = [
+        ('rgb/image', '/head_front_camera/rgb/image_raw'),
+        ('rgb/camera_info', '/head_front_camera/rgb/camera_info'),
+        ('depth/image', '/head_front_camera/depth/image_raw'),
+        ('depth/camera_info', '/head_front_camera/depth/camera_info'),
+        ('rgbd_image', '/head_front_camera/rgbd/image'),
+        ('depth/points', '/head_front_camera/depth/points'),
+        ('scan', '/scan_raw'),
+        ('odom', '/mobile_base_controller/odom'),
+    ]
+
+    rviz_config_dir = os.path.join(
+        get_package_share_directory('rtabmap_ros'),
+        'launch', 'rtabmap.rviz'
+    )
+
+    return LaunchDescription([
+        DeclareLaunchArgument('use_sim_time', default_value='true'),
+        DeclareLaunchArgument('qos', default_value='2'),
+        DeclareLaunchArgument('localization', default_value='false'),
+        
+        # SLAM Node
+        Node(
+            condition=UnlessCondition(localization),
+            package='rtabmap_slam', executable='rtabmap', 
+            output='screen', parameters=[parameters],
+            remappings=remappings, arguments=['-d']
+        ),
+        
+        # Localization Node
+        Node(
+            condition=IfCondition(localization),
+            package='rtabmap_slam', executable='rtabmap', 
+            output='screen', parameters=[parameters, {
+                'Mem/IncrementalMemory': 'False',
+                'Mem/InitWMWithAllNodes': 'True'
+            }], remappings=remappings
+        ),
+        
+        # Visualization
+        Node(
+            package='rtabmap_viz', executable='rtabmap_viz', 
+            output='screen', parameters=[parameters],
+            remappings=remappings
+        ),
+        
+        # RViz
+        Node(
+            package='rviz2', executable='rviz2', output='screen',
+            name='rviz2', arguments=['-d', rviz_config_dir],
+            parameters=[{'use_sim_time': use_sim_time}]
+        ),
+    ])</pre>
+                </div>
+                
+                <div class="tip-box">
+                    <p><strong>Key Configuration Notes:</strong></p>
+                    <ul>
+                        <li><code>use_sim_time</code>: Set to 'true' for simulation</li>
+                        <li><code>subscribe_scan_cloud</code>: Enables LiDAR point cloud processing</li>
+                        <li><code>Reg/Strategy 1</code>: Combines visual and ICP registration</li>
+                        <li><code>Reg/Force3DoF</code>: Constraint for ground robots</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="troubleshooting" class="content-section">
+            <h2>Troubleshooting Common Issues</h2>
+            
+            <div class="step">
+                <h3>No Map Appearing in RViz</h3>
+                <p>Possible causes and solutions:</p>
+                <ul>
+                    <li><strong>TF Errors:</strong> Check frame transformations with <code>ros2 run tf2_tools view_frames.py</code></li>
+                    <li><strong>Topic Remapping:</strong> Verify remappings match actual topics</li>
+                    <li><strong>Camera Issues:</strong> Ensure RGB and depth images are being published</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <h3>Poor Mapping Quality</h3>
+                <p>Improve mapping with these adjustments:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Parameter Adjustments
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre># Increase feature detection
+'Kp/DetectorStrategy': '6'  # Use GFTT + BRIEF
+
+# Reduce minimum visual features for loop closure
+'Vis/MinInliers': '15'
+
+# Increase loop closure detection radius
+'RGBD/ProximityPathMaxNeighbors': '50'</pre>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>High CPU Usage</h3>
+                <p>Optimize performance with these settings:</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        Performance Parameters
+                        <button class="copy-btn">Copy</button>
+                    </div>
+                    <pre># Reduce map update rate
+'Rtabmap/DetectionRate': '2'  # Hz
+
+# Limit memory usage
+'Mem/STMSize': '30'  # Maximum stored locations
+
+# Disable visual word generation
+'Mem/IncrementalMemory': 'false'  # For localization mode</pre>
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>Common Error Messages</h3>
+                <div class="warning-box">
+                    <p><strong>"Could not get camera info"</strong></p>
+                    <p>Solution: Verify camera_info topics are being published and remapped correctly.</p>
+                </div>
+                
+                <div class="warning-box">
+                    <p><strong>"No matching device found"</strong></p>
+                    <p>Solution: Ensure Gazebo plugins for cameras are properly loaded.</p>
+                </div>
+                
+                <div class="warning-box">
+                    <p><strong>"Transform failed" between frames</strong></p>
+                    <p>Solution: Check static transforms and URDF configuration.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>RTAB-Map & TIAGo Integration Guide | ROS 2 Humble</p>
+            <p>Created for robotics enthusiasts and developers</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and sections
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding section
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Copy button functionality
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const codeBlock = button.closest('.code-block').querySelector('pre');
+                const textToCopy = codeBlock.textContent;
+                
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    // Visual feedback
+                    const originalText = button.textContent;
+                    button.textContent = 'Copied!';
+                    button.style.backgroundColor = '#27ae60';
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.backgroundColor = '';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
