@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.9.1 (2025-12-15)
+------------------
 * missing deps
 * Contributors: antoniobrandi
 
