@@ -28,6 +28,7 @@
   <exec_depend>tiago_moveit_config</exec_depend>
   <exec_depend>tiago_2dnav</exec_depend>
   <exec_depend>tiago_laser_sensors</exec_depend>
+  <exec_depend>tiago_rgbd_sensors</exec_depend>
   <exec_depend>pal_urdf_utils</exec_depend>
   <exec_depend>omni_base_description</exec_depend>
   <test_depend>ament_cmake_gtest</test_depend>
