@@ -2,6 +2,11 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* missing deps
+* Contributors: antoniobrandi
+
 4.9.0 (2025-12-11)
 ------------------
 * Point Cloud filter pipeline
