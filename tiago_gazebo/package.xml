@@ -16,6 +16,8 @@
   <exec_depend>gazebo_plugins</exec_depend>
   <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>gazebo_ros2_control</exec_depend>
+  <exec_depend>gz_ros2_control</exec_depend>
+  <exec_depend>gz-sensors6</exec_depend>
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_pal</exec_depend>
   <exec_depend>launch_ros</exec_depend>
@@ -37,6 +39,7 @@
   <test_depend>launch_testing_ament_cmake</test_depend>
   <test_depend>play_motion2_msgs</test_depend>
   <test_depend>rclcpp</test_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
   <test_depend>sensor_msgs</test_depend>
   <exec_depend condition="$PAL_DISTRO >= alum">robot_info_publisher</exec_depend>
 
