@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.10.0 (2026-01-12)
+-------------------
 * Add support for new gazebo
 * Contributors: Noel Jimenez
 
