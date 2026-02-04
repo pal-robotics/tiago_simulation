@@ -24,6 +24,7 @@ from launch_ros.substitutions import FindPackageShare
 from launch_pal.robot_arguments import CommonArgs
 from launch_pal.arg_utils import LaunchArgumentsBase
 from launch_pal.include_utils import include_scoped_launch_py_description
+from tiago_description.launch_arguments import TiagoArgs
 
 
 @dataclass(frozen=True)
@@ -32,7 +33,7 @@ class LaunchArguments(LaunchArgumentsBase):
     slam: DeclareLaunchArgument = CommonArgs.slam
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     rviz: DeclareLaunchArgument = CommonArgs.rviz
-
+    base_type: DeclareLaunchArgument = TiagoArgs.base_type
 
 def generate_launch_description():
 
@@ -51,7 +52,7 @@ def declare_actions(
     launch_description: LaunchDescription, launch_args: LaunchArguments
 ):
     public_nav_params = PathJoinSubstitution([
-        FindPackageShare(PythonExpression(["'", LaunchConfiguration('base_type'), "'_2dnav"])),
+        FindPackageShare(PythonExpression(["'", LaunchConfiguration('base_type'), "_2dnav'"])),
         'config',
         'nav_public_sim.yaml',
     ])
@@ -63,6 +64,7 @@ def declare_actions(
         launch_arguments={
             'params_file': public_nav_params,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
+            'base_type': launch_args.base_type,
         },
     )
 
@@ -82,6 +84,7 @@ def declare_actions(
             ]),
             'use_sim_time': LaunchConfiguration('use_sim_time'),
             'world_name': LaunchConfiguration('world_name'),
+            'base_type': launch_args.base_type,
         },
         condition=UnlessCondition(LaunchConfiguration('slam')),
     )
@@ -95,6 +98,7 @@ def declare_actions(
         launch_arguments={
             'params_file': public_nav_params,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
+            'base_type': launch_args.base_type,
         },
         condition=IfCondition(LaunchConfiguration('slam')),
     )
