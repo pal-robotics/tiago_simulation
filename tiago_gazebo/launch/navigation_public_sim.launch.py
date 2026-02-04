@@ -35,6 +35,7 @@ class LaunchArguments(LaunchArgumentsBase):
     rviz: DeclareLaunchArgument = CommonArgs.rviz
     base_type: DeclareLaunchArgument = TiagoArgs.base_type
 
+
 def generate_launch_description():
 
     # Create the launch description and populate
