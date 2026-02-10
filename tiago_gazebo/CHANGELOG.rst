@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.10.1 (2026-02-10)
+-------------------
 * formatting problem
 * base type arg added for pub nav
 * Contributors: Michela Cavuoto
