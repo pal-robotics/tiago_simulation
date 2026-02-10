@@ -2,6 +2,12 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* formatting problem
+* base type arg added for pub nav
+* Contributors: Michela Cavuoto
+
 4.10.0 (2026-01-12)
 -------------------
 * Add support for new gazebo
