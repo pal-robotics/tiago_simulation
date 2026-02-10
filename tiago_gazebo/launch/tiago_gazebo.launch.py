@@ -146,6 +146,7 @@ def declare_actions(
             'slam': launch_args.slam,
             'use_sim_time': LaunchConfiguration('use_sim_time'),
             'rviz': launch_args.rviz,
+            'base_type': launch_args.base_type,
         },
     )
     launch_description.add_action(public_navigation_launch)
