@@ -177,8 +177,16 @@ def declare_actions(
     launch_description.add_action(slam)
 
     # Docking
+    docking_pkg = PythonExpression([
+        "'", LaunchConfiguration('base_type'),
+        "' + '_advanced_docking' if '",
+        LaunchConfiguration('advanced_navigation'),
+        "'=='True' else '",
+        LaunchConfiguration('base_type'),
+        "' + '_docking'"
+    ])
     docking = include_scoped_launch_py_description(
-        pkg_name=PythonExpression(["'", LaunchConfiguration('base_type'), "' + '_docking'"]),
+        pkg_name=docking_pkg,
         paths=['launch', 'docking_sim.launch.py'],
         launch_arguments={
             'namespace': launch_args.namespace,
