@@ -2,6 +2,12 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* stores_server log level
+* separate advanced docking
+* Contributors: antoniobrandi
+
 4.10.1 (2026-02-10)
 -------------------
 * formatting problem
