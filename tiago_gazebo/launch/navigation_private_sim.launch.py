@@ -16,7 +16,7 @@ from dataclasses import dataclass
 import os
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable
+from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable, GroupAction
 from launch.conditions import IfCondition, UnlessCondition
 from launch.substitutions import (
     LaunchConfiguration,
@@ -136,45 +136,46 @@ def declare_actions(
 
     launch_description.add_action(navigation)
 
-    # Localization
-    localization = include_scoped_launch_py_description(
-        pkg_name=PythonExpression(["'", LaunchConfiguration('base_type'), "' + '_2dnav'"]),
-        paths=['launch', 'localization.launch.py'],
-        launch_arguments={
-            'namespace': launch_args.namespace,
-            'wheel_model': launch_args.wheel_model,
-            'camera_model': launch_args.camera_model,
-            'base_type': launch_args.base_type,
-            'laser_model': launch_args.laser_model,
-            'docking': launch_args.docking,
-            'advanced_navigation': launch_args.advanced_navigation,
-            'use_sim_time': LaunchConfiguration('use_sim_time'),
-        },
-        env_vars=[robot_info_env],
-        condition=UnlessCondition(LaunchConfiguration('slam')),
+    # Localization and SLAM
+    localization_and_slam = GroupAction(
+        condition=UnlessCondition(LaunchConfiguration('advanced_navigation')),
+        actions=[
+            include_scoped_launch_py_description(
+                pkg_name=PythonExpression(["'", LaunchConfiguration('base_type'), "' + '_2dnav'"]),
+                paths=['launch', 'localization.launch.py'],
+                launch_arguments={
+                    'namespace': launch_args.namespace,
+                    'wheel_model': launch_args.wheel_model,
+                    'camera_model': launch_args.camera_model,
+                    'base_type': launch_args.base_type,
+                    'laser_model': launch_args.laser_model,
+                    'docking': launch_args.docking,
+                    'advanced_navigation': launch_args.advanced_navigation,
+                    'use_sim_time': LaunchConfiguration('use_sim_time'),
+                },
+                env_vars=[robot_info_env],
+                condition=UnlessCondition(LaunchConfiguration('slam')),
+            ),
+            include_scoped_launch_py_description(
+                pkg_name=PythonExpression(["'", LaunchConfiguration('base_type'), "' + '_2dnav'"]),
+                paths=['launch', 'slam.launch.py'],
+                launch_arguments={
+                    'namespace': launch_args.namespace,
+                    'wheel_model': launch_args.wheel_model,
+                    'camera_model': launch_args.camera_model,
+                    'base_type': launch_args.base_type,
+                    'laser_model': launch_args.laser_model,
+                    'docking': launch_args.docking,
+                    'advanced_navigation': launch_args.advanced_navigation,
+                    'use_sim_time': LaunchConfiguration('use_sim_time'),
+                },
+                env_vars=[robot_info_env],
+                condition=IfCondition(LaunchConfiguration('slam')),
+            )
+        ]
     )
 
-    launch_description.add_action(localization)
-
-    # SLAM
-    slam = include_scoped_launch_py_description(
-        pkg_name=PythonExpression(["'", LaunchConfiguration('base_type'), "' + '_2dnav'"]),
-        paths=['launch', 'slam.launch.py'],
-        launch_arguments={
-            'namespace': launch_args.namespace,
-            'wheel_model': launch_args.wheel_model,
-            'camera_model': launch_args.camera_model,
-            'base_type': launch_args.base_type,
-            'laser_model': launch_args.laser_model,
-            'docking': launch_args.docking,
-            'advanced_navigation': launch_args.advanced_navigation,
-            'use_sim_time': LaunchConfiguration('use_sim_time'),
-        },
-        env_vars=[robot_info_env],
-        condition=IfCondition(LaunchConfiguration('slam')),
-    )
-
-    launch_description.add_action(slam)
+    launch_description.add_action(localization_and_slam)
 
     # Docking
     docking_pkg = PythonExpression([
