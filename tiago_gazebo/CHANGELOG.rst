@@ -2,8 +2,8 @@
 Changelog for package tiago_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+4.13.0 (2026-08-24)
+-------------------
 * added pal_configuration_manager
 * Contributors: antoniobrandi
 
